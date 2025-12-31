@@ -1,0 +1,26 @@
+[
+  {
+    "id": "car_petrol",
+    "name": "Drive Car - Petrol",
+    "unit": "km",
+    "carbonUnitRate": 0.17
+  },
+  {
+    "id": "bus_travel",
+    "name": "Bus Journey",
+    "unit": "km",
+    "carbonUnitRate": 0.1
+  },
+  {
+    "id": "beef_meal",
+    "name": "Meal - Beef",
+    "unit": "serving",
+    "carbonUnitRate": 15.5
+  },
+  {
+    "id": "electricity_usage",
+    "name": "Home Electricity",
+    "unit": "kWh",
+    "carbonUnitRate": 0.23
+  }
+]

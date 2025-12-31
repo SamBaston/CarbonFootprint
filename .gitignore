@@ -1,0 +1,9 @@
+# Dependency directories
+node_modules/
+
+# Log files
+npm-debug.log*
+
+# OS metadata
+.DS_Store
+Thumbs.db
