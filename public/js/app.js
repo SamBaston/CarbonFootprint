@@ -19,12 +19,11 @@ async function initDashboard() {
         // Render Activity Types Table
         renderActivityTable(activities);
         
-        // (Optional) Render Records Table
-        // renderRecordsTable(records);
+        // Render Records Table
+        renderRecordsTable(records);
 
     } catch (err) {
         console.error("Dashboard failed to load:", err);
-        // Show user-friendly error (Coursework requirement)
         document.getElementById('total-emissions').innerText = "Offline";
     }
 }
@@ -36,6 +35,18 @@ function renderActivityTable(activities) {
             <td>${activity.name}</td>
             <td>${activity.unit}</td>
             <td>${activity.carbonUnitRate} kg</td>
+        </tr>
+    `).join('');
+}
+
+function renderRecordsTable(records) {
+    const tableBody = document.getElementById('record-table-body');
+    tableBody.innerHTML = records.map(record => `
+        <tr>
+            <td>${record.activityName}</td>
+            <td>${record.amount}</td>
+            <td>${record.co2Amount}</td>
+            <td>${record.date}</td>
         </tr>
     `).join('');
 }
