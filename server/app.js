@@ -45,7 +45,7 @@ app.post('/api/activities', async (req, res) => {
     res.status(201).json({ message: "Activity added" });
 });
 
-// UPDATE activity type
+// PUT (update) activity type
 app.put('/api/activities/:id', async (req, res) => {
     const activities = await readData(ACTIVITIES_FILE);
     const index = activities.findIndex(a => a.id === req.params.id);
@@ -78,7 +78,25 @@ app.get('/api/records', async (req, res) => {
     }
 });
 
-// POST new record (with auto-calculation)
+// GET a specific record
+app.get('/api/records/:id', async (req, res) => {
+    try {
+        const records = await readData(RECORDS_FILE);
+        const targetId = String(req.params.id).trim();
+        const record = records.find(r => String(r.id).trim() === targetId);
+        
+        if (!record) {
+            return res.status(404).json({ error: `Record ${targetId} not found` });
+        }
+        
+        res.json(record);
+    } catch (err) {
+        console.error("Error fetching record:", err);
+        res.status(500).json({ error: "Failed to fetch record" });
+    }
+});
+
+// POST a new record 
 app.post('/api/records', async (req, res) => {
     const { activityId, amount } = req.body;
     if (!activityId || !amount) return res.status(400).json({ error: "Missing fields" });
@@ -105,6 +123,47 @@ app.post('/api/records', async (req, res) => {
         res.status(201).json(newRecord);
     } catch (err) {
         res.status(500).json({ error: "Server error saving record" });
+    }
+});
+
+// PUT (update) a record 
+// PUT (update) a record 
+app.put('/api/records/:id', async (req, res) => {
+    try {
+        const records = await readData(RECORDS_FILE);
+        const activities = await readData(ACTIVITIES_FILE);
+        
+        // Use String() and trim() to ensure "2" matches 2 or " 2 "
+        const targetId = String(req.params.id).trim();
+        const index = records.findIndex(r => String(r.id).trim() === targetId);
+
+        if (index === -1) {
+            // This will help you see exactly what the server is looking for vs what it has
+            console.log(`Failed to find ID: [${targetId}] in`, records.map(r => r.id));
+            return res.status(404).send("Record ID not found in database");
+        }
+
+        const { activityId, amount } = req.body;
+        const activity = activities.find(a => String(a.id) === String(activityId));
+
+        if (!activity) {
+            return res.status(400).send("Linked Activity Type not found");
+        }
+
+        // Update the record and recalculate
+        records[index] = {
+            ...records[index],
+            activityId: activityId,
+            activityName: activity.name,
+            amount: parseFloat(amount),
+            co2Amount: parseFloat((parseFloat(amount) * activity.carbonUnitRate).toFixed(2))
+        };
+
+        await writeData(RECORDS_FILE, records);
+        res.json(records[index]);
+    } catch (err) {
+        console.error("Server Error during PUT:", err);
+        res.status(500).send("Internal Server Error");
     }
 });
 
