@@ -119,10 +119,8 @@ function openModal(type, id = null) {
             <input type="number" id="f-rate" class="form-control mb-2" placeholder="Rate" value="${data.carbonUnitRate}">
         `;
     } else {
-        // FIXED: Using simple comparison and handling the 'undefined' case safely
         const data = id ? state.records.find(r => String(r.id) === String(id)) : {activityId:'', amount:''};
         
-        // Safety check: if data is still undefined (id not found), use empty defaults
         const recordData = data || {activityId:'', amount:''};
 
         const options = state.activities.map(a => 

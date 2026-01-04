@@ -11,8 +11,8 @@
     "id": "2",
     "date": "2025-12-02",
     "activityId": "beef_meal",
-    "activityName": "Dinner",
+    "activityName": "Meal - Beef",
     "amount": 2,
-    "co2Amount": 31.0
+    "co2Amount": 31
   }
 ]

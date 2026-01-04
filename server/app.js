@@ -4,7 +4,6 @@ const path = require('path');
 const app = express();
 
 app.use(express.json());
-app.use(express.static('public')); // Serve frontend files
 
 const ACTIVITIES_FILE = path.join(__dirname, '../data/activities.json');
 const RECORDS_FILE = path.join(__dirname, '../data/records.json');
@@ -96,44 +95,12 @@ app.get('/api/records/:id', async (req, res) => {
     }
 });
 
-// POST a new record 
-app.post('/api/records', async (req, res) => {
-    const { activityId, amount } = req.body;
-    if (!activityId || !amount) return res.status(400).json({ error: "Missing fields" });
-
-    try {
-        const activities = await readData(ACTIVITIES_FILE);
-        const records = await readData(RECORDS_FILE);
-
-        // Find the activity to get the name and rate
-        const activity = activities.find(a => a.id === activityId);
-        if (!activity) return res.status(404).json({ error: "Activity type not found" });
-
-        const newRecord = {
-            id: Date.now().toString(), // Simple unique ID
-            date: new Date().toISOString().split('T')[0], // YYYY-MM-DD
-            activityId: activityId,
-            activityName: activity.name,
-            amount: parseFloat(amount),
-            co2Amount: parseFloat((amount * activity.carbonUnitRate).toFixed(2))
-        };
-
-        records.push(newRecord);
-        await writeData(RECORDS_FILE, records);
-        res.status(201).json(newRecord);
-    } catch (err) {
-        res.status(500).json({ error: "Server error saving record" });
-    }
-});
-
-// PUT (update) a record 
 // PUT (update) a record 
 app.put('/api/records/:id', async (req, res) => {
     try {
         const records = await readData(RECORDS_FILE);
         const activities = await readData(ACTIVITIES_FILE);
         
-        // Use String() and trim() to ensure "2" matches 2 or " 2 "
         const targetId = String(req.params.id).trim();
         const index = records.findIndex(r => String(r.id).trim() === targetId);
 
@@ -167,6 +134,36 @@ app.put('/api/records/:id', async (req, res) => {
     }
 });
 
+// POST a new record 
+app.post('/api/records', async (req, res) => {
+    const { activityId, amount } = req.body;
+    if (!activityId || !amount) return res.status(400).json({ error: "Missing fields" });
+
+    try {
+        const activities = await readData(ACTIVITIES_FILE);
+        const records = await readData(RECORDS_FILE);
+
+        // Find the activity to get the name and rate
+        const activity = activities.find(a => a.id === activityId);
+        if (!activity) return res.status(404).json({ error: "Activity type not found" });
+
+        const newRecord = {
+            id: Date.now().toString(), // Simple unique ID
+            date: new Date().toISOString().split('T')[0], // YYYY-MM-DD
+            activityId: activityId,
+            activityName: activity.name,
+            amount: parseFloat(amount),
+            co2Amount: parseFloat((amount * activity.carbonUnitRate).toFixed(2))
+        };
+
+        records.push(newRecord);
+        await writeData(RECORDS_FILE, records);
+        res.status(201).json(newRecord);
+    } catch (err) {
+        res.status(500).json({ error: "Server error saving record" });
+    }
+});
+
 // DELETE a record
 app.delete('/api/records/:id', async (req, res) => {
     let records = await readData(RECORDS_FILE);
@@ -174,5 +171,7 @@ app.delete('/api/records/:id', async (req, res) => {
     await writeData(RECORDS_FILE, records);
     res.status(204).send();
 });
+
+app.use(express.static('public')); // Serve frontend files
 
 module.exports = app;
