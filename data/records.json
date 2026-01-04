@@ -11,8 +11,24 @@
     "id": "2",
     "date": "2025-12-02",
     "activityId": "beef_meal",
-    "activityName": "Meal - Beef",
+    "activityName": "dinner",
     "amount": 2,
     "co2Amount": 31
+  },
+  {
+    "id": "1767541049933",
+    "date": "2026-04-05",
+    "activityId": "electricity_usage",
+    "activityName": "leccy",
+    "amount": 12,
+    "co2Amount": 2.76
+  },
+  {
+    "id": "1767541421491",
+    "date": "2025-12-25",
+    "activityId": "beef_meal",
+    "activityName": "xmas dins",
+    "amount": 12,
+    "co2Amount": 186
   }
 ]

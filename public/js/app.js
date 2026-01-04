@@ -69,7 +69,7 @@ function renderDashboard() {
 // Render the Activities view
 function renderActivities() {
     const tableBody = document.getElementById('activity-table-body');
-    if (!tableBody) return; 
+    if (!tableBody) return;
 
     tableBody.innerHTML = state.activities.map(a => `
         <tr>
@@ -88,17 +88,23 @@ function renderRecords() {
     const tableBody = document.getElementById('record-table-body');
     if (!tableBody) return;
 
-    tableBody.innerHTML = state.records.map(r => `
-        <tr>
-            <td>${r.activityName}</td>
-            <td>${r.amount}</td>
-            <td>${r.co2Amount} kg</td>
-            <td>${r.date}</td>
-            <td>
-                <button class="btn btn-sm btn-outline-primary" onclick="openModal('record', '${r.id}')">Edit</button>
-            </td>
-        </tr>
-    `).join('');
+    tableBody.innerHTML = state.records.map(r => {
+        const activityCategory = state.activities.find(a => String(a.id) === String(r.activityId));
+        const categoryName = activityCategory ? activityCategory.name : 'Unknown';
+
+        return `
+            <tr>
+                <td><span class="badge bg-secondary">${categoryName}</span></td>
+                <td>${r.activityName}</td> 
+                <td>${r.amount}</td>
+                <td>${r.co2Amount} kg</td>
+                <td>${r.date}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-primary" onclick="openModal('record', '${r.id}')">Edit</button>
+                </td>
+            </tr>
+        `;
+    }).join('');
 }
 
 
@@ -111,32 +117,32 @@ function renderRecords() {
 function openModal(type, id = null) {
     state.editingType = type;
     state.editingId = id;
-    
+
     document.getElementById('modalTitle').innerText = id ? `Edit ${type}` : `Add ${type}`;
     const deleteBtn = document.getElementById('btnDelete');
     id ? deleteBtn.classList.remove('d-none') : deleteBtn.classList.add('d-none');
 
     const body = document.getElementById('modalBody');
     if (type === 'activity') {
-        const data = id ? state.activities.find(a => String(a.id) === String(id)) : {id:'', name:'', unit:'', carbonUnitRate:''};
+        const activity = id ? state.activities.find(a => String(a.id) === String(id)) : { name: '', unit: '', carbonUnitRate: '' };
         body.innerHTML = `
-            <input type="text" id="f-id" class="form-control mb-2" placeholder="ID" value="${data.id}" ${id ? 'readonly' : ''}>
-            <input type="text" id="f-name" class="form-control mb-2" placeholder="Name" value="${data.name}">
-            <input type="text" id="f-unit" class="form-control mb-2" placeholder="Unit" value="${data.unit}">
-            <input type="number" id="f-rate" class="form-control mb-2" placeholder="Rate" value="${data.carbonUnitRate}">
+            <input type="text" id="f-name" class="form-control mb-2" placeholder="Name" value="${activity.name}">
+            <input type="text" id="f-unit" class="form-control mb-2" placeholder="Unit" value="${activity.unit}">
+            <input type="number" id="f-rate" class="form-control mb-2" placeholder="Rate" value="${activity.carbonUnitRate}">
         `;
-    } else {
-        const data = id ? state.records.find(r => String(r.id) === String(id)) : {activityId:'', amount:''};
-        
-        const recordData = data || {activityId:'', amount:''};
+    }
+    else {
+        const record = id ? state.records.find(r => String(r.id) === String(id)) : { activityId: '', activityName: '', amount: '', date: new Date().toISOString().split('T')[0] };
 
-        const options = state.activities.map(a => 
-            `<option value="${a.id}" ${a.id === recordData.activityId ? 'selected':''}>${a.name}</option>`
+        const options = state.activities.map(a =>
+            `<option value="${a.id}" ${a.id === record.activityId ? 'selected' : ''}>${a.name}</option>`
         ).join('');
 
         body.innerHTML = `
             <select id="f-actId" class="form-select mb-2">${options}</select>
-            <input type="number" id="f-amount" class="form-control mb-2" placeholder="Amount" value="${recordData.amount}">
+            <input type="text" id="f-actName" class="form-control mb-2" placeholder="Name" value="${record.activityName}">
+            <input type="number" id="f-amount" class="form-control mb-2" placeholder="Amount" value="${record.amount}">
+            <input type="date" id="f-date" class="form-control mb-2" placeholder="Date" value="${record.date}">
         `;
     }
     modal.show();
@@ -147,25 +153,27 @@ async function handleSave() {
     const type = state.editingType;
     const isEdit = !!state.editingId;
     const url = `/api/${type === 'activity' ? 'activities' : 'records'}${isEdit ? `/${state.editingId}` : ''}`;
-    
+
     let payload = {};
     if (type === 'activity') {
         payload = {
-            id: document.getElementById('f-id').value,
             name: document.getElementById('f-name').value,
             unit: document.getElementById('f-unit').value,
             carbonUnitRate: parseFloat(document.getElementById('f-rate').value)
         };
-    } else {
+    }
+    else {
         payload = {
             activityId: document.getElementById('f-actId').value,
-            amount: parseFloat(document.getElementById('f-amount').value)
+            activityName: document.getElementById('f-actName').value,
+            amount: parseFloat(document.getElementById('f-amount').value),
+            date: document.getElementById('f-date').value
         };
     }
 
     const res = await fetch(url, {
         method: isEdit ? 'PUT' : 'POST',
-        headers: {'Content-Type': 'application/json'},
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
     });
 

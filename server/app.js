@@ -39,11 +39,19 @@ app.get('/api/activities', async (req, res) => {
 // POST new activity type
 app.post('/api/activities', async (req, res) => {
     try {
-        const { id, name, unit, carbonUnitRate } = req.body;
-        if (!id || !name || !carbonUnitRate) return res.status(400).json({ error: "Missing fields" });
+        const { name, unit, carbonUnitRate } = req.body;
+        if (!name || !carbonUnitRate) return res.status(400).json({ error: "Missing fields" });
 
         const activities = await readData(ACTIVITIES_FILE);
-        activities.push({ id, name, unit, carbonUnitRate });
+
+        const newActivity = {
+            id: Date.now().toString(), // Simple unique ID
+            name: name,
+            unit: unit,
+            carbonUnitRate: carbonUnitRate,
+        };
+
+        activities.push(newActivity);
         await writeData(ACTIVITIES_FILE, activities);
         res.status(201).json({ message: "Activity added" });
     }
@@ -128,7 +136,7 @@ app.put('/api/records/:id', async (req, res) => {
 
         if (index === -1) return res.status(404).send("Record ID not found in database");
 
-        const { activityId, amount } = req.body;
+        const { activityId, activityName, amount, date } = req.body;
         const activity = activities.find(a => String(a.id) === String(activityId));
 
         if (!activity) {
@@ -139,7 +147,8 @@ app.put('/api/records/:id', async (req, res) => {
         records[index] = {
             ...records[index],
             activityId: activityId,
-            activityName: activity.name,
+            activityName: activityName,
+            date: date,
             amount: parseFloat(amount),
             co2Amount: parseFloat((parseFloat(amount) * activity.carbonUnitRate).toFixed(2))
         };
@@ -155,8 +164,8 @@ app.put('/api/records/:id', async (req, res) => {
 
 // POST a new record 
 app.post('/api/records', async (req, res) => {
-    const { activityId, amount } = req.body;
-    if (!activityId || !amount) return res.status(400).json({ error: "Missing fields" });
+    const { activityId, activityName, amount, date} = req.body;
+    if (!activityId || !activityName || !amount || !date) return res.status(400).json({ error: "Missing fields" });
 
     try {
         const activities = await readData(ACTIVITIES_FILE);
@@ -168,9 +177,9 @@ app.post('/api/records', async (req, res) => {
 
         const newRecord = {
             id: Date.now().toString(), // Simple unique ID
-            date: new Date().toISOString().split('T')[0], // YYYY-MM-DD
+            date: date,
             activityId: activityId,
-            activityName: activity.name,
+            activityName: activityName,
             amount: parseFloat(amount),
             co2Amount: parseFloat((amount * activity.carbonUnitRate).toFixed(2))
         };
