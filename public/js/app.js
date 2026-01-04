@@ -1,4 +1,6 @@
-/** --- State Management --- **/
+//---------------------------------------------//
+/** ------------ STATE MANAGEMENT ----------- **/
+//---------------------------------------------//
 let state = {
     activities: [],
     records: [],
@@ -29,8 +31,9 @@ async function syncAppData() {
 
 
 
-
-/** --- View Management --- **/
+//---------------------------------------------//
+/** ------------ VIEW MANAGEMENT ------------ **/
+//---------------------------------------------//
 function switchView(viewName) {
     document.querySelectorAll('.view-section').forEach(s => s.classList.add('d-none'));
     document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
@@ -44,8 +47,9 @@ function switchView(viewName) {
 
 
 
-
-/** --- Rendering --- **/
+//---------------------------------------------//
+/** --------------- RENDERING --------------- **/
+//---------------------------------------------//
 function render() {
     renderDashboard();
     renderActivities();
@@ -99,8 +103,11 @@ function renderRecords() {
 
 
 
+//---------------------------------------------//
+/** ---------- CRUD & MODAL lOGIC ----------- **/
+//---------------------------------------------//
 
-/** --- CRUD & Modal Logic --- **/
+// The Edit and Create events for Activities and Records
 function openModal(type, id = null) {
     state.editingType = type;
     state.editingId = id;
@@ -135,6 +142,7 @@ function openModal(type, id = null) {
     modal.show();
 }
 
+// Save event for Activities and Records
 async function handleSave() {
     const type = state.editingType;
     const isEdit = !!state.editingId;
@@ -167,6 +175,7 @@ async function handleSave() {
     }
 }
 
+// Deletion event for Activities and Records
 async function handleDelete() {
     if (!confirm("Are you sure? This will delete the entry forever.")) return;
     const type = state.editingType === 'activity' ? 'activities' : 'records';
@@ -182,7 +191,6 @@ function handleConnectionError(err) {
     const statusLabel = document.getElementById('total-emissions');
     if (statusLabel) statusLabel.innerHTML = '<span class="text-danger">Offline</span>';
 }
-
 
 
 

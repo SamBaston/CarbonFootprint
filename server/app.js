@@ -21,58 +21,79 @@ async function writeData(filePath, data) {
 
 
 
-/** --- ACTIVITY TYPE ENDPOINTS --- **/
+//---------------------------------------------//
+/** -------- ACTIVITY TYPE ENDPOINTS -------- **/
+//---------------------------------------------//
 
 // GET all activity types
 app.get('/api/activities', async (req, res) => {
     try {
         const activities = await readData(ACTIVITIES_FILE);
         res.json(activities);
-    } catch (err) {
+    }
+    catch (err) {
         res.status(500).json({ error: "Failed to read activities" });
     }
 });
 
 // POST new activity type
 app.post('/api/activities', async (req, res) => {
-    const { id, name, unit, carbonUnitRate } = req.body;
-    if (!id || !name || !carbonUnitRate) return res.status(400).json({ error: "Missing fields" });
+    try {
+        const { id, name, unit, carbonUnitRate } = req.body;
+        if (!id || !name || !carbonUnitRate) return res.status(400).json({ error: "Missing fields" });
 
-    const activities = await readData(ACTIVITIES_FILE);
-    activities.push({ id, name, unit, carbonUnitRate });
-    await writeData(ACTIVITIES_FILE, activities);
-    res.status(201).json({ message: "Activity added" });
+        const activities = await readData(ACTIVITIES_FILE);
+        activities.push({ id, name, unit, carbonUnitRate });
+        await writeData(ACTIVITIES_FILE, activities);
+        res.status(201).json({ message: "Activity added" });
+    }
+    catch (err) {
+        res.status(500).json({ error: "Failed to add an activity" });
+    }
 });
 
-// PUT (update) activity type
+// PUT (update) an activity type
 app.put('/api/activities/:id', async (req, res) => {
-    const activities = await readData(ACTIVITIES_FILE);
-    const index = activities.findIndex(a => a.id === req.params.id);
-    if (index === -1) return res.status(404).json({ error: "Not found" });
+    try {
+        const activities = await readData(ACTIVITIES_FILE);
+        const index = activities.findIndex(a => a.id === req.params.id);
+        if (index === -1) return res.status(404).json({ error: "Not found" });
 
-    activities[index] = { ...activities[index], ...req.body };
-    await writeData(ACTIVITIES_FILE, activities);
-    res.json(activities[index]);
+        activities[index] = { ...activities[index], ...req.body };
+        await writeData(ACTIVITIES_FILE, activities);
+        res.json(activities[index]);
+    }
+    catch (err) {
+        res.status(500).json({ error: "Failed to update an activity" });
+    }
 });
 
 // DELETE activity type
 app.delete('/api/activities/:id', async (req, res) => {
-    let activities = await readData(ACTIVITIES_FILE);
-    activities = activities.filter(a => a.id !== req.params.id);
-    await writeData(ACTIVITIES_FILE, activities);
-    res.status(204).send();
+    try {
+        let activities = await readData(ACTIVITIES_FILE);
+        activities = activities.filter(a => a.id !== req.params.id);
+        await writeData(ACTIVITIES_FILE, activities);
+        res.status(204).send();
+    }
+    catch (err) {
+        res.status(500).json({ error: "Failed to delete an activity" });
+    }
 });
 
 
 
-/** --- RECORDS ENDPOINTS --- **/
+//---------------------------------------------//
+/** ----------- RECORDS ENDPOINTS ----------- **/
+//---------------------------------------------//
 
 // GET all records
 app.get('/api/records', async (req, res) => {
     try {
         const records = await readData(RECORDS_FILE);
         res.json(records);
-    } catch (err) {
+    }
+    catch (err) {
         res.status(500).json({ error: "Failed to read records" });
     }
 });
@@ -83,13 +104,14 @@ app.get('/api/records/:id', async (req, res) => {
         const records = await readData(RECORDS_FILE);
         const targetId = String(req.params.id).trim();
         const record = records.find(r => String(r.id).trim() === targetId);
-        
+
         if (!record) {
             return res.status(404).json({ error: `Record ${targetId} not found` });
         }
-        
+
         res.json(record);
-    } catch (err) {
+    }
+    catch (err) {
         console.error("Error fetching record:", err);
         res.status(500).json({ error: "Failed to fetch record" });
     }
@@ -100,15 +122,11 @@ app.put('/api/records/:id', async (req, res) => {
     try {
         const records = await readData(RECORDS_FILE);
         const activities = await readData(ACTIVITIES_FILE);
-        
+
         const targetId = String(req.params.id).trim();
         const index = records.findIndex(r => String(r.id).trim() === targetId);
 
-        if (index === -1) {
-            // This will help you see exactly what the server is looking for vs what it has
-            console.log(`Failed to find ID: [${targetId}] in`, records.map(r => r.id));
-            return res.status(404).send("Record ID not found in database");
-        }
+        if (index === -1) return res.status(404).send("Record ID not found in database");
 
         const { activityId, amount } = req.body;
         const activity = activities.find(a => String(a.id) === String(activityId));
@@ -128,7 +146,8 @@ app.put('/api/records/:id', async (req, res) => {
 
         await writeData(RECORDS_FILE, records);
         res.json(records[index]);
-    } catch (err) {
+    }
+    catch (err) {
         console.error("Server Error during PUT:", err);
         res.status(500).send("Internal Server Error");
     }
@@ -159,17 +178,23 @@ app.post('/api/records', async (req, res) => {
         records.push(newRecord);
         await writeData(RECORDS_FILE, records);
         res.status(201).json(newRecord);
-    } catch (err) {
+    }
+    catch (err) {
         res.status(500).json({ error: "Server error saving record" });
     }
 });
 
 // DELETE a record
 app.delete('/api/records/:id', async (req, res) => {
-    let records = await readData(RECORDS_FILE);
-    records = records.filter(r => r.id !== req.params.id);
-    await writeData(RECORDS_FILE, records);
-    res.status(204).send();
+    try {
+        let records = await readData(RECORDS_FILE);
+        records = records.filter(r => r.id !== req.params.id);
+        await writeData(RECORDS_FILE, records);
+        res.status(204).send();
+    }
+    catch (err) {
+        res.status(500).json({ error: "Failed to delete an activity" });
+    }
 });
 
 app.use(express.static('public')); // Serve frontend files
