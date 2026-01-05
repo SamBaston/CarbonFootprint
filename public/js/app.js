@@ -56,14 +56,103 @@ function render() {
     renderRecords();
 }
 
-// Render the Dashboard view
-function renderDashboard() {
-    // Dashboard 1
-    document.getElementById('activity-count').innerText = state.activities.length;
+// // Render the Dashboard view
+// function renderDashboard() {
+//     // Dashboard 1
+//     document.getElementById('activity-count').innerText = state.activities.length;
 
-    // Dashboard 2
-    const total = state.records.reduce((sum, r) => sum + r.co2Amount, 0);
-    document.getElementById('total-emissions').innerText = `${total.toFixed(2)} kg`;
+//     // Dashboard 2
+//     const total = state.records.reduce((sum, r) => sum + r.co2Amount, 0);
+//     document.getElementById('total-emissions').innerText = `${total.toFixed(2)} kg`;
+// }
+
+let emissionsChart = null; // Global chart instance
+
+function renderDashboard() {
+    const range = document.getElementById('timeRangeSelect').value;
+    const activityFilter = document.getElementById('graphActivityFilter').value;
+
+    // 1. Calculate Time Windows
+    const now = new Date();
+    const rangeDays = range === 'today' ? 1 : parseInt(range);
+    const msInRange = rangeDays * 24 * 60 * 60 * 1000;
+
+    const currentStart = new Date(now - msInRange);
+    const previousStart = new Date(now - (msInRange * 2));
+
+    // 2. Filter Records
+    const currentRecords = state.records.filter(r => new Date(r.date) >= currentStart);
+    const previousRecords = state.records.filter(r => {
+        const d = new Date(r.date);
+        return d >= previousStart && d < currentStart;
+    });
+
+    // 3. Update Dashboard 1 (Comparison)
+    const currentTotal = currentRecords.reduce((sum, r) => sum + r.co2Amount, 0);
+    const previousTotal = previousRecords.reduce((sum, r) => sum + r.co2Amount, 0);
+
+    const comparisonDiv = document.getElementById('comparison-stat');
+    if (previousTotal > 0) {
+        const percent = ((currentTotal - previousTotal) / previousTotal) * 100;
+        comparisonDiv.innerText = `${Math.abs(percent).toFixed(1)}%`;
+        comparisonDiv.className = percent > 0 ? 'display-4 fw-bold text-danger' : 'display-4 fw-bold text-success';
+        document.getElementById('comparison-text').innerText = percent > 0 ? 'Increase from last period' : 'Decrease from last period';
+    } else {
+        comparisonDiv.innerText = "N/A";
+        document.getElementById('comparison-text').innerText = "Not enough data for comparison";
+    }
+
+    // 4. Update Dashboard 2 (Ranking)
+    document.getElementById('dashboard-total').innerText = `${currentTotal.toFixed(2)} kg CO2`;
+    const rankingDiv = document.getElementById('category-ranking');
+    const grouped = currentRecords.reduce((acc, r) => {
+        acc[r.activityName] = (acc[r.activityName] || 0) + r.co2Amount;
+        return acc;
+    }, {});
+
+    rankingDiv.innerHTML = Object.entries(grouped)
+        .sort((a, b) => b[1] - a[1])
+        .map(([name, val], i) => `<div>${i + 1}. ${name}: ${((val / currentTotal) * 100).toFixed(1)}%</div>`)
+        .join('');
+
+    // 5. Update Line Graph
+    updateGraph(currentRecords, range, activityFilter);
+}
+
+function updateGraph(records, range, filter) {
+    const ctx = document.getElementById('emissionsChart').getContext('2d');
+
+    // Apply Activity Filter
+    const filtered = filter === 'all' ? records : records.filter(r => r.activityId === filter);
+
+    // Sort by date for the graph
+    filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    const labels = filtered.map(r => r.date);
+    const data = filtered.map(r => r.co2Amount);
+
+    if (emissionsChart) emissionsChart.destroy();
+
+    emissionsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'CO2 Emissions (kg)',
+                data: data,
+                borderColor: '#0d6efd',
+                backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                fill: true,
+                tension: 0.4, // Smooth line like in your reference image
+                pointRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: { y: { beginAtZero: true } }
+        }
+    });
 }
 
 // Render the Activities view

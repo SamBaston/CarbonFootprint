@@ -6,10 +6,40 @@
     "carbonUnitRate": 0.17
   },
   {
+    "id": "car_diesel",
+    "name": "Drive Car - Diesel",
+    "unit": "km",
+    "carbonUnitRate": 0.21
+  },
+  {
+    "id": "car_electric",
+    "name": "Drive Car - Electric",
+    "unit": "km",
+    "carbonUnitRate": 0.05
+  },
+  {
     "id": "bus_travel",
     "name": "Bus Journey",
     "unit": "km",
     "carbonUnitRate": 0.1
+  },
+  {
+    "id": "train_travel",
+    "name": "Train Journey",
+    "unit": "km",
+    "carbonUnitRate": 0.04
+  },
+  {
+    "id": "flight_short",
+    "name": "Short-Haul Flight",
+    "unit": "km",
+    "carbonUnitRate": 0.25
+  },
+  {
+    "id": "flight_long",
+    "name": "Long-Haul Flight",
+    "unit": "km",
+    "carbonUnitRate": 0.15
   },
   {
     "id": "beef_meal",
@@ -18,9 +48,57 @@
     "carbonUnitRate": 15.5
   },
   {
+    "id": "lamb_meal",
+    "name": "Meal - Lamb",
+    "unit": "serving",
+    "carbonUnitRate": 20.4
+  },
+  {
+    "id": "chicken_meal",
+    "name": "Meal - Chicken",
+    "unit": "serving",
+    "carbonUnitRate": 6.5
+  },
+  {
+    "id": "pork_meal",
+    "name": "Meal - Pork",
+    "unit": "serving",
+    "carbonUnitRate": 7.8
+  },
+  {
+    "id": "veg_meal",
+    "name": "Meal - Vegetarian",
+    "unit": "serving",
+    "carbonUnitRate": 2.5
+  },
+  {
     "id": "electricity_usage",
     "name": "Home Electricity",
     "unit": "kWh",
     "carbonUnitRate": 0.23
+  },
+  {
+    "id": "natural_gas",
+    "name": "Home Natural Gas",
+    "unit": "kWh",
+    "carbonUnitRate": 0.2
+  },
+  {
+    "id": "new_tshirt",
+    "name": "Clothing - New T-Shirt",
+    "unit": "item",
+    "carbonUnitRate": 5.0
+  },
+  {
+    "id": "new_phone",
+    "name": "Electronics - New Smartphone",
+    "unit": "item",
+    "carbonUnitRate": 80.0
+  },
+  {
+    "id": "internet_usage",
+    "name": "Internet Data Usage",
+    "unit": "GB",
+    "carbonUnitRate": 0.5
   }
 ]
