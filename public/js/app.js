@@ -1,5 +1,5 @@
 //---------------------------------------------//
-/** ------------ STATE MANAGEMENT ----------- **/
+/** -------- STATE & DATA MANAGEMENT -------- **/
 //---------------------------------------------//
 let state = {
     activities: [],
@@ -23,10 +23,25 @@ async function syncAppData() {
         state.activities = await actRes.json();
         state.records = await recRes.json();
 
+        populateGraphDropdown();
         render();
     } catch (err) {
         handleConnectionError(err);
     }
+}
+
+// Populate the Activity Type dropdown for the Emissions Graph dashboard panel
+function populateGraphDropdown() {
+    const select = document.getElementById('graphActivityFilter');
+    if (!select) return;
+
+    select.innerHTML = '<option value="all">All Activities</option>'; // Default to all
+    state.activities.forEach(a => {
+        const opt = document.createElement('option');
+        opt.value = a.id;
+        opt.innerText = a.name;
+        select.appendChild(opt);
+    });
 }
 
 
@@ -56,101 +71,174 @@ function render() {
     renderRecords();
 }
 
-// // Render the Dashboard view
-// function renderDashboard() {
-//     // Dashboard 1
-//     document.getElementById('activity-count').innerText = state.activities.length;
+let emissionsChart = null;
 
-//     // Dashboard 2
-//     const total = state.records.reduce((sum, r) => sum + r.co2Amount, 0);
-//     document.getElementById('total-emissions').innerText = `${total.toFixed(2)} kg`;
-// }
-
-let emissionsChart = null; // Global chart instance
-
+// Render the Dashboard view
 function renderDashboard() {
+
+    // Get data between the selected timeframe option and the present date
     const range = document.getElementById('timeRangeSelect').value;
     const activityFilter = document.getElementById('graphActivityFilter').value;
 
-    // 1. Calculate Time Windows
     const now = new Date();
-    const rangeDays = range === 'today' ? 1 : parseInt(range);
-    const msInRange = rangeDays * 24 * 60 * 60 * 1000;
+    const rangeDays = range === 'today' ? 0 : parseInt(range);
+    const currentStart = new Date();
+    currentStart.setDate(now.getDate() - rangeDays);
+    currentStart.setHours(0, 0, 0, 0);
 
-    const currentStart = new Date(now - msInRange);
-    const previousStart = new Date(now - (msInRange * 2));
+    const previousStart = new Date();
+    previousStart.setDate(currentStart.getDate() - (rangeDays || 1) - rangeDays);
+    previousStart.setHours(0, 0, 0, 0);
 
-    // 2. Filter Records
-    const currentRecords = state.records.filter(r => new Date(r.date) >= currentStart);
+    const currentRecords = state.records.filter(r => {
+        const d = new Date(r.date);
+        return d >= currentStart && d <= now;
+    });
+
     const previousRecords = state.records.filter(r => {
         const d = new Date(r.date);
         return d >= previousStart && d < currentStart;
     });
 
-    // 3. Update Dashboard 1 (Comparison)
     const currentTotal = currentRecords.reduce((sum, r) => sum + r.co2Amount, 0);
     const previousTotal = previousRecords.reduce((sum, r) => sum + r.co2Amount, 0);
 
-    const comparisonDiv = document.getElementById('comparison-stat');
-    if (previousTotal > 0) {
-        const percent = ((currentTotal - previousTotal) / previousTotal) * 100;
-        comparisonDiv.innerText = `${Math.abs(percent).toFixed(1)}%`;
-        comparisonDiv.className = percent > 0 ? 'display-4 fw-bold text-danger' : 'display-4 fw-bold text-success';
-        document.getElementById('comparison-text').innerText = percent > 0 ? 'Increase from last period' : 'Decrease from last period';
-    } else {
-        comparisonDiv.innerText = "N/A";
-        document.getElementById('comparison-text').innerText = "Not enough data for comparison";
+    // Render the actual dashboards
+    renderComparison(currentTotal, previousTotal);
+    renderEmissionsBreakdown(currentRecords, currentTotal);
+    renderEmissionsGraph(currentRecords, currentStart, now, activityFilter);
+}
+
+// Render the Time Range Comparison dashboard panel
+function renderComparison(current, previous) {
+    const statDiv = document.getElementById('comparison-stat');
+    const textDiv = document.getElementById('comparison-text');
+
+    // If there is no data for this period or the previous one
+    if (current === 0 && previous === 0) {
+        statDiv.innerText = "---";
+        statDiv.className = "display-4 fw-bold text-muted";
+        textDiv.innerText = "No records found for this period.";
+        return;
     }
 
-    // 4. Update Dashboard 2 (Ranking)
-    document.getElementById('dashboard-total').innerText = `${currentTotal.toFixed(2)} kg CO2`;
+    // If there is data for this period but there is none for the previous one
+    if (previous <= 0) {
+        statDiv.innerText = "---";
+        statDiv.className = "display-4 fw-bold text-secondary";
+        textDiv.innerText = "There is no data for the previous equal time period.";
+        return;
+    }
+
+    // If we have data for this period and the previous one
+    const percent = ((current - previous) / previous) * 100;
+    const isIncrease = percent > 0;
+
+    statDiv.innerText = `${Math.abs(percent).toFixed(1)}%`;
+
+    // Show the percentage as red it is an increase and green if is a decrease and compare to previous period
+    statDiv.className = isIncrease ? "display-4 fw-bold text-danger" : "display-4 fw-bold text-success";
+    const direction = isIncrease ? "higher" : "lower";
+    textDiv.innerHTML = `
+        ${direction} than previous period
+        <div class="mt-1 small text-muted">
+            Previous total: <strong>${previous.toFixed(2)} kg</strong>
+        </div>
+    `;
+}
+
+// Render the Emissions Breakdown dashboard panel
+function renderEmissionsBreakdown(records, total) {
     const rankingDiv = document.getElementById('category-ranking');
-    const grouped = currentRecords.reduce((acc, r) => {
-        acc[r.activityName] = (acc[r.activityName] || 0) + r.co2Amount;
+    document.getElementById('dashboard-total').innerText = `${total.toFixed(2)} kg CO2`;
+
+    // Group records by their Activity Type 
+    const grouped = records.reduce((acc, r) => {
+        const category = state.activities.find(a => String(a.id) === String(r.activityId));
+        const name = category ? category.name : "Other";
+        acc[name] = (acc[name] || 0) + r.co2Amount;
         return acc;
     }, {});
 
+    // Sort the Activity Types and display the top 5
     rankingDiv.innerHTML = Object.entries(grouped)
         .sort((a, b) => b[1] - a[1])
-        .map(([name, val], i) => `<div>${i + 1}. ${name}: ${((val / currentTotal) * 100).toFixed(1)}%</div>`)
-        .join('');
-
-    // 5. Update Line Graph
-    updateGraph(currentRecords, range, activityFilter);
+        .slice(0, 5)
+        .map(([name, val]) => {
+            const pct = total > 0 ? ((val / total) * 100).toFixed(1) : 0;
+            return `
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between small mb-1">
+                        <span>${name}</span>
+                        <span class="fw-bold">${pct}%</span>
+                    </div>
+                    <div class="progress" style="height: 10px; border-radius: 5px;">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: ${pct}%"></div>
+                    </div>
+                </div>
+            `;
+        }).join('');
 }
 
-function updateGraph(records, range, filter) {
-    const ctx = document.getElementById('emissionsChart').getContext('2d');
+// Render the Emissions Graph dashboard panel
+function renderEmissionsGraph(records, minDate, maxDate, filter) {
+    const canvas = document.getElementById('emissionsChart');
+    if (!canvas) return;
 
-    // Apply Activity Filter
-    const filtered = filter === 'all' ? records : records.filter(r => r.activityId === filter);
+    const ctx = canvas.getContext('2d');
 
-    // Sort by date for the graph
-    filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+    // Destroy any existing emissionsChart instances to prevent "Canvas already in use" error
+    const existingChart = Chart.getChart("emissionsChart");
+    if (existingChart) {
+        existingChart.destroy();
+    }
 
-    const labels = filtered.map(r => r.date);
-    const data = filtered.map(r => r.co2Amount);
+    // Filter the data based on the Activity Type dropdown option selected
+    const filtered = filter === 'all'
+        ? records
+        : records.filter(r => String(r.activityId) === String(filter));
 
-    if (emissionsChart) emissionsChart.destroy();
+    // Create the chart
+    const dataPoints = filtered.map(r => ({
+        x: new Date(r.date),
+        y: r.co2Amount
+    })).sort((a, b) => a.x - b.x);
 
-    emissionsChart = new Chart(ctx, {
+    new Chart(ctx, {
         type: 'line',
         data: {
-            labels: labels,
             datasets: [{
-                label: 'CO2 Emissions (kg)',
-                data: data,
+                label: 'kg CO2',
+                data: dataPoints,
                 borderColor: '#0d6efd',
                 backgroundColor: 'rgba(13, 110, 253, 0.1)',
                 fill: true,
-                tension: 0.4, // Smooth line like in your reference image
+                tension: 0.3,
                 pointRadius: 4
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            scales: { y: { beginAtZero: true } }
+            scales: {
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        displayFormats: { day: 'MMM d' }
+                    },
+                    min: minDate.toISOString(),
+                    max: maxDate.toISOString(),
+                    title: { display: true, text: 'Date' }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'kg CO2' }
+                }
+            },
+            plugins: {
+                legend: { display: false }
+            }
         }
     });
 }
