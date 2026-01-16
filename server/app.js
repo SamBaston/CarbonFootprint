@@ -45,7 +45,7 @@ app.post('/api/activities', async (req, res) => {
         const activities = await readData(ACTIVITIES_FILE);
 
         const newActivity = {
-            id: Date.now().toString(), // Simple unique ID
+            id: Date.now().toString(), // Use the timestamp as a simple unique ID
             name: name,
             unit: unit,
             carbonUnitRate: carbonUnitRate,
@@ -143,14 +143,13 @@ app.put('/api/records/:id', async (req, res) => {
             return res.status(400).send("Linked Activity Type not found");
         }
 
-        // Update the record and recalculate
         records[index] = {
             ...records[index],
             activityId: activityId,
             activityName: activityName,
             date: date,
             amount: parseFloat(amount),
-            co2Amount: parseFloat((parseFloat(amount) * activity.carbonUnitRate).toFixed(2))
+            co2Amount: parseFloat((parseFloat(amount) * activity.carbonUnitRate).toFixed(2)) // recalculate CO2 amount
         };
 
         await writeData(RECORDS_FILE, records);
@@ -164,19 +163,19 @@ app.put('/api/records/:id', async (req, res) => {
 
 // POST a new record 
 app.post('/api/records', async (req, res) => {
-    const { activityId, activityName, amount, date} = req.body;
+    const { activityId, activityName, amount, date } = req.body;
     if (!activityId || !activityName || !amount || !date) return res.status(400).json({ error: "Missing fields" });
 
     try {
         const activities = await readData(ACTIVITIES_FILE);
         const records = await readData(RECORDS_FILE);
 
-        // Find the activity to get the name and rate
+        // Find the activity to get the name and rate for the calculation
         const activity = activities.find(a => a.id === activityId);
         if (!activity) return res.status(404).json({ error: "Activity type not found" });
 
         const newRecord = {
-            id: Date.now().toString(), // Simple unique ID
+            id: Date.now().toString(), // Use the timestamp as a simple unique ID
             date: date,
             activityId: activityId,
             activityName: activityName,

@@ -287,7 +287,7 @@ function renderRecords() {
 
 
 //---------------------------------------------//
-/** ---------- CRUD & MODAL lOGIC ----------- **/
+/** ----------- CRUD & MODAL LOGIC ---------- **/
 //---------------------------------------------//
 
 // The Edit and Create events for Activities and Records
