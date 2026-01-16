@@ -1,7 +1,21 @@
 body {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+@media (min-width: 992px) {
+    body {
+        flex-direction: row;
+    }
+
+    #sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
 }
 
 #sidebar {
