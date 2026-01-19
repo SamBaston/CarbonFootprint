@@ -2,6 +2,8 @@
 
 Base URL: `http://localhost:3000/api`
 
+<br><br>
+
 ## Activity Types
 
 ### Get Activities
@@ -27,6 +29,8 @@ Retrieves a list of all activity types.
 ]
 ```
 
+<br>
+
 ### Create Activity
 `POST /activities`
 
@@ -47,6 +51,8 @@ Creates a new activity type.
   "message": "Activity added"
 }
 ```
+
+<br>
 
 ### Update Activity
 `PUT /activities/:id`
@@ -70,6 +76,8 @@ Updates an existing activity type.
   "carbonUnitRate": 0.08
 }
 ```
+
+<br>
 
 ### Delete Activity
 `DELETE /activities/:id`
@@ -106,6 +114,8 @@ Retrieves all logged records.
 ]
 ```
 
+<br>
+
 ### Log Record
 `POST /records`
 
@@ -133,6 +143,8 @@ Creates a new carbon record and automatically calculates the CO2 amount based on
 }
 ```
 
+<br>
+
 ### Update Record
 `PUT /records/:id`
 
@@ -159,6 +171,8 @@ Updates an existing record and recalculates the CO2 amount.
     "co2Amount": 30.0
 }
 ```
+
+<br>
 
 ### Delete Record
 `DELETE /records/:id`
