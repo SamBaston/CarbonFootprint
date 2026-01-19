@@ -5,9 +5,6 @@ This is a web-based single-page dashboard application designed to help a user tr
 
 This was built in accordance with my [Programming Black Assignment 1 Mark Scheme](https://github.com/stevenaeola/progblack_2526/blob/main/assignment_1/README.md).
 
-## API Documentation
-For detailed information on the API endpoints, request formats, and example outputs, please see [API_DOCUMENTATION.md](API_DOCUMENTATION.md).
-
 ## Features
 
 ### Dashboard
@@ -38,6 +35,9 @@ Manage data entries and catagories.
 *   **[Chart.js](https://www.chartjs.org/docs/latest/)**: Rendering interactive data visualizations (Emissions Chart).
 *   **[date-fns](https://date-fns.org/docs/Getting-Started)**: Lightweight date utility library (Dashboard Date Picker).
 *   **Vanilla JavaScript**: Core application logic.
+
+## API Documentation
+For information on the API endpoints, please see my [documentation](docs/API.md).
 
 ## Installation & Testing
 
