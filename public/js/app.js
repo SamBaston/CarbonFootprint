@@ -6,7 +6,9 @@ let state = {
     records: [],
     currentView: 'dashboard', // Default to the dashboard view
     editingId: null,
-    editingType: null // 'activity' or 'record'
+    editingType: null, // 'activity' or 'record'
+    recordSort: { column: 'date', direction: 'desc' },
+    activitySort: { column: 'name', direction: 'asc' }
 };
 
 const modal = new bootstrap.Modal(document.getElementById('crudModal'));
@@ -71,6 +73,7 @@ function render() {
     renderRecords();
 }
 
+/** -- DASHBOARDS -- **/
 let emissionsChart = null;
 
 // Render the Dashboard view
@@ -243,6 +246,7 @@ function renderEmissionsGraph(records, minDate, maxDate, filter) {
     });
 }
 
+/** -- ACTIVITIES -- **/
 // Render the Activities view
 function renderActivities() {
     const tableBody = document.getElementById('activity-table-body');
@@ -260,6 +264,35 @@ function renderActivities() {
     `).join('');
 }
 
+// Sort the Activities table
+function sortActivities(key) {
+    // Toggle direction if clicking the same column again
+    if (state.activitySort.column === key) {
+        state.activitySort.direction = state.activitySort.direction === 'asc' ? 'desc' : 'asc';
+    } else {
+        state.activitySort.column = key;
+        state.activitySort.direction = 'asc';
+    }
+
+    // Sort the activities in the selected direction
+    state.activities.sort((activityA, activityB) => {
+        let valueA = activityA[key];
+        let valueB = activityB[key];
+
+        if (typeof valueA === 'string') {
+            valueA = valueA.toLowerCase();
+            valueB = valueB.toLowerCase();
+        }
+
+        if (valueA < valueB) return state.activitySort.direction === 'asc' ? -1 : 1;
+        if (valueA > valueB) return state.activitySort.direction === 'asc' ? 1 : -1;
+        return 0;
+    });
+
+    renderActivities();
+}
+
+/** -- RECORDS -- **/
 // Render the Records view
 function renderRecords() {
     const tableBody = document.getElementById('record-table-body');
@@ -282,6 +315,41 @@ function renderRecords() {
             </tr>
         `;
     }).join('');
+}
+
+// Sort the Records table
+function sortRecords(key) {
+    // Toggle direction if clicking the same column again
+    if (state.recordSort.column === key) {
+        state.recordSort.direction = state.recordSort.direction === 'asc' ? 'desc' : 'asc';
+    } else {
+        state.recordSort.column = key;
+        state.recordSort.direction = 'asc';
+    }
+
+    // Sort the records in the selected direction
+    state.records.sort((recordA, recordB) => {
+        let valueA, valueB;
+
+        if (key === 'activityType') {
+            const categoryA = state.activities.find(act => String(act.id) === String(recordA.activityId));
+            const categoryB = state.activities.find(act => String(act.id) === String(recordB.activityId));
+            valueA = categoryA ? categoryA.name.toLowerCase() : '';
+            valueB = categoryB ? categoryB.name.toLowerCase() : '';
+        } else if (typeof recordA[key] === 'string') {
+            valueA = recordA[key].toLowerCase();
+            valueB = recordB[key].toLowerCase();
+        } else {
+            valueA = recordA[key];
+            valueB = recordB[key];
+        }
+
+        if (valueA < valueB) return state.recordSort.direction === 'asc' ? -1 : 1;
+        if (valueA > valueB) return state.recordSort.direction === 'asc' ? 1 : -1;
+        return 0;
+    });
+
+    renderRecords();
 }
 
 

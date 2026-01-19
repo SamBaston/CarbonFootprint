@@ -109,9 +109,12 @@
                 <table class="table table-hover bg-white shadow-sm rounded">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Unit</th>
-                            <th>Rate</th>
+                            <th role="button" onclick="sortActivities('name')" style="cursor: pointer;">Name &#8693;
+                            </th>
+                            <th role="button" onclick="sortActivities('unit')" style="cursor: pointer;">Unit &#8693;
+                            </th>
+                            <th role="button" onclick="sortActivities('carbonUnitRate')" style="cursor: pointer;">Rate
+                                &#8693;</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -130,11 +133,15 @@
                 <table class="table table-hover bg-white shadow-sm rounded">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Activity</th>
-                            <th>Amount</th>
-                            <th>CO2</th>
-                            <th>Date</th>
+                            <th role="button" onclick="sortRecords('activityType')" style="cursor: pointer;">Activity
+                                &#8693;</th>
+                            <th role="button" onclick="sortRecords('activityName')" style="cursor: pointer;">Name
+                                &#8693;</th>
+                            <th role="button" onclick="sortRecords('amount')" style="cursor: pointer;">Amount &#8693;
+                            </th>
+                            <th role="button" onclick="sortRecords('co2Amount')" style="cursor: pointer;">CO2 &#8693;
+                            </th>
+                            <th role="button" onclick="sortRecords('date')" style="cursor: pointer;">Date &#8693;</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
