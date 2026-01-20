@@ -233,7 +233,10 @@ app.get('/api/settings', async (req, res) => {
 app.put('/api/settings', async (req, res) => {
     try {
         const { dailyCarbonGoal } = req.body;
-        if (dailyCarbonGoal === undefined) return res.status(400).json({ error: "Missing dailyCarbonGoal" });
+
+        if (dailyCarbonGoal === undefined) {
+            return res.status(400).json({ error: "Missing daily Carbon Goal value" });
+        }
 
         const settings = { dailyCarbonGoal: parseFloat(dailyCarbonGoal) };
         await writeData(SETTINGS_FILE, settings);

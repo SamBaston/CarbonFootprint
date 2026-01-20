@@ -8,22 +8,31 @@ let state = {
     editingId: null,
     editingType: null, // 'activity' or 'record'
     recordSort: { column: 'date', direction: 'desc' },
-    activitySort: { column: 'name', direction: 'asc' }
+    activitySort: { column: 'name', direction: 'asc' },
+    dailyCarbonGoal: 15.0
 };
 
 const modal = new bootstrap.Modal(document.getElementById('crudModal'));
 
 async function syncAppData() {
     try {
-        const [actRes, recRes] = await Promise.all([
+        const [actRes, recRes, setRes] = await Promise.all([
             fetch('/api/activities'),
-            fetch('/api/records')
+            fetch('/api/records'),
+            fetch('/api/settings')
         ]);
 
-        if (!actRes.ok || !recRes.ok) throw new Error("Server error");
+        if (!actRes.ok || !recRes.ok || !setRes.ok) throw new Error("Server error");
 
         state.activities = await actRes.json();
         state.records = await recRes.json();
+        state.settings = await setRes.json();
+        state.dailyCarbonGoal = state.settings.dailyCarbonGoal;
+
+        const goalInput = document.getElementById('dailyCarbonGoalInput');
+        if (goalInput && document.activeElement !== goalInput) {
+            goalInput.value = state.dailyCarbonGoal;
+        }
 
         populateGraphDropdown();
         render();
@@ -44,6 +53,27 @@ function populateGraphDropdown() {
         opt.innerText = a.name;
         select.appendChild(opt);
     });
+}
+
+// Update the daily carbon goal from the Carbon Heatmap dashboard panel
+async function updateDailyCarbonGoal() {
+    const val = parseFloat(document.getElementById('dailyCarbonGoalInput').value);
+    if (isNaN(val)) return;
+
+    try {
+        const res = await fetch('/api/settings', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ dailyCarbonGoal: val })
+        });
+        if (res.ok) {
+            state.dailyCarbonGoal = val;
+            render();
+        }
+    }
+    catch (err) {
+        console.error("Failed to update daily carbon goal:", err);
+    }
 }
 
 
