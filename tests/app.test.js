@@ -18,6 +18,7 @@ const app = require('../server/app');
 describe('EcoTrack API Service', () => {
     let mockActivities;
     let mockRecords;
+    let mockSettings;
 
     // Reset mock data before each test
     beforeEach(() => {
@@ -37,6 +38,8 @@ describe('EcoTrack API Service', () => {
             }
         ];
 
+        mockSettings = { dailyGoal: 15.0 };
+
         jest.clearAllMocks();
 
         // Setup read and write mocks to return the mock data
@@ -47,6 +50,9 @@ describe('EcoTrack API Service', () => {
             if (filePath.includes('records.json')) {
                 return JSON.stringify(mockRecords);
             }
+            if (filePath.includes('settings.json')) {
+                return JSON.stringify(mockSettings);
+            }
             throw new Error("File not found");
         });
         fs.writeFile.mockImplementation(async (filePath, data) => {
@@ -56,6 +62,9 @@ describe('EcoTrack API Service', () => {
             }
             if (filePath.includes('records.json')) {
                 mockRecords = parsed;
+            }
+            if (filePath.includes('settings.json')) {
+                mockSettings = parsed;
             }
         });
     });
@@ -188,6 +197,42 @@ describe('EcoTrack API Service', () => {
             return request(app)
                 .delete('/api/records/101')
                 .expect(204);
+        });
+    });
+
+
+
+    //---------------------------------------------//
+    /** ---------- SETTINGS ENDPOINTS ----------- **/
+    //---------------------------------------------//
+    describe('Settings Endpoints', () => {
+
+        /** -- Test GET Requests -- **/
+        test('GET /api/settings succeeds', () => {
+            return request(app)
+                .get('/api/settings')
+                .expect(200)
+                .expect('Content-Type', /json/)
+                .expect(res => {
+                    if (res.body.dailyGoal !== 15.0) throw new Error("Incorrect daily goal");
+                });
+        });
+
+        /** -- Test PUT Requests -- **/
+        test('PUT /api/settings succeeds', () => {
+            return request(app)
+                .put('/api/settings')
+                .send({ dailyGoal: 20.5 })
+                .expect(200)
+                .expect(res => {
+                    if (res.body.dailyGoal !== 20.5) throw new Error("Goal not updated");
+                });
+        });
+        test('PUT /api/settings fails with missing dailyGoal', () => {
+            return request(app)
+                .put('/api/settings')
+                .send({})
+                .expect(400);
         });
     });
 });

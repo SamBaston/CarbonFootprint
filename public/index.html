@@ -81,11 +81,12 @@
             </div>
 
             <!-- Carbon Emission Chart -->
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-12">
                     <div class="card p-3 shadow-sm">
                         <div class="d-flex justify-content-between">
                             <h5>Emission Trends</h5>
+                            <!-- Activity Type Filter -->
                             <select id="graphActivityFilter" class="form-select w-auto mb-2"
                                 onchange="renderDashboard()">
                                 <option value="all">All Activities</option>
@@ -94,6 +95,25 @@
                         <div style="height: 300px;">
                             <canvas id="emissionsChart"></canvas>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yearly Carbon Heatmap -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card p-3 shadow-sm mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h5>Yearly Carbon Contributions</h5>
+                            <!-- Daily Carbon Goal -->
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="small text-muted">Daily Goal:</span>
+                                <input type="number" id="dailyGoalInput" class="form-control form-control-sm"
+                                    style="width: 70px;" value="15" onchange="updateGoal()">
+                                <span class="small text-muted">kg</span>
+                            </div>
+                        </div>
+                        <div id="carbonHeatmap" style="width: 100%; overflow-x: auto;"></div>
                     </div>
                 </div>
             </div>

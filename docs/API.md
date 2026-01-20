@@ -181,3 +181,44 @@ Deletes a specific record.
 
 **Response**
 (204 No Content)
+
+
+
+<br><br><br>
+
+
+
+## Settings
+
+### Get Settings
+`GET /settings`
+
+Retrieves the current user settings, such as the daily carbon goal.
+
+**Response**
+```json
+{
+  "dailyGoal": 15.0
+}
+```
+
+<br>
+
+### Update Settings
+`PUT /settings`
+
+Updates the user settings.
+
+**Request Body**
+```json
+{
+  "dailyGoal": 20.0
+}
+```
+
+**Response**
+```json
+{
+  "dailyGoal": 20.0
+}
+```

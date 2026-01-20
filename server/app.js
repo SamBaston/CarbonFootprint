@@ -7,8 +7,19 @@ app.use(express.json());
 
 const ACTIVITIES_FILE = path.join(__dirname, '../data/activities.json');
 const RECORDS_FILE = path.join(__dirname, '../data/records.json');
+const SETTINGS_FILE = path.join(__dirname, '../data/settings.json');
 
-// Read to JSON files
+// Check if the settings file exists, set defaults if not
+async function checkSettings() {
+    try {
+        await fs.access(SETTINGS_FILE);
+    } catch {
+        await writeData(SETTINGS_FILE, { dailyGoal: 15.0 });
+    }
+}
+checkSettings();
+
+// Read from JSON files
 async function readData(filePath) {
     const data = await fs.readFile(filePath, 'utf8');
     return JSON.parse(data);
@@ -120,7 +131,6 @@ app.get('/api/records/:id', async (req, res) => {
         res.json(record);
     }
     catch (err) {
-        console.error("Error fetching record:", err);
         res.status(500).json({ error: "Failed to fetch record" });
     }
 });
@@ -156,8 +166,7 @@ app.put('/api/records/:id', async (req, res) => {
         res.json(records[index]);
     }
     catch (err) {
-        console.error("Server Error during PUT:", err);
-        res.status(500).send("Internal Server Error");
+        res.status(500).json({ error: "Failed to update a record" });
     }
 });
 
@@ -188,7 +197,7 @@ app.post('/api/records', async (req, res) => {
         res.status(201).json(newRecord);
     }
     catch (err) {
-        res.status(500).json({ error: "Server error saving record" });
+        res.status(500).json({ error: "Failed to save a record" });
     }
 });
 
@@ -201,9 +210,41 @@ app.delete('/api/records/:id', async (req, res) => {
         res.status(204).send();
     }
     catch (err) {
-        res.status(500).json({ error: "Failed to delete an activity" });
+        res.status(500).json({ error: "Failed to delete a record" });
     }
 });
+
+
+
+//---------------------------------------------//
+/** ---------- SETTINGS ENDPOINTS ----------- **/
+//---------------------------------------------//
+
+app.get('/api/settings', async (req, res) => {
+    try {
+        const settings = await readData(SETTINGS_FILE);
+        res.json(settings);
+    }
+    catch (err) {
+        res.status(500).json({ error: "Failed to read settings" });
+    }
+});
+
+app.put('/api/settings', async (req, res) => {
+    try {
+        const { dailyGoal } = req.body;
+        if (dailyGoal === undefined) return res.status(400).json({ error: "Missing dailyGoal" });
+
+        const settings = { dailyGoal: parseFloat(dailyGoal) };
+        await writeData(SETTINGS_FILE, settings);
+        res.json(settings);
+    }
+    catch (err) {
+        res.status(500).json({ error: "Failed to update settings" });
+    }
+});
+
+
 
 app.use(express.static('public')); // Serve frontend files
 
