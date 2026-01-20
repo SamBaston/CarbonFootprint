@@ -38,7 +38,7 @@ describe('EcoTrack API Service', () => {
             }
         ];
 
-        mockSettings = { dailyGoal: 15.0 };
+        mockSettings = { dailyCarbonGoal: 15.0 };
 
         jest.clearAllMocks();
 
@@ -214,7 +214,7 @@ describe('EcoTrack API Service', () => {
                 .expect(200)
                 .expect('Content-Type', /json/)
                 .expect(res => {
-                    if (res.body.dailyGoal !== 15.0) throw new Error("Incorrect daily goal");
+                    if (res.body.dailyCarbonGoal !== 15.0) throw new Error("Incorrect daily goal");
                 });
         });
 
@@ -222,13 +222,13 @@ describe('EcoTrack API Service', () => {
         test('PUT /api/settings succeeds', () => {
             return request(app)
                 .put('/api/settings')
-                .send({ dailyGoal: 20.5 })
+                .send({ dailyCarbonGoal: 20.5 })
                 .expect(200)
                 .expect(res => {
-                    if (res.body.dailyGoal !== 20.5) throw new Error("Goal not updated");
+                    if (res.body.dailyCarbonGoal !== 20.5) throw new Error("Goal not updated");
                 });
         });
-        test('PUT /api/settings fails with missing dailyGoal', () => {
+        test('PUT /api/settings fails with missing dailyCarbonGoal', () => {
             return request(app)
                 .put('/api/settings')
                 .send({})

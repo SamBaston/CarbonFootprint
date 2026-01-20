@@ -198,7 +198,7 @@ Retrieves the current user settings, such as the daily carbon goal.
 **Response**
 ```json
 {
-  "dailyGoal": 15.0
+  "dailyCarbonGoal": 15.0
 }
 ```
 
@@ -212,13 +212,13 @@ Updates the user settings.
 **Request Body**
 ```json
 {
-  "dailyGoal": 20.0
+  "dailyCarbonGoal": 20.0
 }
 ```
 
 **Response**
 ```json
 {
-  "dailyGoal": 20.0
+  "dailyCarbonGoal": 20.0
 }
 ```

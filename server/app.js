@@ -14,7 +14,7 @@ async function checkSettings() {
     try {
         await fs.access(SETTINGS_FILE);
     } catch {
-        await writeData(SETTINGS_FILE, { dailyGoal: 15.0 });
+        await writeData(SETTINGS_FILE, { dailyCarbonGoal: 15.0 });
     }
 }
 checkSettings();
@@ -232,10 +232,10 @@ app.get('/api/settings', async (req, res) => {
 
 app.put('/api/settings', async (req, res) => {
     try {
-        const { dailyGoal } = req.body;
-        if (dailyGoal === undefined) return res.status(400).json({ error: "Missing dailyGoal" });
+        const { dailyCarbonGoal } = req.body;
+        if (dailyCarbonGoal === undefined) return res.status(400).json({ error: "Missing dailyCarbonGoal" });
 
-        const settings = { dailyGoal: parseFloat(dailyGoal) };
+        const settings = { dailyCarbonGoal: parseFloat(dailyCarbonGoal) };
         await writeData(SETTINGS_FILE, settings);
         res.json(settings);
     }
