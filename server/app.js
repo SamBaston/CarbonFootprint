@@ -90,9 +90,22 @@ app.put('/api/activities/:id', async (req, res) => {
 // DELETE activity type
 app.delete('/api/activities/:id', async (req, res) => {
     try {
+        const id = req.params.id;
+
+        // Remove associated records first
+        let records = await readData(RECORDS_FILE);
+        const initialRecordCount = records.length;
+        records = records.filter(r => String(r.activityId) !== String(id));
+
+        if (records.length !== initialRecordCount) {
+            await writeData(RECORDS_FILE, records);
+        }
+
+        // Remove the activity
         let activities = await readData(ACTIVITIES_FILE);
-        activities = activities.filter(a => a.id !== req.params.id);
+        activities = activities.filter(a => a.id !== id);
         await writeData(ACTIVITIES_FILE, activities);
+
         res.status(204).send();
     }
     catch (err) {
