@@ -566,6 +566,9 @@ function sortRecords(key) {
             const categoryB = state.activities.find(act => String(act.id) === String(recordB.activityId));
             valueA = categoryA ? categoryA.name.toLowerCase() : '';
             valueB = categoryB ? categoryB.name.toLowerCase() : '';
+        } else if (key === 'date') {
+            valueA = new Date(recordA[key]).getTime();
+            valueB = new Date(recordB[key]).getTime();
         } else if (typeof recordA[key] === 'string') {
             valueA = recordA[key].toLowerCase();
             valueB = recordB[key].toLowerCase();
@@ -655,6 +658,7 @@ async function handleSave() {
     if (res.ok) {
         modal.hide();
         syncAppData();
+        showToast("Changes saved successfully.");
     }
 }
 
@@ -666,16 +670,26 @@ async function handleDelete() {
     if (res.ok) {
         modal.hide();
         syncAppData();
+        showToast("Item deleted successfully.");
     }
 }
 
 function handleConnectionError(err) {
     console.error("API Connection Error:", err);
-    const statusLabel = document.getElementById('total-emissions');
+    const statusLabel = document.getElementById('dashboard-total');
     if (statusLabel) statusLabel.innerHTML = '<span class="text-danger">Offline</span>';
 }
 
-
+// Show a toast notification
+function showToast(message) {
+    const toastEl = document.getElementById('liveToast');
+    const toastMsg = document.getElementById('toastMessage');
+    if (toastEl && toastMsg) {
+        toastMsg.textContent = message;
+        const toast = new bootstrap.Toast(toastEl);
+        toast.show();
+    }
+}
 
 // Start the app
 syncAppData();
