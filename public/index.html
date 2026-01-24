@@ -102,19 +102,51 @@
             <!-- Yearly Carbon Heatmap -->
             <div class="row">
                 <div class="col-12">
-                    <div class="card p-3 shadow-sm mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h5>Yearly Carbon Contributions</h5>
-                            <!-- Daily Carbon Goal -->
-                            <div class="d-flex align-items-center gap-2">
-                                <span class="small text-muted">Daily Goal:</span>
-                                <input type="number" id="dailyCarbonGoalInput" class="form-control form-control-sm"
-                                    style="width: 70px;" value="15" onchange="updateDailyCarbonGoal()">
-                                <span class="small text-muted">kg</span>
+                    <div class="card p-4 shadow-sm mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                            <h5 class="mb-0">Yearly Carbon Contributions</h5>
+
+                            <div class="d-flex align-items-center gap-4">
+                                <!-- Year Picker -->
+                                <div class="year-picker">
+                                    <button class="year-button" onclick="changeHeatmapYear(-1)">← Previous</button>
+                                    <div class="year-display" id="heatmapYearDisplay">2024</div>
+                                    <button class="year-button" onclick="changeHeatmapYear(1)">Next →</button>
+                                </div>
+
+                                <!-- Daily Carbon Goal -->
+                                <div class="d-flex align-items-center gap-2 border-start ps-4">
+                                    <span class="small text-muted">Goal:</span>
+                                    <input type="number" id="dailyCarbonGoalInput" class="form-control form-control-sm"
+                                        style="width: 65px;" onchange="updateDailyCarbonGoal()">
+                                    <span class="small text-muted">kg</span>
+                                </div>
                             </div>
                         </div>
-                        <div id="carbonHeatmap" style="width: 100%; overflow-x: auto;"></div>
+
+                        <!-- Heatmap Grid Wrapper -->
+                        <div class="heatmap-wrapper">
+                            <div class="months-container" id="carbonHeatmap"></div>
+                        </div>
+
+                        <!-- Heatmap Stats -->
+                        <div class="stats-row">
+                            <div class="stat-box">
+                                <span class="stat-label">Avg. Daily Emission</span>
+                                <span class="stat-val" id="heatmapStatAvg">-- kg</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Goal Met Frequency</span>
+                                <span class="stat-val" id="heatmapStatFrequency">--%</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Total Yearly CO2</span>
+                                <span class="stat-val" id="heatmapStatTotal">-- kg</span>
+                            </div>
+                        </div>
                     </div>
+                    <!-- Tooltip Container -->
+                    <div id="heatmap-tooltip" class="heatmap-tooltip"></div>
                 </div>
             </div>
         </div>

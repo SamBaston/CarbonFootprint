@@ -1,3 +1,12 @@
+/* --- GLOBAL --- */
+:root {
+    --cell-size: 11px;
+    --cell-gap: 2px;
+    --text-color: #24292e;
+    --gray-text: #586069;
+    --border-color: #e1e4e8;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -5,6 +14,9 @@ body {
     overflow-x: hidden;
 }
 
+
+
+/* --- LAYOUT & NAV SIDEBAR --- */
 @media (min-width: 992px) {
     body {
         flex-direction: row;
@@ -43,4 +55,249 @@ body {
 
 .nav-link:hover {
     color: white;
+}
+
+
+
+/* --- YEARLY CARBON HEATMAP DASHBOARD PANEL --- */
+.year-picker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.year-button {
+    background: #fafbfc;
+    border: 1px solid rgba(27, 31, 36, 0.15);
+    border-radius: 6px;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+    color: var(--text-color);
+}
+
+.year-button:hover {
+    background-color: #f3f4f6;
+    border-color: rgba(27, 31, 36, 0.3);
+}
+
+.year-display {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+}
+
+.heatmap-wrapper {
+    overflow-x: auto;
+    padding-bottom: 16px;
+}
+
+.months-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.month-block {
+    margin-bottom: 15px;
+}
+
+.month-header {
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 11px;
+    color: var(--gray-text);
+    height: 18px;
+    position: relative;
+}
+
+.month-label {
+    position: absolute;
+    top: 0;
+    left: 26px;
+    height: 18px;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.month-grid {
+    display: flex;
+}
+
+.days-column {
+    width: 26px;
+    padding-right: 5px;
+    font-size: 9px;
+    color: var(--gray-text);
+}
+
+.day-label {
+    height: var(--cell-size);
+    margin-bottom: var(--cell-gap);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.weeks-grid {
+    display: flex;
+    gap: var(--cell-gap);
+}
+
+.week-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cell-gap);
+}
+
+.day-cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.day-cell:hover {
+    outline: 2px solid rgba(0, 0, 0, 0.3);
+    outline-offset: 1px;
+}
+
+.day-cell.empty {
+    background-color: transparent;
+    cursor: default;
+    border: none;
+}
+
+.day-cell.empty:hover {
+    outline: none;
+}
+
+.day-cell.future {
+    background-color: #f6f8fa;
+    border: 1px dashed #d1d5da;
+}
+
+.day-cell.no-data {
+    background-color: #ebedf0;
+}
+
+/* Red day shades (significantly over goal) */
+.day-cell.level-0 {
+    background-color: #8b0000;
+}
+
+.day-cell.level-1 {
+    background-color: #b22222;
+}
+
+.day-cell.level-2 {
+    background-color: #dc3545;
+}
+
+.day-cell.level-3 {
+    background-color: #ff4d4d;
+}
+
+.day-cell.level-4 {
+    background-color: #ff6666;
+}
+
+/* Amber day shades (slightly over goal) */
+.day-cell.level-5 {
+    background-color: #ff8c00;
+}
+
+.day-cell.level-6 {
+    background-color: #ffa500;
+}
+
+.day-cell.level-7 {
+    background-color: #ffd700;
+}
+
+/* Green day shades (met or under goal) */
+.day-cell.level-8 {
+    background-color: #a3d900;
+}
+
+.day-cell.level-9 {
+    background-color: #76c100;
+}
+
+.day-cell.level-10 {
+    background-color: #28a745;
+}
+
+.day-cell.level-11 {
+    background-color: #1e7e34;
+}
+
+.day-cell.level-12 {
+    background-color: #006400;
+}
+
+.heatmap-tooltip {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.heatmap-legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--gray-text);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.legend-colors {
+    display: flex;
+    gap: 2px;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.stats-row {
+    margin-top: 15px;
+    display: flex;
+    gap: 30px;
+    font-size: 13px;
+    flex-wrap: wrap;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    color: var(--gray-text);
+    font-size: 11px;
+    margin-bottom: 2px;
+}
+
+.stat-val {
+    font-weight: 600;
+    font-size: 14px;
 }

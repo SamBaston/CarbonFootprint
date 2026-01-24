@@ -21,7 +21,7 @@
     "activityId": "beef_meal",
     "activityName": "Weekend BBQ",
     "amount": 2,
-    "co2Amount": 31.00
+    "co2Amount": 31
   },
   {
     "id": "1736208000004",
@@ -29,7 +29,7 @@
     "activityId": "train_travel",
     "activityName": "Commute to work",
     "amount": 40,
-    "co2Amount": 1.60
+    "co2Amount": 1.6
   },
   {
     "id": "1736467200005",
@@ -37,7 +37,7 @@
     "activityId": "bus_travel",
     "activityName": "Trip to the cinema",
     "amount": 15,
-    "co2Amount": 1.50
+    "co2Amount": 1.5
   },
   {
     "id": "1736553600006",
@@ -45,7 +45,7 @@
     "activityId": "chicken_meal",
     "activityName": "Healthy dinner",
     "amount": 2,
-    "co2Amount": 13.00
+    "co2Amount": 13
   },
   {
     "id": "1736812800007",
@@ -61,7 +61,7 @@
     "activityId": "natural_gas",
     "activityName": "Heating on a cold day",
     "amount": 55,
-    "co2Amount": 11.00
+    "co2Amount": 11
   },
   {
     "id": "1737158400009",
@@ -69,7 +69,7 @@
     "activityId": "flight_short",
     "activityName": "Business trip to Dublin",
     "amount": 450,
-    "co2Amount": 112.50
+    "co2Amount": 112.5
   },
   {
     "id": "1737244800010",
@@ -77,7 +77,7 @@
     "activityId": "internet_usage",
     "activityName": "Weekend gaming & streaming",
     "amount": 75,
-    "co2Amount": 37.50
+    "co2Amount": 37.5
   },
   {
     "id": "1737504000011",
@@ -85,7 +85,7 @@
     "activityId": "veg_meal",
     "activityName": "Meat-free Monday",
     "amount": 1,
-    "co2Amount": 2.50
+    "co2Amount": 2.5
   },
   {
     "id": "1737590400012",
@@ -101,7 +101,7 @@
     "activityId": "car_electric",
     "activityName": "School run",
     "amount": 20,
-    "co2Amount": 1.00
+    "co2Amount": 1
   },
   {
     "id": "1737936000014",
@@ -109,7 +109,7 @@
     "activityId": "pork_meal",
     "activityName": "Family dinner",
     "amount": 3,
-    "co2Amount": 23.40
+    "co2Amount": 23.4
   },
   {
     "id": "1738195200015",
@@ -117,7 +117,7 @@
     "activityId": "new_tshirt",
     "activityName": "Bought a new shirt",
     "amount": 3,
-    "co2Amount": 15.00
+    "co2Amount": 15
   },
   {
     "id": "1740355200016",
@@ -125,7 +125,7 @@
     "activityId": "flight_long",
     "activityName": "Holiday flight to USA",
     "amount": 8000,
-    "co2Amount": 1200.00
+    "co2Amount": 1200
   },
   {
     "id": "1743033600017",
@@ -133,7 +133,7 @@
     "activityId": "lamb_meal",
     "activityName": "Special occasion dinner",
     "amount": 2,
-    "co2Amount": 40.80
+    "co2Amount": 40.8
   },
   {
     "id": "1745625600018",
@@ -141,7 +141,7 @@
     "activityId": "car_petrol",
     "activityName": "Road trip start",
     "amount": 150,
-    "co2Amount": 25.50
+    "co2Amount": 25.5
   },
   {
     "id": "1748217600019",
@@ -157,7 +157,7 @@
     "activityId": "train_travel",
     "activityName": "Summer city break",
     "amount": 300,
-    "co2Amount": 12.00
+    "co2Amount": 12
   },
   {
     "id": "1753401600021",
@@ -165,7 +165,7 @@
     "activityId": "beef_meal",
     "activityName": "Summer BBQ",
     "amount": 4,
-    "co2Amount": 62.00
+    "co2Amount": 62
   },
   {
     "id": "1755993600022",
@@ -173,7 +173,7 @@
     "activityId": "bus_travel",
     "activityName": "Festival shuttle bus",
     "amount": 10,
-    "co2Amount": 1.00
+    "co2Amount": 1
   },
   {
     "id": "1758585600023",
@@ -181,7 +181,7 @@
     "activityId": "new_phone",
     "activityName": "Annual upgrade",
     "amount": 1,
-    "co2Amount": 80.00
+    "co2Amount": 80
   },
   {
     "id": "1761177600024",
@@ -189,7 +189,7 @@
     "activityId": "natural_gas",
     "activityName": "Heating season begins",
     "amount": 60,
-    "co2Amount": 12.00
+    "co2Amount": 12
   },
   {
     "id": "1763769600025",
@@ -197,7 +197,7 @@
     "activityId": "car_diesel",
     "activityName": "Preparing for winter trip",
     "amount": 80,
-    "co2Amount": 16.80
+    "co2Amount": 16.8
   },
   {
     "id": "1766361600026",
@@ -213,7 +213,7 @@
     "activityId": "chicken_meal",
     "activityName": "Boxing Day leftovers",
     "amount": 2,
-    "co2Amount": 13.00
+    "co2Amount": 13
   },
   {
     "id": "1767225600028",
@@ -221,7 +221,7 @@
     "activityId": "flight_short",
     "activityName": "New Year's Eve trip",
     "amount": 600,
-    "co2Amount": 150.00
+    "co2Amount": 150
   },
   {
     "id": "1767312000029",
@@ -229,7 +229,7 @@
     "activityId": "car_petrol",
     "activityName": "New Year's Day drive",
     "amount": 30,
-    "co2Amount": 5.10
+    "co2Amount": 5.1
   },
   {
     "id": "1767398400030",
@@ -237,7 +237,7 @@
     "activityId": "veg_meal",
     "activityName": "New Year healthy start",
     "amount": 1,
-    "co2Amount": 2.50
+    "co2Amount": 2.5
   },
   {
     "id": "1767484800031",
@@ -253,7 +253,7 @@
     "activityId": "train_travel",
     "activityName": "Back to work commute",
     "amount": 40,
-    "co2Amount": 1.60
+    "co2Amount": 1.6
   },
   {
     "id": "1767657600033",
@@ -261,7 +261,7 @@
     "activityId": "pork_meal",
     "activityName": "Sunday roast",
     "amount": 3,
-    "co2Amount": 23.40
+    "co2Amount": 23.4
   },
   {
     "id": "1767744000034",
@@ -269,7 +269,7 @@
     "activityId": "internet_usage",
     "activityName": "Browsing & social media",
     "amount": 20,
-    "co2Amount": 10.00
+    "co2Amount": 10
   },
   {
     "id": "1767830400035",
@@ -285,7 +285,7 @@
     "activityId": "natural_gas",
     "activityName": "Heating & hot water",
     "amount": 50,
-    "co2Amount": 10.00
+    "co2Amount": 10
   },
   {
     "id": "1768003200037",
@@ -293,7 +293,7 @@
     "activityId": "beef_meal",
     "activityName": "Dinner out",
     "amount": 1,
-    "co2Amount": 15.50
+    "co2Amount": 15.5
   },
   {
     "id": "1768089600038",
@@ -301,7 +301,7 @@
     "activityId": "bus_travel",
     "activityName": "Shopping trip into town",
     "amount": 12,
-    "co2Amount": 1.20
+    "co2Amount": 1.2
   },
   {
     "id": "1768176000039",
@@ -317,7 +317,7 @@
     "activityId": "lamb_meal",
     "activityName": "Special weekend meal",
     "amount": 2,
-    "co2Amount": 40.80
+    "co2Amount": 40.8
   },
   {
     "id": "1768348800041",
@@ -325,7 +325,7 @@
     "activityId": "car_diesel",
     "activityName": "Commute",
     "amount": 50,
-    "co2Amount": 10.50
+    "co2Amount": 10.5
   },
   {
     "id": "1768435200042",
@@ -333,7 +333,7 @@
     "activityId": "new_tshirt",
     "activityName": "Sale purchase",
     "amount": 2,
-    "co2Amount": 10.00
+    "co2Amount": 10
   },
   {
     "id": "1768521600043",
@@ -341,7 +341,7 @@
     "activityId": "chicken_meal",
     "activityName": "Quick weeknight dinner",
     "amount": 2,
-    "co2Amount": 13.00
+    "co2Amount": 13
   },
   {
     "id": "1768608000044",
@@ -357,7 +357,7 @@
     "activityId": "flight_long",
     "activityName": "Booking a future holiday",
     "amount": 2500,
-    "co2Amount": 375.00
+    "co2Amount": 375
   },
   {
     "id": "1768780800046",
@@ -365,7 +365,7 @@
     "activityId": "veg_meal",
     "activityName": "Lunch at a cafe",
     "amount": 1,
-    "co2Amount": 2.50
+    "co2Amount": 2.5
   },
   {
     "id": "1768867200047",
@@ -373,7 +373,7 @@
     "activityId": "car_petrol",
     "activityName": "Weekend trip to the coast",
     "amount": 110,
-    "co2Amount": 18.70
+    "co2Amount": 18.7
   },
   {
     "id": "1768953600048",
@@ -381,7 +381,7 @@
     "activityId": "train_travel",
     "activityName": "Day trip to a nearby city",
     "amount": 80,
-    "co2Amount": 3.20
+    "co2Amount": 3.2
   },
   {
     "id": "1769040000049",
@@ -389,7 +389,7 @@
     "activityId": "natural_gas",
     "activityName": "Cold snap - heating on high",
     "amount": 70,
-    "co2Amount": 14.00
+    "co2Amount": 14
   },
   {
     "id": "1769126400050",
@@ -397,7 +397,7 @@
     "activityId": "pork_meal",
     "activityName": "Mid-week dinner",
     "amount": 2,
-    "co2Amount": 15.60
+    "co2Amount": 15.6
   },
   {
     "id": "1769212800051",
@@ -405,7 +405,7 @@
     "activityId": "internet_usage",
     "activityName": "Large file download",
     "amount": 100,
-    "co2Amount": 50.00
+    "co2Amount": 50
   },
   {
     "id": "1769299200052",
@@ -413,7 +413,7 @@
     "activityId": "car_electric",
     "activityName": "Visiting relatives",
     "amount": 60,
-    "co2Amount": 3.00
+    "co2Amount": 3
   },
   {
     "id": "1769385600053",
@@ -429,7 +429,7 @@
     "activityId": "bus_travel",
     "activityName": "Gym commute",
     "amount": 8,
-    "co2Amount": 0.80
+    "co2Amount": 0.8
   },
   {
     "id": "1769558400055",
@@ -437,7 +437,7 @@
     "activityId": "beef_meal",
     "activityName": "Celebration dinner",
     "amount": 3,
-    "co2Amount": 46.50
+    "co2Amount": 46.5
   },
   {
     "id": "1769644800056",
@@ -445,7 +445,7 @@
     "activityId": "new_phone",
     "activityName": "Partner's new phone",
     "amount": 1,
-    "co2Amount": 80.00
+    "co2Amount": 80
   },
   {
     "id": "1769731200057",
@@ -461,7 +461,7 @@
     "activityId": "chicken_meal",
     "activityName": "Healthy lunch prep",
     "amount": 1,
-    "co2Amount": 6.50
+    "co2Amount": 6.5
   },
   {
     "id": "1769904000059",
@@ -477,7 +477,7 @@
     "activityId": "car_petrol",
     "activityName": "Weekend errands",
     "amount": 40,
-    "co2Amount": 6.80
+    "co2Amount": 6.8
   },
   {
     "id": "1738924800061",
@@ -485,7 +485,7 @@
     "activityId": "flight_short",
     "activityName": "Weekend getaway",
     "amount": 800,
-    "co2Amount": 200.00
+    "co2Amount": 200
   },
   {
     "id": "1741516800062",
@@ -493,7 +493,7 @@
     "activityId": "natural_gas",
     "activityName": "Staying warm",
     "amount": 48,
-    "co2Amount": 9.60
+    "co2Amount": 9.6
   },
   {
     "id": "1744108800063",
@@ -509,7 +509,7 @@
     "activityId": "internet_usage",
     "activityName": "Online course",
     "amount": 30,
-    "co2Amount": 15.00
+    "co2Amount": 15
   },
   {
     "id": "1749292800065",
@@ -517,7 +517,7 @@
     "activityId": "lamb_meal",
     "activityName": "Birthday dinner",
     "amount": 2,
-    "co2Amount": 40.80
+    "co2Amount": 40.8
   },
   {
     "id": "1751884800066",
@@ -525,7 +525,7 @@
     "activityId": "bus_travel",
     "activityName": "Concert commute",
     "amount": 20,
-    "co2Amount": 2.00
+    "co2Amount": 2
   },
   {
     "id": "1754476800067",
@@ -533,7 +533,7 @@
     "activityId": "electricity_usage",
     "activityName": "Hot day - fans on",
     "amount": 40,
-    "co2Amount": 9.20
+    "co2Amount": 9.2
   },
   {
     "id": "1757068800068",
@@ -541,7 +541,7 @@
     "activityId": "train_travel",
     "activityName": "Visiting university",
     "amount": 250,
-    "co2Amount": 10.00
+    "co2Amount": 10
   },
   {
     "id": "1759660800069",
@@ -549,7 +549,7 @@
     "activityId": "car_diesel",
     "activityName": "Autumn scenic drive",
     "amount": 90,
-    "co2Amount": 18.90
+    "co2Amount": 18.9
   },
   {
     "id": "1762252800070",
@@ -557,7 +557,7 @@
     "activityId": "pork_meal",
     "activityName": "Bonfire night meal",
     "amount": 4,
-    "co2Amount": 31.20
+    "co2Amount": 31.2
   },
   {
     "id": "1764844800071",
@@ -565,7 +565,7 @@
     "activityId": "new_tshirt",
     "activityName": "Christmas gift shopping",
     "amount": 5,
-    "co2Amount": 25.00
+    "co2Amount": 25
   },
   {
     "id": "1736640000072",
@@ -573,7 +573,7 @@
     "activityId": "veg_meal",
     "activityName": "Trying a new recipe",
     "amount": 2,
-    "co2Amount": 5.00
+    "co2Amount": 5
   },
   {
     "id": "1743321600073",
@@ -581,7 +581,7 @@
     "activityId": "car_petrol",
     "activityName": "Easter family visit",
     "amount": 120,
-    "co2Amount": 20.40
+    "co2Amount": 20.4
   },
   {
     "id": "1748505600074",
@@ -589,7 +589,7 @@
     "activityId": "flight_long",
     "activityName": "Summer holiday to Italy",
     "amount": 2000,
-    "co2Amount": 300.00
+    "co2Amount": 300
   },
   {
     "id": "1753689600075",
@@ -597,7 +597,7 @@
     "activityId": "chicken_meal",
     "activityName": "Light summer salad",
     "amount": 1,
-    "co2Amount": 6.50
+    "co2Amount": 6.5
   },
   {
     "id": "1756281600076",
@@ -605,7 +605,7 @@
     "activityId": "electricity_usage",
     "activityName": "Back to school prep",
     "amount": 30,
-    "co2Amount": 6.90
+    "co2Amount": 6.9
   },
   {
     "id": "1758873600077",
@@ -613,7 +613,7 @@
     "activityId": "natural_gas",
     "activityName": "First fire of the season",
     "amount": 35,
-    "co2Amount": 7.00
+    "co2Amount": 7
   },
   {
     "id": "1761465600078",
@@ -621,7 +621,7 @@
     "activityId": "bus_travel",
     "activityName": "Halloween party bus",
     "amount": 25,
-    "co2Amount": 2.50
+    "co2Amount": 2.5
   },
   {
     "id": "1764057600079",
@@ -629,7 +629,7 @@
     "activityId": "beef_meal",
     "activityName": "Thanksgiving feast",
     "amount": 3,
-    "co2Amount": 46.50
+    "co2Amount": 46.5
   },
   {
     "id": "1765526400080",
@@ -637,6 +637,2989 @@
     "activityId": "train_travel",
     "activityName": "Christmas market trip",
     "amount": 150,
+    "co2Amount": 6
+  },
+  {
+    "id": "1735689600001",
+    "date": "2025-01-01",
+    "activityId": "car_petrol",
+    "activityName": "New Year's Day visit",
+    "amount": 25,
+    "co2Amount": 4.25
+  },
+  {
+    "id": "1735776000002",
+    "date": "2025-01-02",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home use",
+    "amount": 32,
+    "co2Amount": 7.36
+  },
+  {
+    "id": "1735862400003",
+    "date": "2025-01-03",
+    "activityId": "beef_meal",
+    "activityName": "Weekend BBQ",
+    "amount": 2,
+    "co2Amount": 31
+  },
+  {
+    "id": "1735948800004",
+    "date": "2025-01-04",
+    "activityId": "car_petrol",
+    "activityName": "Grocery shopping",
+    "amount": 12,
+    "co2Amount": 2.04
+  },
+  {
+    "id": "1736035200005",
+    "date": "2025-01-05",
+    "activityId": "train_travel",
+    "activityName": "Commute to work",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1736121600006",
+    "date": "2025-01-06",
+    "activityId": "electricity_usage",
+    "activityName": "Morning routine",
+    "amount": 18,
+    "co2Amount": 4.14
+  },
+  {
+    "id": "1736208000007",
+    "date": "2025-01-07",
+    "activityId": "bus_travel",
+    "activityName": "Trip to the cinema",
+    "amount": 15,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1736294400008",
+    "date": "2025-01-08",
+    "activityId": "chicken_meal",
+    "activityName": "Healthy dinner",
+    "amount": 2,
+    "co2Amount": 13
+  },
+  {
+    "id": "1736380800009",
+    "date": "2025-01-09",
+    "activityId": "car_diesel",
+    "activityName": "Weekly shop run",
+    "amount": 18,
+    "co2Amount": 3.78
+  },
+  {
+    "id": "1736467200010",
+    "date": "2025-01-10",
+    "activityId": "natural_gas",
+    "activityName": "Heating on a cold day",
+    "amount": 55,
+    "co2Amount": 11
+  },
+  {
+    "id": "1736553600011",
+    "date": "2025-01-11",
+    "activityId": "flight_short",
+    "activityName": "Business trip to Dublin",
+    "amount": 450,
+    "co2Amount": 112.5
+  },
+  {
+    "id": "1736640000012",
+    "date": "2025-01-12",
+    "activityId": "internet_usage",
+    "activityName": "Weekend gaming & streaming",
+    "amount": 75,
+    "co2Amount": 37.5
+  },
+  {
+    "id": "1736726400013",
+    "date": "2025-01-13",
+    "activityId": "veg_meal",
+    "activityName": "Meat-free Monday",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1736812800014",
+    "date": "2025-01-14",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home use",
+    "amount": 29,
+    "co2Amount": 6.67
+  },
+  {
+    "id": "1736899200015",
+    "date": "2025-01-15",
+    "activityId": "car_electric",
+    "activityName": "School run",
+    "amount": 20,
+    "co2Amount": 1
+  },
+  {
+    "id": "1736985600016",
+    "date": "2025-01-16",
+    "activityId": "pork_meal",
+    "activityName": "Family dinner",
+    "amount": 3,
+    "co2Amount": 23.4
+  },
+  {
+    "id": "1737072000017",
+    "date": "2025-01-17",
+    "activityId": "train_travel",
+    "activityName": "Daily commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1737158400018",
+    "date": "2025-01-18",
+    "activityId": "new_tshirt",
+    "activityName": "Bought a new shirt",
+    "amount": 3,
+    "co2Amount": 15
+  },
+  {
+    "id": "1737244800019",
+    "date": "2025-01-19",
+    "activityId": "electricity_usage",
+    "activityName": "Weekend cleaning",
+    "amount": 35,
+    "co2Amount": 8.05
+  },
+  {
+    "id": "1737331200020",
+    "date": "2025-01-20",
+    "activityId": "car_petrol",
+    "activityName": "Visit friends",
+    "amount": 30,
+    "co2Amount": 5.1
+  },
+  {
+    "id": "1737417600021",
+    "date": "2025-01-21",
+    "activityId": "beef_meal",
+    "activityName": "Restaurant dinner",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1737504000022",
+    "date": "2025-01-22",
+    "activityId": "bus_travel",
+    "activityName": "City center shopping",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1737590400023",
+    "date": "2025-01-23",
+    "activityId": "natural_gas",
+    "activityName": "Evening heating",
+    "amount": 40,
+    "co2Amount": 8
+  },
+  {
+    "id": "1737676800024",
+    "date": "2025-01-24",
+    "activityId": "chicken_meal",
+    "activityName": "Quick lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1737763200025",
+    "date": "2025-01-25",
+    "activityId": "car_diesel",
+    "activityName": "Weekend trip",
+    "amount": 60,
+    "co2Amount": 12.6
+  },
+  {
+    "id": "1737849600026",
+    "date": "2025-01-26",
+    "activityId": "veg_meal",
+    "activityName": "Salad day",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1737936000027",
+    "date": "2025-01-27",
+    "activityId": "electricity_usage",
+    "activityName": "Work from home",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1738022400028",
+    "date": "2025-01-28",
+    "activityId": "train_travel",
+    "activityName": "Meeting in city",
+    "amount": 80,
+    "co2Amount": 3.2
+  },
+  {
+    "id": "1738108800029",
+    "date": "2025-01-29",
+    "activityId": "pork_meal",
+    "activityName": "Dinner out",
+    "amount": 2,
+    "co2Amount": 15.6
+  },
+  {
+    "id": "1738195200030",
+    "date": "2025-01-30",
+    "activityId": "car_electric",
+    "activityName": "Doctor appointment",
+    "amount": 15,
+    "co2Amount": 0.75
+  },
+  {
+    "id": "1738281600031",
+    "date": "2025-01-31",
+    "activityId": "internet_usage",
+    "activityName": "Movie night streaming",
+    "amount": 40,
+    "co2Amount": 20
+  },
+  {
+    "id": "1738368000032",
+    "date": "2025-02-01",
+    "activityId": "flight_short",
+    "activityName": "Weekend city break",
+    "amount": 600,
+    "co2Amount": 150
+  },
+  {
+    "id": "1738454400033",
+    "date": "2025-02-02",
+    "activityId": "car_petrol",
+    "activityName": "Airport transfer",
+    "amount": 25,
+    "co2Amount": 4.25
+  },
+  {
+    "id": "1738540800034",
+    "date": "2025-02-03",
+    "activityId": "electricity_usage",
+    "activityName": "Back to work",
+    "amount": 30,
+    "co2Amount": 6.9
+  },
+  {
+    "id": "1738627200035",
+    "date": "2025-02-04",
+    "activityId": "beef_meal",
+    "activityName": "Steak dinner",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1738713600036",
+    "date": "2025-02-05",
+    "activityId": "bus_travel",
+    "activityName": "Daily commute",
+    "amount": 20,
+    "co2Amount": 2
+  },
+  {
+    "id": "1738800000037",
+    "date": "2025-02-06",
+    "activityId": "natural_gas",
+    "activityName": "Cold night heating",
+    "amount": 45,
+    "co2Amount": 9
+  },
+  {
+    "id": "1738886400038",
+    "date": "2025-02-07",
+    "activityId": "chicken_meal",
+    "activityName": "Healthy lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1738972800039",
+    "date": "2025-02-08",
+    "activityId": "car_diesel",
+    "activityName": "Weekend errands",
+    "amount": 35,
+    "co2Amount": 7.35
+  },
+  {
+    "id": "1739059200040",
+    "date": "2025-02-09",
+    "activityId": "veg_meal",
+    "activityName": "Meat-free day",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1739145600041",
+    "date": "2025-02-10",
+    "activityId": "train_travel",
+    "activityName": "Business meeting",
+    "amount": 60,
+    "co2Amount": 2.4
+  },
+  {
+    "id": "1739232000042",
+    "date": "2025-02-11",
+    "activityId": "electricity_usage",
+    "activityName": "Home office day",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1739318400043",
+    "date": "2025-02-12",
+    "activityId": "pork_meal",
+    "activityName": "Family meal",
+    "amount": 3,
+    "co2Amount": 23.4
+  },
+  {
+    "id": "1739404800044",
+    "date": "2025-02-13",
+    "activityId": "car_electric",
+    "activityName": "Shopping trip",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1739491200045",
+    "date": "2025-02-14",
+    "activityId": "flight_long",
+    "activityName": "Valentine's weekend getaway",
+    "amount": 1500,
+    "co2Amount": 225
+  },
+  {
+    "id": "1739577600046",
+    "date": "2025-02-15",
+    "activityId": "new_tshirt",
+    "activityName": "Valentine's gift",
+    "amount": 2,
+    "co2Amount": 10
+  },
+  {
+    "id": "1739664000047",
+    "date": "2025-02-16",
+    "activityId": "internet_usage",
+    "activityName": "Weekend browsing",
+    "amount": 30,
+    "co2Amount": 15
+  },
+  {
+    "id": "1739750400048",
+    "date": "2025-02-17",
+    "activityId": "car_petrol",
+    "activityName": "Return journey",
+    "amount": 40,
+    "co2Amount": 6.8
+  },
+  {
+    "id": "1739836800049",
+    "date": "2025-02-18",
+    "activityId": "beef_meal",
+    "activityName": "Celebration dinner",
+    "amount": 2,
+    "co2Amount": 31
+  },
+  {
+    "id": "1739923200050",
+    "date": "2025-02-19",
+    "activityId": "bus_travel",
+    "activityName": "Regular commute",
+    "amount": 20,
+    "co2Amount": 2
+  },
+  {
+    "id": "1740009600051",
+    "date": "2025-02-20",
+    "activityId": "natural_gas",
+    "activityName": "Winter heating",
+    "amount": 50,
+    "co2Amount": 10
+  },
+  {
+    "id": "1740096000052",
+    "date": "2025-02-21",
+    "activityId": "chicken_meal",
+    "activityName": "Quick dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1740182400053",
+    "date": "2025-02-22",
+    "activityId": "car_diesel",
+    "activityName": "Weekend drive",
+    "amount": 45,
+    "co2Amount": 9.45
+  },
+  {
+    "id": "1740268800054",
+    "date": "2025-02-23",
+    "activityId": "veg_meal",
+    "activityName": "Healthy eating",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1740355200055",
+    "date": "2025-02-24",
+    "activityId": "flight_long",
+    "activityName": "Holiday flight to USA",
+    "amount": 8000,
+    "co2Amount": 1200
+  },
+  {
+    "id": "1740441600056",
+    "date": "2025-02-25",
+    "activityId": "electricity_usage",
+    "activityName": "Hotel stay",
+    "amount": 40,
+    "co2Amount": 9.2
+  },
+  {
+    "id": "1740528000057",
+    "date": "2025-02-26",
+    "activityId": "train_travel",
+    "activityName": "Sightseeing",
+    "amount": 100,
+    "co2Amount": 4
+  },
+  {
+    "id": "1740614400058",
+    "date": "2025-02-27",
+    "activityId": "pork_meal",
+    "activityName": "Local cuisine",
+    "amount": 2,
+    "co2Amount": 15.6
+  },
+  {
+    "id": "1740700800059",
+    "date": "2025-02-28",
+    "activityId": "car_petrol",
+    "activityName": "Road trip",
+    "amount": 80,
+    "co2Amount": 13.6
+  },
+  {
+    "id": "1740787200060",
+    "date": "2025-03-01",
+    "activityId": "internet_usage",
+    "activityName": "Vacation photos upload",
+    "amount": 50,
+    "co2Amount": 25
+  },
+  {
+    "id": "1740873600061",
+    "date": "2025-03-02",
+    "activityId": "flight_long",
+    "activityName": "Return flight",
+    "amount": 8000,
+    "co2Amount": 1200
+  },
+  {
+    "id": "1740960000062",
+    "date": "2025-03-03",
+    "activityId": "car_electric",
+    "activityName": "Airport pickup",
+    "amount": 30,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1741046400063",
+    "date": "2025-03-04",
+    "activityId": "electricity_usage",
+    "activityName": "Recovery day at home",
+    "amount": 20,
+    "co2Amount": 4.6
+  },
+  {
+    "id": "1741132800064",
+    "date": "2025-03-05",
+    "activityId": "beef_meal",
+    "activityName": "Welcome home meal",
+    "amount": 2,
+    "co2Amount": 31
+  },
+  {
+    "id": "1741219200065",
+    "date": "2025-03-06",
+    "activityId": "bus_travel",
+    "activityName": "Back to routine",
+    "amount": 20,
+    "co2Amount": 2
+  },
+  {
+    "id": "1741305600066",
+    "date": "2025-03-07",
+    "activityId": "natural_gas",
+    "activityName": "Spring heating",
+    "amount": 35,
+    "co2Amount": 7
+  },
+  {
+    "id": "1741392000067",
+    "date": "2025-03-08",
+    "activityId": "chicken_meal",
+    "activityName": "Weekend BBQ",
+    "amount": 3,
+    "co2Amount": 19.5
+  },
+  {
+    "id": "1741478400068",
+    "date": "2025-03-09",
+    "activityId": "car_diesel",
+    "activityName": "Garden center visit",
+    "amount": 25,
+    "co2Amount": 5.25
+  },
+  {
+    "id": "1741564800069",
+    "date": "2025-03-10",
+    "activityId": "veg_meal",
+    "activityName": "Meat-free Monday",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1741651200070",
+    "date": "2025-03-11",
+    "activityId": "train_travel",
+    "activityName": "Conference attendance",
+    "amount": 120,
+    "co2Amount": 4.8
+  },
+  {
+    "id": "1741737600071",
+    "date": "2025-03-12",
+    "activityId": "electricity_usage",
+    "activityName": "Conference prep",
+    "amount": 35,
+    "co2Amount": 8.05
+  },
+  {
+    "id": "1741824000072",
+    "date": "2025-03-13",
+    "activityId": "pork_meal",
+    "activityName": "Networking dinner",
+    "amount": 2,
+    "co2Amount": 15.6
+  },
+  {
+    "id": "1741910400073",
+    "date": "2025-03-14",
+    "activityId": "car_petrol",
+    "activityName": "Client meeting",
+    "amount": 40,
+    "co2Amount": 6.8
+  },
+  {
+    "id": "1741996800074",
+    "date": "2025-03-15",
+    "activityId": "new_tshirt",
+    "activityName": "Spring wardrobe update",
+    "amount": 4,
+    "co2Amount": 20
+  },
+  {
+    "id": "1742083200075",
+    "date": "2025-03-16",
+    "activityId": "internet_usage",
+    "activityName": "Weekend streaming",
+    "amount": 45,
+    "co2Amount": 22.5
+  },
+  {
+    "id": "1742169600076",
+    "date": "2025-03-17",
+    "activityId": "car_electric",
+    "activityName": "St. Patrick's parade",
+    "amount": 20,
+    "co2Amount": 1
+  },
+  {
+    "id": "1742256000077",
+    "date": "2025-03-18",
+    "activityId": "beef_meal",
+    "activityName": "Celebration meal",
+    "amount": 2,
+    "co2Amount": 31
+  },
+  {
+    "id": "1742342400078",
+    "date": "2025-03-19",
+    "activityId": "bus_travel",
+    "activityName": "Regular commute",
+    "amount": 20,
+    "co2Amount": 2
+  },
+  {
+    "id": "1742428800079",
+    "date": "2025-03-20",
+    "activityId": "natural_gas",
+    "activityName": "Spring evening",
+    "amount": 25,
+    "co2Amount": 5
+  },
+  {
+    "id": "1742515200080",
+    "date": "2025-03-21",
+    "activityId": "chicken_meal",
+    "activityName": "Healthy choice",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1742601600081",
+    "date": "2025-03-22",
+    "activityId": "car_diesel",
+    "activityName": "Weekend planning",
+    "amount": 30,
+    "co2Amount": 6.3
+  },
+  {
+    "id": "1742688000082",
+    "date": "2025-03-23",
+    "activityId": "veg_meal",
+    "activityName": "Farmers market visit",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1742774400083",
+    "date": "2025-03-24",
+    "activityId": "train_travel",
+    "activityName": "Day trip",
+    "amount": 80,
+    "co2Amount": 3.2
+  },
+  {
+    "id": "1742860800084",
+    "date": "2025-03-25",
+    "activityId": "electricity_usage",
+    "activityName": "Spring cleaning",
+    "amount": 40,
+    "co2Amount": 9.2
+  },
+  {
+    "id": "1742947200085",
+    "date": "2025-03-26",
+    "activityId": "lamb_meal",
+    "activityName": "Special occasion dinner",
+    "amount": 2,
+    "co2Amount": 40.8
+  },
+  {
+    "id": "1743033600086",
+    "date": "2025-03-27",
+    "activityId": "car_petrol",
+    "activityName": "Easter prep shopping",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1743120000087",
+    "date": "2025-03-28",
+    "activityId": "pork_meal",
+    "activityName": "Pre-Easter feast",
+    "amount": 3,
+    "co2Amount": 23.4
+  },
+  {
+    "id": "1743206400088",
+    "date": "2025-03-29",
+    "activityId": "bus_travel",
+    "activityName": "Easter visit",
+    "amount": 30,
+    "co2Amount": 3
+  },
+  {
+    "id": "1743292800089",
+    "date": "2025-03-30",
+    "activityId": "car_diesel",
+    "activityName": "Easter family visit",
+    "amount": 120,
+    "co2Amount": 25.2
+  },
+  {
+    "id": "1743379200090",
+    "date": "2025-03-31",
+    "activityId": "beef_meal",
+    "activityName": "Easter Sunday roast",
+    "amount": 3,
+    "co2Amount": 46.5
+  },
+  {
+    "id": "1743465600091",
+    "date": "2025-04-01",
+    "activityId": "veg_meal",
+    "activityName": "April Fool's healthy start",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1743552000092",
+    "date": "2025-04-02",
+    "activityId": "electricity_usage",
+    "activityName": "Spring energy",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1743638400093",
+    "date": "2025-04-03",
+    "activityId": "chicken_meal",
+    "activityName": "Light dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1743724800094",
+    "date": "2025-04-04",
+    "activityId": "car_electric",
+    "activityName": "Spring cleaning supplies",
+    "amount": 15,
+    "co2Amount": 0.75
+  },
+  {
+    "id": "1743811200095",
+    "date": "2025-04-05",
+    "activityId": "train_travel",
+    "activityName": "Weekend excursion",
+    "amount": 60,
+    "co2Amount": 2.4
+  },
+  {
+    "id": "1743897600096",
+    "date": "2025-04-06",
+    "activityId": "natural_gas",
+    "activityName": "Mild spring evening",
+    "amount": 15,
+    "co2Amount": 3
+  },
+  {
+    "id": "1743984000097",
+    "date": "2025-04-07",
+    "activityId": "car_electric",
+    "activityName": "Spring cleaning trip",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1744070400098",
+    "date": "2025-04-08",
+    "activityId": "beef_meal",
+    "activityName": "Tuesday treat",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1744156800099",
+    "date": "2025-04-09",
+    "activityId": "bus_travel",
+    "activityName": "Regular commute",
+    "amount": 20,
+    "co2Amount": 2
+  },
+  {
+    "id": "1744243200100",
+    "date": "2025-04-10",
+    "activityId": "electricity_usage",
+    "activityName": "Work from home",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1744329600101",
+    "date": "2025-04-11",
+    "activityId": "pork_meal",
+    "activityName": "Friday dinner",
+    "amount": 2,
+    "co2Amount": 15.6
+  },
+  {
+    "id": "1744416000102",
+    "date": "2025-04-12",
+    "activityId": "car_petrol",
+    "activityName": "Weekend market",
+    "amount": 20,
+    "co2Amount": 3.4
+  },
+  {
+    "id": "1744502400103",
+    "date": "2025-04-13",
+    "activityId": "veg_meal",
+    "activityName": "Spring salad day",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1744588800104",
+    "date": "2025-04-14",
+    "activityId": "train_travel",
+    "activityName": "Business trip",
+    "amount": 150,
+    "co2Amount": 6
+  },
+  {
+    "id": "1744675200105",
+    "date": "2025-04-15",
+    "activityId": "new_tshirt",
+    "activityName": "Spring collection",
+    "amount": 3,
+    "co2Amount": 15
+  },
+  {
+    "id": "1744761600106",
+    "date": "2025-04-16",
+    "activityId": "internet_usage",
+    "activityName": "Online shopping",
+    "amount": 35,
+    "co2Amount": 17.5
+  },
+  {
+    "id": "1744848000107",
+    "date": "2025-04-17",
+    "activityId": "car_diesel",
+    "activityName": "Tax appointment",
+    "amount": 25,
+    "co2Amount": 5.25
+  },
+  {
+    "id": "1744934400108",
+    "date": "2025-04-18",
+    "activityId": "chicken_meal",
+    "activityName": "Good Friday meal",
+    "amount": 2,
+    "co2Amount": 13
+  },
+  {
+    "id": "1745020800109",
+    "date": "2025-04-19",
+    "activityId": "natural_gas",
+    "activityName": "Cooler evening",
+    "amount": 20,
+    "co2Amount": 4
+  },
+  {
+    "id": "1745107200110",
+    "date": "2025-04-20",
+    "activityId": "veg_meal",
+    "activityName": "Easter Monday",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1745193600111",
+    "date": "2025-04-21",
+    "activityId": "car_electric",
+    "activityName": "Bank holiday drive",
+    "amount": 30,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1745280000112",
+    "date": "2025-04-22",
+    "activityId": "beef_meal",
+    "activityName": "Earth Day irony",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1745366400113",
+    "date": "2025-04-23",
+    "activityId": "bus_travel",
+    "activityName": "St. George's event",
+    "amount": 15,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1745452800114",
+    "date": "2025-04-24",
+    "activityId": "electricity_usage",
+    "activityName": "Evening study",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1745539200115",
+    "date": "2025-04-25",
+    "activityId": "pork_meal",
+    "activityName": "Pancake breakfast",
+    "amount": 2,
+    "co2Amount": 15.6
+  },
+  {
+    "id": "1745625600116",
+    "date": "2025-04-26",
+    "activityId": "car_petrol",
+    "activityName": "Weekend market",
+    "amount": 20,
+    "co2Amount": 3.4
+  },
+  {
+    "id": "1745712000117",
+    "date": "2025-04-27",
+    "activityId": "train_travel",
+    "activityName": "Weekend excursion",
+    "amount": 60,
+    "co2Amount": 2.4
+  },
+  {
+    "id": "1745798400118",
+    "date": "2025-04-28",
+    "activityId": "electricity_usage",
+    "activityName": "Evening study",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1745884800119",
+    "date": "2025-04-29",
+    "activityId": "car_diesel",
+    "activityName": "Tax appointment",
+    "amount": 25,
+    "co2Amount": 5.25
+  },
+  {
+    "id": "1745971200120",
+    "date": "2025-04-30",
+    "activityId": "chicken_meal",
+    "activityName": "Good Friday meal",
+    "amount": 2,
+    "co2Amount": 13
+  },
+  {
+    "id": "1768934009299",
+    "date": "2026-01-20",
+    "activityId": "car_petrol",
+    "activityName": "moring drive",
+    "amount": 12,
+    "co2Amount": 2.04
+  },
+  {
+    "id": "1745539200115",
+    "date": "2025-04-25",
+    "activityId": "car_petrol",
+    "activityName": "Road trip start",
+    "amount": 150,
+    "co2Amount": 25.50
+  },
+  {
+    "id": "1745625600116",
+    "date": "2025-04-26",
+    "activityId": "pork_meal",
+    "activityName": "Weekend feast",
+    "amount": 3,
+    "co2Amount": 23.40
+  },
+  {
+    "id": "1745712000117",
+    "date": "2025-04-27",
+    "activityId": "train_travel",
+    "activityName": "Return journey",
+    "amount": 150,
     "co2Amount": 6.00
+  },
+  {
+    "id": "1745798400118",
+    "date": "2025-04-28",
+    "activityId": "electricity_usage",
+    "activityName": "Post-trip laundry",
+    "amount": 40,
+    "co2Amount": 9.20
+  },
+  {
+    "id": "1745884800119",
+    "date": "2025-04-29",
+    "activityId": "chicken_meal",
+    "activityName": "Quick Tuesday dinner",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1745971200120",
+    "date": "2025-04-30",
+    "activityId": "natural_gas",
+    "activityName": "Spring evening warmth",
+    "amount": 18,
+    "co2Amount": 3.60
+  },
+  {
+    "id": "1746057600121",
+    "date": "2025-05-01",
+    "activityId": "car_diesel",
+    "activityName": "May Day market visit",
+    "amount": 25,
+    "co2Amount": 5.25
+  },
+  {
+    "id": "1746144000122",
+    "date": "2025-05-02",
+    "activityId": "beef_meal",
+    "activityName": "May Day BBQ",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1746230400123",
+    "date": "2025-05-03",
+    "activityId": "bus_travel",
+    "activityName": "Bank holiday transport",
+    "amount": 25,
+    "co2Amount": 2.50
+  },
+  {
+    "id": "1746316800124",
+    "date": "2025-05-04",
+    "activityId": "veg_meal",
+    "activityName": "Healthy start to May",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1746403200125",
+    "date": "2025-05-05",
+    "activityId": "train_travel",
+    "activityName": "Back to work commute",
+    "amount": 40,
+    "co2Amount": 1.60
+  },
+  {
+    "id": "1746489600126",
+    "date": "2025-05-06",
+    "activityId": "electricity_usage",
+    "activityName": "Regular home use",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1746576000127",
+    "date": "2025-05-07",
+    "activityId": "internet_usage",
+    "activityName": "Online course",
+    "amount": 30,
+    "co2Amount": 15.00
+  },
+  {
+    "id": "1746662400128",
+    "date": "2025-05-08",
+    "activityId": "chicken_meal",
+    "activityName": "Midweek dinner",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1746748800129",
+    "date": "2025-05-09",
+    "activityId": "car_petrol",
+    "activityName": "Friday night out",
+    "amount": 20,
+    "co2Amount": 3.40
+  },
+  {
+    "id": "1746835200130",
+    "date": "2025-05-10",
+    "activityId": "pork_meal",
+    "activityName": "Weekend celebration",
+    "amount": 3,
+    "co2Amount": 23.40
+  },
+  {
+    "id": "1746921600131",
+    "date": "2025-05-11",
+    "activityId": "car_electric",
+    "activityName": "Sunday drive",
+    "amount": 35,
+    "co2Amount": 1.75
+  },
+  {
+    "id": "1747008000132",
+    "date": "2025-05-12",
+    "activityId": "natural_gas",
+    "activityName": "Mild spring evening",
+    "amount": 12,
+    "co2Amount": 2.40
+  },
+  {
+    "id": "1747094400133",
+    "date": "2025-05-13",
+    "activityId": "veg_meal",
+    "activityName": "Meat-free Monday",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1747180800134",
+    "date": "2025-05-14",
+    "activityId": "train_travel",
+    "activityName": "Weekly commute",
+    "amount": 40,
+    "co2Amount": 1.60
+  },
+  {
+    "id": "1747267200135",
+    "date": "2025-05-15",
+    "activityId": "electricity_usage",
+    "activityName": "Home office day",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1747353600136",
+    "date": "2025-05-16",
+    "activityId": "beef_meal",
+    "activityName": "Friday treat",
+    "amount": 1,
+    "co2Amount": 15.50
+  },
+  {
+    "id": "1747440000137",
+    "date": "2025-05-17",
+    "activityId": "bus_travel",
+    "activityName": "Weekend planning",
+    "amount": 20,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1747526400138",
+    "date": "2025-05-18",
+    "activityId": "flight_short",
+    "activityName": "Weekend city break",
+    "amount": 500,
+    "co2Amount": 125.00
+  },
+  {
+    "id": "1747612800139",
+    "date": "2025-05-19",
+    "activityId": "car_diesel",
+    "activityName": "Airport transfer",
+    "amount": 30,
+    "co2Amount": 6.30
+  },
+  {
+    "id": "1747699200140",
+    "date": "2025-05-20",
+    "activityId": "chicken_meal",
+    "activityName": "Return home meal",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1747785600141",
+    "date": "2025-05-21",
+    "activityId": "electricity_usage",
+    "activityName": "Catch up on chores",
+    "amount": 35,
+    "co2Amount": 8.05
+  },
+  {
+    "id": "1747872000142",
+    "date": "2025-05-22",
+    "activityId": "pork_meal",
+    "activityName": "Midweek dinner",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1747958400143",
+    "date": "2025-05-23",
+    "activityId": "car_petrol",
+    "activityName": "Pre-holiday shopping",
+    "amount": 40,
+    "co2Amount": 6.80
+  },
+  {
+    "id": "1748044800144",
+    "date": "2025-05-24",
+    "activityId": "veg_meal",
+    "activityName": "Healthy Friday",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1748131200145",
+    "date": "2025-05-25",
+    "activityId": "electricity_usage",
+    "activityName": "AC running all day",
+    "amount": 45,
+    "co2Amount": 10.35
+  },
+  {
+    "id": "1748217600146",
+    "date": "2025-05-26",
+    "activityId": "flight_long",
+    "activityName": "Summer holiday to Italy",
+    "amount": 2000,
+    "co2Amount": 300.00
+  },
+  {
+    "id": "1748304000147",
+    "date": "2025-05-27",
+    "activityId": "train_travel",
+    "activityName": "Italian sightseeing",
+    "amount": 120,
+    "co2Amount": 4.80
+  },
+  {
+    "id": "1748390400148",
+    "date": "2025-05-28",
+    "activityId": "beef_meal",
+    "activityName": "Local cuisine",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1748476800149",
+    "date": "2025-05-29",
+    "activityId": "car_diesel",
+    "activityName": "Rental car for trip",
+    "amount": 80,
+    "co2Amount": 16.80
+  },
+  {
+    "id": "1748563200150",
+    "date": "2025-05-30",
+    "activityId": "chicken_meal",
+    "activityName": "Light lunch",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1748649600151",
+    "date": "2025-05-31",
+    "activityId": "flight_long",
+    "activityName": "Return flight",
+    "amount": 2000,
+    "co2Amount": 300.00
+  },
+  {
+    "id": "1748736000152",
+    "date": "2025-06-01",
+    "activityId": "car_electric",
+    "activityName": "Airport pickup",
+    "amount": 35,
+    "co2Amount": 1.75
+  },
+  {
+    "id": "1748822400153",
+    "date": "2025-06-02",
+    "activityId": "electricity_usage",
+    "activityName": "Holiday recovery",
+    "amount": 30,
+    "co2Amount": 6.90
+  },
+  {
+    "id": "1748908800154",
+    "date": "2025-06-03",
+    "activityId": "veg_meal",
+    "activityName": "Healthy restart",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1748995200155",
+    "date": "2025-06-04",
+    "activityId": "bus_travel",
+    "activityName": "Summer commute",
+    "amount": 20,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1749081600156",
+    "date": "2025-06-05",
+    "activityId": "natural_gas",
+    "activityName": "Minimal heating",
+    "amount": 8,
+    "co2Amount": 1.60
+  },
+  {
+    "id": "1749168000157",
+    "date": "2025-06-06",
+    "activityId": "lamb_meal",
+    "activityName": "Birthday dinner",
+    "amount": 2,
+    "co2Amount": 40.80
+  },
+  {
+    "id": "1749254400158",
+    "date": "2025-06-07",
+    "activityId": "car_petrol",
+    "activityName": "Weekend trip",
+    "amount": 60,
+    "co2Amount": 10.20
+  },
+  {
+    "id": "1749340800159",
+    "date": "2025-06-08",
+    "activityId": "train_travel",
+    "activityName": "Summer excursion",
+    "amount": 80,
+    "co2Amount": 3.20
+  },
+  {
+    "id": "1749427200160",
+    "date": "2025-06-09",
+    "activityId": "chicken_meal",
+    "activityName": "Sunday roast",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1749513600161",
+    "date": "2025-06-10",
+    "activityId": "electricity_usage",
+    "activityName": "AC starting season",
+    "amount": 38,
+    "co2Amount": 8.74
+  },
+  {
+    "id": "1749600000162",
+    "date": "2025-06-11",
+    "activityId": "pork_meal",
+    "activityName": "Midweek dinner",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1749686400163",
+    "date": "2025-06-12",
+    "activityId": "car_diesel",
+    "activityName": "Business meeting",
+    "amount": 45,
+    "co2Amount": 9.45
+  },
+  {
+    "id": "1749772800164",
+    "date": "2025-06-13",
+    "activityId": "beef_meal",
+    "activityName": "Friday celebration",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1749859200165",
+    "date": "2025-06-14",
+    "activityId": "bus_travel",
+    "activityName": "Weekend transport",
+    "amount": 25,
+    "co2Amount": 2.50
+  },
+  {
+    "id": "1749945600166",
+    "date": "2025-06-15",
+    "activityId": "veg_meal",
+    "activityName": "Summer salad",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1750032000167",
+    "date": "2025-06-16",
+    "activityId": "car_electric",
+    "activityName": "Father's Day visit",
+    "amount": 40,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1750118400168",
+    "date": "2025-06-17",
+    "activityId": "electricity_usage",
+    "activityName": "Hot day AC",
+    "amount": 42,
+    "co2Amount": 9.66
+  },
+  {
+    "id": "1750204800169",
+    "date": "2025-06-18",
+    "activityId": "chicken_meal",
+    "activityName": "Light dinner",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1750291200170",
+    "date": "2025-06-19",
+    "activityId": "train_travel",
+    "activityName": "Summer city break",
+    "amount": 300,
+    "co2Amount": 12.00
+  },
+  {
+    "id": "1750377600171",
+    "date": "2025-06-20",
+    "activityId": "flight_short",
+    "activityName": "Weekend getaway",
+    "amount": 600,
+    "co2Amount": 150.00
+  },
+  {
+    "id": "1750464000172",
+    "date": "2025-06-21",
+    "activityId": "car_petrol",
+    "activityName": "Summer solstice drive",
+    "amount": 50,
+    "co2Amount": 8.50
+  },
+  {
+    "id": "1750550400173",
+    "date": "2025-06-22",
+    "activityId": "pork_meal",
+    "activityName": "Weekend BBQ",
+    "amount": 3,
+    "co2Amount": 23.40
+  },
+  {
+    "id": "1750636800174",
+    "date": "2025-06-23",
+    "activityId": "bus_travel",
+    "activityName": "Return journey",
+    "amount": 30,
+    "co2Amount": 3.00
+  },
+  {
+    "id": "1750723200175",
+    "date": "2025-06-24",
+    "activityId": "train_travel",
+    "activityName": "Summer city break",
+    "amount": 300,
+    "co2Amount": 12.00
+  },
+  {
+    "id": "1750809600176",
+    "date": "2025-06-25",
+    "activityId": "electricity_usage",
+    "activityName": "Post-trip recovery",
+    "amount": 35,
+    "co2Amount": 8.05
+  },
+  {
+    "id": "1750896000177",
+    "date": "2025-06-26",
+    "activityId": "veg_meal",
+    "activityName": "Healthy eating",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1750982400178",
+    "date": "2025-06-27",
+    "activityId": "car_diesel",
+    "activityName": "Weekend prep",
+    "amount": 30,
+    "co2Amount": 6.30
+  },
+  {
+    "id": "1751068800179",
+    "date": "2025-06-28",
+    "activityId": "beef_meal",
+    "activityName": "Saturday steak",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1751155200180",
+    "date": "2025-06-29",
+    "activityId": "chicken_meal",
+    "activityName": "Sunday lunch",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1751241600181",
+    "date": "2025-06-30",
+    "activityId": "natural_gas",
+    "activityName": "End of month",
+    "amount": 10,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1751328000182",
+    "date": "2025-07-01",
+    "activityId": "car_electric",
+    "activityName": "July 4th prep",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1751414400183",
+    "date": "2025-07-02",
+    "activityId": "electricity_usage",
+    "activityName": "Summer AC",
+    "amount": 45,
+    "co2Amount": 10.35
+  },
+  {
+    "id": "1751500800184",
+    "date": "2025-07-03",
+    "activityId": "flight_short",
+    "activityName": "Independence Day travel",
+    "amount": 700,
+    "co2Amount": 175.00
+  },
+  {
+    "id": "1751587200185",
+    "date": "2025-07-04",
+    "activityId": "car_petrol",
+    "activityName": "Holiday road trip",
+    "amount": 80,
+    "co2Amount": 13.60
+  },
+  {
+    "id": "1751673600186",
+    "date": "2025-07-05",
+    "activityId": "beef_meal",
+    "activityName": "July 4th BBQ",
+    "amount": 3,
+    "co2Amount": 46.50
+  },
+  {
+    "id": "1751760000187",
+    "date": "2025-07-06",
+    "activityId": "bus_travel",
+    "activityName": "Concert commute",
+    "amount": 20,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1751846400188",
+    "date": "2025-07-07",
+    "activityId": "train_travel",
+    "activityName": "Back to work",
+    "amount": 40,
+    "co2Amount": 1.60
+  },
+  {
+    "id": "1751932800189",
+    "date": "2025-07-08",
+    "activityId": "electricity_usage",
+    "activityName": "Hot summer day",
+    "amount": 50,
+    "co2Amount": 11.50
+  },
+  {
+    "id": "1752019200190",
+    "date": "2025-07-09",
+    "activityId": "chicken_meal",
+    "activityName": "Light summer meal",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1752105600191",
+    "date": "2025-07-10",
+    "activityId": "pork_meal",
+    "activityName": "Midweek dinner",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1752192000192",
+    "date": "2025-07-11",
+    "activityId": "car_diesel",
+    "activityName": "Weekend getaway prep",
+    "amount": 60,
+    "co2Amount": 12.60
+  },
+  {
+    "id": "1752278400193",
+    "date": "2025-07-12",
+    "activityId": "flight_long",
+    "activityName": "Summer vacation",
+    "amount": 3000,
+    "co2Amount": 450.00
+  },
+  {
+    "id": "1752364800194",
+    "date": "2025-07-13",
+    "activityId": "car_petrol",
+    "activityName": "Holiday rental",
+    "amount": 100,
+    "co2Amount": 17.00
+  },
+  {
+    "id": "1752451200195",
+    "date": "2025-07-14",
+    "activityId": "beef_meal",
+    "activityName": "Vacation dining",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1752537600196",
+    "date": "2025-07-15",
+    "activityId": "electricity_usage",
+    "activityName": "Hotel stay",
+    "amount": 40,
+    "co2Amount": 9.20
+  },
+  {
+    "id": "1752624000197",
+    "date": "2025-07-16",
+    "activityId": "veg_meal",
+    "activityName": "Beach day lunch",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1752710400198",
+    "date": "2025-07-17",
+    "activityId": "train_travel",
+    "activityName": "Sightseeing tour",
+    "amount": 100,
+    "co2Amount": 4.00
+  },
+  {
+    "id": "1752796800199",
+    "date": "2025-07-18",
+    "activityId": "chicken_meal",
+    "activityName": "Poolside dinner",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1752883200200",
+    "date": "2025-07-19",
+    "activityId": "bus_travel",
+    "activityName": "Local transport",
+    "amount": 15,
+    "co2Amount": 1.50
+  },
+  {
+    "id": "1752969600201",
+    "date": "2025-07-20",
+    "activityId": "pork_meal",
+    "activityName": "Holiday feast",
+    "amount": 3,
+    "co2Amount": 23.40
+  },
+  {
+    "id": "1753056000202",
+    "date": "2025-07-21",
+    "activityId": "car_diesel",
+    "activityName": "Scenic drive",
+    "amount": 70,
+    "co2Amount": 14.70
+  },
+  {
+    "id": "1753142400203",
+    "date": "2025-07-22",
+    "activityId": "natural_gas",
+    "activityName": "Evening BBQ",
+    "amount": 15,
+    "co2Amount": 3.00
+  },
+  {
+    "id": "1753228800204",
+    "date": "2025-07-23",
+    "activityId": "flight_long",
+    "activityName": "Return flight",
+    "amount": 3000,
+    "co2Amount": 450.00
+  },
+  {
+    "id": "1753315200205",
+    "date": "2025-07-24",
+    "activityId": "beef_meal",
+    "activityName": "Summer BBQ",
+    "amount": 4,
+    "co2Amount": 62.00
+  },
+  {
+    "id": "1753401600206",
+    "date": "2025-07-25",
+    "activityId": "car_electric",
+    "activityName": "Airport pickup",
+    "amount": 40,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1753488000207",
+    "date": "2025-07-26",
+    "activityId": "electricity_usage",
+    "activityName": "Post-vacation laundry",
+    "amount": 45,
+    "co2Amount": 10.35
+  },
+  {
+    "id": "1753574400208",
+    "date": "2025-07-27",
+    "activityId": "chicken_meal",
+    "activityName": "Light summer salad",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1753660800209",
+    "date": "2025-07-28",
+    "activityId": "veg_meal",
+    "activityName": "Healthy restart",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1753747200210",
+    "date": "2025-07-29",
+    "activityId": "bus_travel",
+    "activityName": "Regular commute",
+    "amount": 20,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1753833600211",
+    "date": "2025-07-30",
+    "activityId": "train_travel",
+    "activityName": "Weekly commute",
+    "amount": 40,
+    "co2Amount": 1.60
+  },
+  {
+    "id": "1753920000212",
+    "date": "2025-07-31",
+    "activityId": "electricity_usage",
+    "activityName": "End of July",
+    "amount": 38,
+    "co2Amount": 8.74
+  },
+  {
+    "id": "1754006400213",
+    "date": "2025-08-01",
+    "activityId": "car_petrol",
+    "activityName": "August road trip",
+    "amount": 90,
+    "co2Amount": 15.30
+  },
+  {
+    "id": "1754092800214",
+    "date": "2025-08-02",
+    "activityId": "beef_meal",
+    "activityName": "Saturday steak",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1754179200215",
+    "date": "2025-08-03",
+    "activityId": "chicken_meal",
+    "activityName": "Sunday BBQ",
+    "amount": 3,
+    "co2Amount": 19.50
+  },
+  {
+    "id": "1754265600216",
+    "date": "2025-08-04",
+    "activityId": "electricity_usage",
+    "activityName": "Peak summer AC",
+    "amount": 55,
+    "co2Amount": 12.65
+  },
+  {
+    "id": "1754352000217",
+    "date": "2025-08-05",
+    "activityId": "electricity_usage",
+    "activityName": "Hot day - fans on",
+    "amount": 40,
+    "co2Amount": 9.20
+  },
+  {
+    "id": "1754438400218",
+    "date": "2025-08-06",
+    "activityId": "veg_meal",
+    "activityName": "Summer salads",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1754524800219",
+    "date": "2025-08-07",
+    "activityId": "bus_travel",
+    "activityName": "Summer commute",
+    "amount": 20,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1754611200220",
+    "date": "2025-08-08",
+    "activityId": "train_travel",
+    "activityName": "Day trip",
+    "amount": 80,
+    "co2Amount": 3.20
+  },
+  {
+    "id": "1754697600221",
+    "date": "2025-08-09",
+    "activityId": "pork_meal",
+    "activityName": "Weekend feast",
+    "amount": 3,
+    "co2Amount": 23.40
+  },
+  {
+    "id": "1754784000222",
+    "date": "2025-08-10",
+    "activityId": "car_diesel",
+    "activityName": "Country drive",
+    "amount": 70,
+    "co2Amount": 14.70
+  },
+  {
+    "id": "1754870400223",
+    "date": "2025-08-11",
+    "activityId": "natural_gas",
+    "activityName": "Evening warmth",
+    "amount": 12,
+    "co2Amount": 2.40
+  },
+  {
+    "id": "1754956800224",
+    "date": "2025-08-12",
+    "activityId": "electricity_usage",
+    "activityName": "Home office",
+    "amount": 32,
+    "co2Amount": 7.36
+  },
+  {
+    "id": "1755043200225",
+    "date": "2025-08-13",
+    "activityId": "chicken_meal",
+    "activityName": "Quick dinner",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1755129600226",
+    "date": "2025-08-14",
+    "activityId": "car_petrol",
+    "activityName": "Shopping trip",
+    "amount": 30,
+    "co2Amount": 5.10
+  },
+  {
+    "id": "1755216000227",
+    "date": "2025-08-15",
+    "activityId": "beef_meal",
+    "activityName": "Friday night out",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1755302400228",
+    "date": "2025-08-16",
+    "activityId": "flight_short",
+    "activityName": "Weekend city break",
+    "amount": 400,
+    "co2Amount": 100.00
+  },
+  {
+    "id": "1755388800229",
+    "date": "2025-08-17",
+    "activityId": "bus_travel",
+    "activityName": "Festival shuttle bus",
+    "amount": 10,
+    "co2Amount": 1.00
+  },
+  {
+    "id": "1755475200230",
+    "date": "2025-08-18",
+    "activityId": "car_electric",
+    "activityName": "Festival transport",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1755561600231",
+    "date": "2025-08-19",
+    "activityId": "electricity_usage",
+    "activityName": "Post-festival recovery",
+    "amount": 30,
+    "co2Amount": 6.90
+  },
+  {
+    "id": "1755648000232",
+    "date": "2025-08-20",
+    "activityId": "veg_meal",
+    "activityName": "Healthy eating",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1755734400233",
+    "date": "2025-08-21",
+    "activityId": "train_travel",
+    "activityName": "Regular commute",
+    "amount": 40,
+    "co2Amount": 1.60
+  },
+  {
+    "id": "1755820800234",
+    "date": "2025-08-22",
+    "activityId": "pork_meal",
+    "activityName": "Midweek dinner",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1755907200235",
+    "date": "2025-08-23",
+    "activityId": "bus_travel",
+    "activityName": "Festival shuttle bus",
+    "amount": 10,
+    "co2Amount": 1.00
+  },
+  {
+    "id": "1755993600236",
+    "date": "2025-08-24",
+    "activityId": "car_diesel",
+    "activityName": "Weekend trip",
+    "amount": 50,
+    "co2Amount": 10.50
+  },
+  {
+    "id": "1756080000237",
+    "date": "2025-08-25",
+    "activityId": "chicken_meal",
+    "activityName": "Sunday lunch",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1756166400238",
+    "date": "2025-08-26",
+    "activityId": "electricity_usage",
+    "activityName": "Back to school prep",
+    "amount": 30,
+    "co2Amount": 6.90
+  },
+  {
+    "id": "1756252800239",
+    "date": "2025-08-27",
+    "activityId": "electricity_usage",
+    "activityName": "Back to school prep",
+    "amount": 30,
+    "co2Amount": 6.90
+  },
+  {
+    "id": "1756339200240",
+    "date": "2025-08-28",
+    "activityId": "beef_meal",
+    "activityName": "End of summer BBQ",
+    "amount": 3,
+    "co2Amount": 46.50
+  },
+  {
+    "id": "1756425600241",
+    "date": "2025-08-29",
+    "activityId": "car_petrol",
+    "activityName": "School run prep",
+    "amount": 25,
+    "co2Amount": 4.25
+  },
+  {
+    "id": "1756512000242",
+    "date": "2025-08-30",
+    "activityId": "veg_meal",
+    "activityName": "Light dinner",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1756598400243",
+    "date": "2025-08-31",
+    "activityId": "natural_gas",
+    "activityName": "End of summer",
+    "amount": 10,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1756684800244",
+    "date": "2025-09-01",
+    "activityId": "car_electric",
+    "activityName": "First day of school",
+    "amount": 20,
+    "co2Amount": 1.00
+  },
+  {
+    "id": "1756771200245",
+    "date": "2025-09-02",
+    "activityId": "electricity_usage",
+    "activityName": "Back to routine",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1756857600246",
+    "date": "2025-09-03",
+    "activityId": "chicken_meal",
+    "activityName": "School night dinner",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1756944000247",
+    "date": "2025-09-04",
+    "activityId": "train_travel",
+    "activityName": "Visiting university",
+    "amount": 250,
+    "co2Amount": 10.00
+  },
+  {
+    "id": "1757030400248",
+    "date": "2025-09-05",
+    "activityId": "bus_travel",
+    "activityName": "Regular commute",
+    "amount": 20,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1757116800249",
+    "date": "2025-09-06",
+    "activityId": "pork_meal",
+    "activityName": "Saturday dinner",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1757203200250",
+    "date": "2025-09-07",
+    "activityId": "car_diesel",
+    "activityName": "Sunday drive",
+    "amount": 40,
+    "co2Amount": 8.40
+  },
+  {
+    "id": "1757289600251",
+    "date": "2025-09-08",
+    "activityId": "natural_gas",
+    "activityName": "Cooler evenings",
+    "amount": 15,
+    "co2Amount": 3.00
+  },
+  {
+    "id": "1757376000252",
+    "date": "2025-09-09",
+    "activityId": "veg_meal",
+    "activityName": "Meat-free Monday",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1757462400253",
+    "date": "2025-09-10",
+    "activityId": "electricity_usage",
+    "activityName": "Work from home",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1757548800254",
+    "date": "2025-09-11",
+    "activityId": "beef_meal",
+    "activityName": "Midweek treat",
+    "amount": 1,
+    "co2Amount": 15.50
+  },
+  {
+    "id": "1757635200255",
+    "date": "2025-09-12",
+    "activityId": "car_petrol",
+    "activityName": "Weekend prep",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1757721600256",
+    "date": "2025-09-13",
+    "activityId": "flight_short",
+    "activityName": "Autumn city break",
+    "amount": 500,
+    "co2Amount": 125.00
+  },
+  {
+    "id": "1757808000257",
+    "date": "2025-09-14",
+    "activityId": "chicken_meal",
+    "activityName": "Travel lunch",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1757894400258",
+    "date": "2025-09-15",
+    "activityId": "train_travel",
+    "activityName": "Sightseeing",
+    "amount": 80,
+    "co2Amount": 3.20
+  },
+  {
+    "id": "1757980800259",
+    "date": "2025-09-16",
+    "activityId": "pork_meal",
+    "activityName": "Local cuisine",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1758067200260",
+    "date": "2025-09-17",
+    "activityId": "car_electric",
+    "activityName": "Rental car",
+    "amount": 50,
+    "co2Amount": 2.50
+  },
+  {
+    "id": "1758153600261",
+    "date": "2025-09-18",
+    "activityId": "veg_meal",
+    "activityName": "Healthy choice",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1758240000262",
+    "date": "2025-09-19",
+    "activityId": "flight_short",
+    "activityName": "Return flight",
+    "amount": 500,
+    "co2Amount": 125.00
+  },
+  {
+    "id": "1758326400263",
+    "date": "2025-09-20",
+    "activityId": "bus_travel",
+    "activityName": "Airport transfer",
+    "amount": 25,
+    "co2Amount": 2.50
+  },
+  {
+    "id": "1758412800264",
+    "date": "2025-09-21",
+    "activityId": "electricity_usage",
+    "activityName": "Post-trip recovery",
+    "amount": 30,
+    "co2Amount": 6.90
+  },
+  {
+    "id": "1758499200265",
+    "date": "2025-09-22",
+    "activityId": "new_phone",
+    "activityName": "Annual upgrade",
+    "amount": 1,
+    "co2Amount": 80.00
+  },
+  {
+    "id": "1758585600266",
+    "date": "2025-09-23",
+    "activityId": "beef_meal",
+    "activityName": "Autumn feast",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1758672000267",
+    "date": "2025-09-24",
+    "activityId": "car_diesel",
+    "activityName": "Weekly shop",
+    "amount": 30,
+    "co2Amount": 6.30
+  },
+  {
+    "id": "1758758400268",
+    "date": "2025-09-25",
+    "activityId": "chicken_meal",
+    "activityName": "Quick dinner",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1758844800269",
+    "date": "2025-09-26",
+    "activityId": "natural_gas",
+    "activityName": "First fire of the season",
+    "amount": 35,
+    "co2Amount": 7.00
+  },
+  {
+    "id": "1758931200270",
+    "date": "2025-09-27",
+    "activityId": "pork_meal",
+    "activityName": "Sunday roast",
+    "amount": 3,
+    "co2Amount": 23.40
+  },
+  {
+    "id": "1759017600271",
+    "date": "2025-09-28",
+    "activityId": "car_petrol",
+    "activityName": "Autumn drive",
+    "amount": 45,
+    "co2Amount": 7.65
+  },
+  {
+    "id": "1759104000272",
+    "date": "2025-09-29",
+    "activityId": "veg_meal",
+    "activityName": "Harvest meal",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1759190400273",
+    "date": "2025-09-30",
+    "activityId": "electricity_usage",
+    "activityName": "End of month",
+    "amount": 32,
+    "co2Amount": 7.36
+  },
+  {
+    "id": "1759276800274",
+    "date": "2025-10-01",
+    "activityId": "train_travel",
+    "activityName": "October commute",
+    "amount": 40,
+    "co2Amount": 1.60
+  },
+  {
+    "id": "1759363200275",
+    "date": "2025-10-02",
+    "activityId": "electricity_usage",
+    "activityName": "Autumn energy",
+    "amount": 30,
+    "co2Amount": 6.90
+  },
+  {
+    "id": "1759449600276",
+    "date": "2025-10-03",
+    "activityId": "chicken_meal",
+    "activityName": "Friday dinner",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1759536000277",
+    "date": "2025-10-04",
+    "activityId": "car_diesel",
+    "activityName": "Autumn scenic drive",
+    "amount": 90,
+    "co2Amount": 18.90
+  },
+  {
+    "id": "1759622400278",
+    "date": "2025-10-05",
+    "activityId": "beef_meal",
+    "activityName": "Sunday lunch",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1759708800279",
+    "date": "2025-10-06",
+    "activityId": "natural_gas",
+    "activityName": "Heating season begins",
+    "amount": 40,
+    "co2Amount": 8.00
+  },
+  {
+    "id": "1759795200280",
+    "date": "2025-10-07",
+    "activityId": "veg_meal",
+    "activityName": "Meat-free Monday",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1759881600281",
+    "date": "2025-10-08",
+    "activityId": "bus_travel",
+    "activityName": "Regular commute",
+    "amount": 20,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1759968000282",
+    "date": "2025-10-09",
+    "activityId": "electricity_usage",
+    "activityName": "Work from home",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1760054400283",
+    "date": "2025-10-10",
+    "activityId": "pork_meal",
+    "activityName": "Friday night",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1760140800284",
+    "date": "2025-10-11",
+    "activityId": "car_petrol",
+    "activityName": "Weekend errands",
+    "amount": 40,
+    "co2Amount": 6.80
+  },
+  {
+    "id": "1760227200285",
+    "date": "2025-10-12",
+    "activityId": "chicken_meal",
+    "activityName": "Sunday roast",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1760313600286",
+    "date": "2025-10-13",
+    "activityId": "train_travel",
+    "activityName": "Business trip",
+    "amount": 120,
+    "co2Amount": 4.80
+  },
+  {
+    "id": "1760400000287",
+    "date": "2025-10-14",
+    "activityId": "new_tshirt",
+    "activityName": "Autumn wardrobe",
+    "amount": 4,
+    "co2Amount": 20.00
+  },
+  {
+    "id": "1760486400288",
+    "date": "2025-10-15",
+    "activityId": "electricity_usage",
+    "activityName": "Cozy evening",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1760572800289",
+    "date": "2025-10-16",
+    "activityId": "beef_meal",
+    "activityName": "Celebration dinner",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1760659200290",
+    "date": "2025-10-17",
+    "activityId": "car_diesel",
+    "activityName": "Weekend prep",
+    "amount": 35,
+    "co2Amount": 7.35
+  },
+  {
+    "id": "1760745600291",
+    "date": "2025-10-18",
+    "activityId": "flight_short",
+    "activityName": "Weekend getaway",
+    "amount": 400,
+    "co2Amount": 100.00
+  },
+  {
+    "id": "1760832000292",
+    "date": "2025-10-19",
+    "activityId": "veg_meal",
+    "activityName": "Healthy travel",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1760918400293",
+    "date": "2025-10-20",
+    "activityId": "bus_travel",
+    "activityName": "Return journey",
+    "amount": 25,
+    "co2Amount": 2.50
+  },
+  {
+    "id": "1761004800294",
+    "date": "2025-10-21",
+    "activityId": "natural_gas",
+    "activityName": "Cooler weather",
+    "amount": 45,
+    "co2Amount": 9.00
+  },
+  {
+    "id": "1761091200295",
+    "date": "2025-10-22",
+    "activityId": "natural_gas",
+    "activityName": "Heating season begins",
+    "amount": 60,
+    "co2Amount": 12.00
+  },
+  {
+    "id": "1761177600296",
+    "date": "2025-10-23",
+    "activityId": "chicken_meal",
+    "activityName": "Midweek dinner",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1761264000297",
+    "date": "2025-10-24",
+    "activityId": "car_electric",
+    "activityName": "Halloween prep",
+    "amount": 30,
+    "co2Amount": 1.50
+  },
+  {
+    "id": "1761350400298",
+    "date": "2025-10-25",
+    "activityId": "pork_meal",
+    "activityName": "Pre-Halloween feast",
+    "amount": 3,
+    "co2Amount": 23.40
+  },
+  {
+    "id": "1761436800299",
+    "date": "2025-10-26",
+    "activityId": "bus_travel",
+    "activityName": "Halloween party bus",
+    "amount": 25,
+    "co2Amount": 2.50
+  },
+  {
+    "id": "1761523200300",
+    "date": "2025-10-27",
+    "activityId": "beef_meal",
+    "activityName": "Halloween BBQ",
+    "amount": 3,
+    "co2Amount": 46.50
+  },
+  {
+    "id": "1761609600301",
+    "date": "2025-10-28",
+    "activityId": "electricity_usage",
+    "activityName": "Decorations",
+    "amount": 35,
+    "co2Amount": 8.05
+  },
+  {
+    "id": "1761696000302",
+    "date": "2025-10-29",
+    "activityId": "car_petrol",
+    "activityName": "Trick or treating",
+    "amount": 15,
+    "co2Amount": 2.55
+  },
+  {
+    "id": "1761782400303",
+    "date": "2025-10-30",
+    "activityId": "veg_meal",
+    "activityName": "Post-Halloween healthy",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1761868800304",
+    "date": "2025-10-31",
+    "activityId": "natural_gas",
+    "activityName": "Spooky night warmth",
+    "amount": 40,
+    "co2Amount": 8.00
+  },
+  {
+    "id": "1761955200305",
+    "date": "2025-11-01",
+    "activityId": "train_travel",
+    "activityName": "November commute",
+    "amount": 40,
+    "co2Amount": 1.60
+  },
+  {
+    "id": "1762041600306",
+    "date": "2025-11-02",
+    "activityId": "electricity_usage",
+    "activityName": "Autumn energy",
+    "amount": 30,
+    "co2Amount": 6.90
+  },
+  {
+    "id": "1762128000307",
+    "date": "2025-11-03",
+    "activityId": "pork_meal",
+    "activityName": "Bonfire night meal",
+    "amount": 4,
+    "co2Amount": 31.20
+  },
+  {
+    "id": "1762214400308",
+    "date": "2025-11-04",
+    "activityId": "bus_travel",
+    "activityName": "Regular commute",
+    "amount": 20,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1762300800309",
+    "date": "2025-11-05",
+    "activityId": "chicken_meal",
+    "activityName": "Midweek dinner",
+    "amount": 1,
+    "co2Amount": 6.50
+  },
+  {
+    "id": "1762387200310",
+    "date": "2025-11-06",
+    "activityId": "car_diesel",
+    "activityName": "Weekly shop",
+    "amount": 30,
+    "co2Amount": 6.30
+  },
+  {
+    "id": "1762473600311",
+    "date": "2025-11-07",
+    "activityId": "natural_gas",
+    "activityName": "Increasing cold",
+    "amount": 50,
+    "co2Amount": 10.00
+  },
+  {
+    "id": "1762560000312",
+    "date": "2025-11-08",
+    "activityId": "veg_meal",
+    "activityName": "Healthy Saturday",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1762646400313",
+    "date": "2025-11-09",
+    "activityId": "beef_meal",
+    "activityName": "Sunday roast",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1762732800314",
+    "date": "2025-11-10",
+    "activityId": "car_petrol",
+    "activityName": "Remembrance Day",
+    "amount": 20,
+    "co2Amount": 3.40
+  },
+  {
+    "id": "1762819200315",
+    "date": "2025-11-11",
+    "activityId": "electricity_usage",
+    "activityName": "Home office",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1762905600316",
+    "date": "2025-11-12",
+    "activityId": "pork_meal",
+    "activityName": "Midweek meal",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1762992000317",
+    "date": "2025-11-13",
+    "activityId": "train_travel",
+    "activityName": "Business meeting",
+    "amount": 80,
+    "co2Amount": 3.20
+  },
+  {
+    "id": "1763078400318",
+    "date": "2025-11-14",
+    "activityId": "flight_short",
+    "activityName": "Pre-Christmas shopping",
+    "amount": 300,
+    "co2Amount": 75.00
+  },
+  {
+    "id": "1763164800319",
+    "date": "2025-11-15",
+    "activityId": "new_tshirt",
+    "activityName": "Winter wardrobe",
+    "amount": 5,
+    "co2Amount": 25.00
+  },
+  {
+    "id": "1763251200320",
+    "date": "2025-11-16",
+    "activityId": "car_electric",
+    "activityName": "Shopping trip",
+    "amount": 35,
+    "co2Amount": 1.75
+  },
+  {
+    "id": "1763337600321",
+    "date": "2025-11-17",
+    "activityId": "electricity_usage",
+    "activityName": "Cozy evening",
+    "amount": 32,
+    "co2Amount": 7.36
+  },
+  {
+    "id": "1763424000322",
+    "date": "2025-11-18",
+    "activityId": "chicken_meal",
+    "activityName": "Comfort food",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1763510400323",
+    "date": "2025-11-19",
+    "activityId": "bus_travel",
+    "activityName": "Regular commute",
+    "amount": 20,
+    "co2Amount": 2.00
+  },
+  {
+    "id": "1763596800324",
+    "date": "2025-11-20",
+    "activityId": "natural_gas",
+    "activityName": "Colder weather",
+    "amount": 55,
+    "co2Amount": 11.00
+  },
+  {
+    "id": "1763683200325",
+    "date": "2025-11-21",
+    "activityId": "car_diesel",
+    "activityName": "Preparing for winter trip",
+    "amount": 80,
+    "co2Amount": 16.80
+  },
+  {
+    "id": "1763769600326",
+    "date": "2025-11-22",
+    "activityId": "veg_meal",
+    "activityName": "Healthy choice",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1763856000327",
+    "date": "2025-11-23",
+    "activityId": "beef_meal",
+    "activityName": "Weekend treat",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1763942400328",
+    "date": "2025-11-24",
+    "activityId": "flight_long",
+    "activityName": "Thanksgiving visit",
+    "amount": 2500,
+    "co2Amount": 375.00
+  },
+  {
+    "id": "1764028800329",
+    "date": "2025-11-25",
+    "activityId": "beef_meal",
+    "activityName": "Thanksgiving feast",
+    "amount": 3,
+    "co2Amount": 46.50
+  },
+  {
+    "id": "1764115200330",
+    "date": "2025-11-26",
+    "activityId": "car_petrol",
+    "activityName": "Black Friday shopping",
+    "amount": 40,
+    "co2Amount": 6.80
+  },
+  {
+    "id": "1764201600331",
+    "date": "2025-11-27",
+    "activityId": "electricity_usage",
+    "activityName": "Online deals",
+    "amount": 40,
+    "co2Amount": 9.20
+  },
+  {
+    "id": "1764288000332",
+    "date": "2025-11-28",
+    "activityId": "pork_meal",
+    "activityName": "Leftovers",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1764374400333",
+    "date": "2025-11-29",
+    "activityId": "bus_travel",
+    "activityName": "Return journey",
+    "amount": 30,
+    "co2Amount": 3.00
+  },
+  {
+    "id": "1764460800334",
+    "date": "2025-11-30",
+    "activityId": "natural_gas",
+    "activityName": "End of November",
+    "amount": 50,
+    "co2Amount": 10.00
+  },
+  {
+    "id": "1764547200335",
+    "date": "2025-12-01",
+    "activityId": "train_travel",
+    "activityName": "December commute",
+    "amount": 40,
+    "co2Amount": 1.60
+  },
+  {
+    "id": "1764633600336",
+    "date": "2025-12-02",
+    "activityId": "electricity_usage",
+    "activityName": "Winter energy",
+    "amount": 35,
+    "co2Amount": 8.05
+  },
+  {
+    "id": "1764720000337",
+    "date": "2025-12-03",
+    "activityId": "new_tshirt",
+    "activityName": "Christmas gift shopping",
+    "amount": 5,
+    "co2Amount": 25.00
+  },
+  {
+    "id": "1764806400338",
+    "date": "2025-12-04",
+    "activityId": "chicken_meal",
+    "activityName": "Pre-Christmas meal",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1764892800339",
+    "date": "2025-12-05",
+    "activityId": "car_diesel",
+    "activityName": "Christmas shopping",
+    "amount": 50,
+    "co2Amount": 10.50
+  },
+  {
+    "id": "1764979200340",
+    "date": "2025-12-06",
+    "activityId": "bus_travel",
+    "activityName": "Weekend transport",
+    "amount": 25,
+    "co2Amount": 2.50
+  },
+  {
+    "id": "1765065600341",
+    "date": "2025-12-07",
+    "activityId": "veg_meal",
+    "activityName": "Healthy Sunday",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1765152000342",
+    "date": "2025-12-08",
+    "activityId": "natural_gas",
+    "activityName": "Winter heating",
+    "amount": 60,
+    "co2Amount": 12.00
+  },
+  {
+    "id": "1765238400343",
+    "date": "2025-12-09",
+    "activityId": "beef_meal",
+    "activityName": "Tuesday dinner",
+    "amount": 1,
+    "co2Amount": 15.50
+  },
+  {
+    "id": "1765324800344",
+    "date": "2025-12-10",
+    "activityId": "electricity_usage",
+    "activityName": "Christmas prep",
+    "amount": 38,
+    "co2Amount": 8.74
+  },
+  {
+    "id": "1765411200345",
+    "date": "2025-12-11",
+    "activityId": "pork_meal",
+    "activityName": "Midweek meal",
+    "amount": 2,
+    "co2Amount": 15.60
+  },
+  {
+    "id": "1765497600346",
+    "date": "2025-12-12",
+    "activityId": "train_travel",
+    "activityName": "Christmas market trip",
+    "amount": 150,
+    "co2Amount": 6.00
+  },
+  {
+    "id": "1765584000347",
+    "date": "2025-12-13",
+    "activityId": "car_petrol",
+    "activityName": "Weekend errands",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1765670400348",
+    "date": "2025-12-14",
+    "activityId": "chicken_meal",
+    "activityName": "Sunday lunch",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1765756800349",
+    "date": "2025-12-15",
+    "activityId": "flight_short",
+    "activityName": "Pre-Christmas visit",
+    "amount": 400,
+    "co2Amount": 100.00
+  },
+  {
+    "id": "1765843200350",
+    "date": "2025-12-16",
+    "activityId": "electricity_usage",
+    "activityName": "Baking day",
+    "amount": 45,
+    "co2Amount": 10.35
+  },
+  {
+    "id": "1765929600351",
+    "date": "2025-12-17",
+    "activityId": "veg_meal",
+    "activityName": "Healthy break",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1766016000352",
+    "date": "2025-12-18",
+    "activityId": "bus_travel",
+    "activityName": "Last-minute shopping",
+    "amount": 30,
+    "co2Amount": 3.00
+  },
+  {
+    "id": "1766102400353",
+    "date": "2025-12-19",
+    "activityId": "pork_meal",
+    "activityName": "Pre-Christmas feast",
+    "amount": 3,
+    "co2Amount": 23.40
+  },
+  {
+    "id": "1766188800354",
+    "date": "2025-12-20",
+    "activityId": "car_diesel",
+    "activityName": "Christmas travel",
+    "amount": 70,
+    "co2Amount": 14.70
+  },
+  {
+    "id": "1766275200355",
+    "date": "2025-12-21",
+    "activityId": "electricity_usage",
+    "activityName": "Christmas lights",
+    "amount": 38,
+    "co2Amount": 8.74
+  },
+  {
+    "id": "1766361600356",
+    "date": "2025-12-22",
+    "activityId": "beef_meal",
+    "activityName": "Christmas Eve prep",
+    "amount": 2,
+    "co2Amount": 31.00
+  },
+  {
+    "id": "1766448000357",
+    "date": "2025-12-23",
+    "activityId": "natural_gas",
+    "activityName": "Christmas warmth",
+    "amount": 65,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1766534400358",
+    "date": "2025-12-24",
+    "activityId": "chicken_meal",
+    "activityName": "Christmas Eve dinner",
+    "amount": 3,
+    "co2Amount": 19.50
+  },
+  {
+    "id": "1766620800359",
+    "date": "2025-12-25",
+    "activityId": "beef_meal",
+    "activityName": "Christmas Day feast",
+    "amount": 4,
+    "co2Amount": 62.00
+  },
+  {
+    "id": "1766707200360",
+    "date": "2025-12-26",
+    "activityId": "chicken_meal",
+    "activityName": "Boxing Day leftovers",
+    "amount": 2,
+    "co2Amount": 13.00
+  },
+  {
+    "id": "1766793600361",
+    "activityId": "flight_short",
+    "activityName": "New Year's Eve trip",
+    "amount": 600,
+    "co2Amount": 150.00
+  },
+  {
+    "id": "1766880000362",
+    "date": "2025-12-27",
+    "activityId": "car_petrol",
+    "activityName": "Post-Christmas sales",
+    "amount": 40,
+    "co2Amount": 6.80
+  },
+  {
+    "id": "1766966400363",
+    "date": "2025-12-28",
+    "activityId": "veg_meal",
+    "activityName": "Healthy recovery",
+    "amount": 2,
+    "co2Amount": 5.00
+  },
+  {
+    "id": "1767052800364",
+    "date": "2025-12-29",
+    "activityId": "electricity_usage",
+    "activityName": "Holiday movies",
+    "amount": 40,
+    "co2Amount": 9.20
+  },
+  {
+    "id": "1767139200365",
+    "date": "2025-12-30",
+    "activityId": "pork_meal",
+    "activityName": "Year-end feast",
+    "amount": 3,
+    "co2Amount": 23.40
+  },
+  {
+    "id": "1767225600366",
+    "date": "2025-12-31",
+    "activityId": "flight_short",
+    "activityName": "New Year's Eve trip",
+    "amount": 600,
+    "co2Amount": 150.00
   }
 ]
