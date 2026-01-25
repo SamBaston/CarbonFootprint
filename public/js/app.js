@@ -71,6 +71,17 @@ function populateActivityDropdowns() {
     populate(recordSelect, 'All Records', '');
 }
 
+// Get daily carbon emission totals
+function getDailyCarbonTotals(records) {
+    if (!Array.isArray(records)) return {};
+    return records.reduce((acc, r) => {
+        if (!r.date) return acc;
+        const dateStr = r.date.split('T')[0];
+        acc[dateStr] = (acc[dateStr] || 0) + r.co2Amount;
+        return acc;
+    }, {});
+}
+
 // Update the daily carbon goal from the Carbon Heatmap dashboard panel
 async function updateDailyCarbonGoal() {
     const val = parseFloat(document.getElementById('dailyCarbonGoalInput').value);
@@ -251,9 +262,10 @@ function renderEmissionsGraph(records, minDate, maxDate, filter) {
         : records.filter(r => String(r.activityId) === String(filter));
 
     // Create the chart
-    const dataPoints = filtered.map(r => ({
-        x: new Date(r.date),
-        y: r.co2Amount
+    const dailyTotals = getDailyCarbonTotals(filtered);
+    const dataPoints = Object.entries(dailyTotals).map(([dateStr, total]) => ({
+        x: new Date(dateStr),
+        y: total
     })).sort((a, b) => a.x - b.x);
 
     new Chart(ctx, {
@@ -311,13 +323,13 @@ function renderYearlyHeatmap() {
     const year = state.heatmapYear;
     yearDisplay.textContent = year;
 
-    // Get data for the selected year
-    const dailyData = {};
-    state.records.forEach(r => {
-        const d = new Date(r.date);
-        if (d.getFullYear() === year) {
-            const dateStr = r.date.split('T')[0];
-            dailyData[dateStr] = (dailyData[dateStr] || 0) + r.co2Amount;
+    // Get daily data for the selected year
+    const allDailyData = getDailyCarbonTotals(state.records);
+
+    const dailyDataForYear = {};
+    Object.entries(allDailyData).forEach(([dateStr, total]) => {
+        if (new Date(dateStr).getFullYear() === year) {
+            dailyDataForYear[dateStr] = total;
         }
     });
 
@@ -380,14 +392,13 @@ function renderYearlyHeatmap() {
                     cell.classList.add('empty');
                 } else {
                     const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(dayCounter).padStart(2, '0')}`;
-                    const emission = dailyData[dateStr];
                     const cellDate = new Date(year, month, dayCounter);
                     const isFuture = cellDate > new Date();
 
                     if (isFuture) {
                         cell.classList.add('future');
                     } else {
-                        const val = emission || 0;
+                        const val = dailyDataForYear[dateStr] || 0;
                         const level = getHeatmapColorLevel(val, state.dailyCarbonGoal);
                         cell.classList.add(`level-${level}`);
 
@@ -395,8 +406,8 @@ function renderYearlyHeatmap() {
                         cell.onmouseenter = (e) => {
                             tooltip.innerHTML = `
                                 <strong>${cellDate.toLocaleDateString(undefined, { dateStyle: 'medium' })}</strong><br/>
-                                <span class="${val <= state.dailyCarbonGoal ? 'text-success' : 'text-danger'}">
-                                    ${val.toFixed(1)} kg CO2
+                                 <span class="${val <= state.dailyCarbonGoal ? 'text-success' : 'text-danger'}">
+                                    ${val.toFixed(2)} kg CO2
                                 </span><br/>
                                 <small>${val <= state.dailyCarbonGoal ? 'Goal Met' : 'Over Goal'}</small>
                             `;
@@ -420,7 +431,7 @@ function renderYearlyHeatmap() {
     }
 
     // Update that years stats at the bottom
-    updateHeatmapStats(dailyData, year);
+    updateHeatmapStats(dailyDataForYear, year);
 }
 
 // Traffic light coding for the boxes in the Yearly Heatmap dashboard panel
