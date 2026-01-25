@@ -87,13 +87,13 @@
     "id": "new_tshirt",
     "name": "Clothing - New T-Shirt",
     "unit": "item",
-    "carbonUnitRate": 5.0
+    "carbonUnitRate": 5
   },
   {
     "id": "new_phone",
     "name": "Electronics - New Smartphone",
     "unit": "item",
-    "carbonUnitRate": 80.0
+    "carbonUnitRate": 80
   },
   {
     "id": "internet_usage",

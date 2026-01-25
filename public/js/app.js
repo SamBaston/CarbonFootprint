@@ -37,7 +37,9 @@ async function syncAppData() {
 
         populateGraphDropdown();
         render();
-    } catch (err) {
+        handleConnectionError(null); // Clear any previous error message
+    }
+    catch (err) {
         handleConnectionError(err);
     }
 }
@@ -74,6 +76,7 @@ async function updateDailyCarbonGoal() {
     }
     catch (err) {
         console.error("Failed to update daily carbon goal:", err);
+        showToast("Failed to save goal. Server unreachable.");
     }
 }
 
@@ -649,16 +652,32 @@ async function handleSave() {
         };
     }
 
-    const res = await fetch(url, {
-        method: isEdit ? 'PUT' : 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-    });
+    const saveBtn = document.getElementById('btnSave');
+    const originalText = saveBtn.innerText;
+    saveBtn.disabled = true;
+    saveBtn.innerText = "Saving...";
 
-    if (res.ok) {
-        modal.hide();
-        syncAppData();
-        showToast("Changes saved successfully.");
+    try {
+        const res = await fetch(url, {
+            method: isEdit ? 'PUT' : 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+            modal.hide();
+            syncAppData();
+            showToast("Changes saved successfully.");
+        } else {
+            const data = await res.json();
+            showToast(`Error: ${data.error || "Failed to save"}`);
+        }
+    } catch (err) {
+        console.error(err);
+        showToast("Network error. Please try again.");
+    } finally {
+        saveBtn.disabled = false;
+        saveBtn.innerText = originalText;
     }
 }
 
@@ -666,18 +685,44 @@ async function handleSave() {
 async function handleDelete() {
     if (!confirm("Are you sure? This will delete the entry forever.")) return;
     const type = state.editingType === 'activity' ? 'activities' : 'records';
-    const res = await fetch(`/api/${type}/${state.editingId}`, { method: 'DELETE' });
-    if (res.ok) {
-        modal.hide();
-        syncAppData();
-        showToast("Item deleted successfully.");
+    const deleteBtn = document.getElementById('btnDelete');
+    const originalText = deleteBtn.innerText;
+    deleteBtn.disabled = true;
+    deleteBtn.innerText = "Deleting...";
+
+    try {
+        const res = await fetch(`/api/${type}/${state.editingId}`, { method: 'DELETE' });
+        if (res.ok) {
+            modal.hide();
+            syncAppData();
+            showToast("Item deleted successfully.");
+        } else {
+            showToast("Failed to delete item.");
+        }
+    }
+    catch (err) {
+        console.error(err);
+        showToast("Network error. Please try again.");
+    }
+    finally {
+        deleteBtn.disabled = false;
+        deleteBtn.innerText = originalText;
     }
 }
 
-function handleConnectionError(err) {
-    console.error("API Connection Error:", err);
-    const statusLabel = document.getElementById('dashboard-total');
-    if (statusLabel) statusLabel.innerHTML = '<span class="text-danger">Offline</span>';
+
+// Show connection error message when server is offline
+function handleConnectionError(err = null) {
+    const alert = document.getElementById('offline-alert');
+
+    if (err) {
+        console.error("API Connection Error:", err);
+        alert.classList.remove('d-none');
+        document.body.style.paddingTop = alert.offsetHeight + 'px';
+    } else {
+        alert.classList.add('d-none');
+        document.body.style.paddingTop = '0';
+    }
 }
 
 // Show a toast notification
