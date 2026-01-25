@@ -11,10 +11,18 @@ const SETTINGS_FILE = path.join(__dirname, '../data/settings.json');
 
 // Check if the settings file exists, set defaults if not
 async function checkSettings() {
-    try {
-        await fs.access(SETTINGS_FILE);
-    } catch {
-        await writeData(SETTINGS_FILE, { dailyCarbonGoal: 15.0 });
+    const files = [
+        { path: SETTINGS_FILE, default: { dailyCarbonGoal: 15.0 } },
+        { path: ACTIVITIES_FILE, default: [] },
+        { path: RECORDS_FILE, default: [] }
+    ];
+
+    for (const file of files) {
+        try {
+            await fs.access(file.path);
+        } catch {
+            await writeData(file.path, file.default);
+        }
     }
 }
 checkSettings();
@@ -58,7 +66,10 @@ app.get('/api/activities', async (req, res) => {
 app.post('/api/activities', async (req, res) => {
     try {
         const { name, unit, carbonUnitRate } = req.body;
-        if (!name || !carbonUnitRate) return res.status(400).json({ error: "Missing fields" });
+        if (!name || !unit || carbonUnitRate === undefined) return res.status(400).json({ error: "Missing fields" });
+
+        const rate = parseFloat(carbonUnitRate);
+        if (isNaN(rate)) return res.status(400).json({ error: "Rate must be a valid number" });
 
         const activities = await readData(ACTIVITIES_FILE);
 
@@ -175,22 +186,25 @@ app.put('/api/records/:id', async (req, res) => {
         const targetId = String(req.params.id).trim();
         const index = records.findIndex(r => String(r.id).trim() === targetId);
 
-        if (index === -1) return res.status(404).send("Record ID not found in database");
+        if (index === -1) return res.status(404).json({ error: "Record ID not found in database" });
 
         const { activityId, activityName, amount, date } = req.body;
         const activity = activities.find(a => String(a.id) === String(activityId));
 
         if (!activity) {
-            return res.status(400).send("Linked Activity Type not found");
+            return res.status(400).json({ error: "Linked Activity Type not found" });
         }
+
+        const val = parseFloat(amount);
+        if (isNaN(val) || val < 0) return res.status(400).json({ error: "Amount must be a positive number" });
 
         records[index] = {
             ...records[index],
             activityId: activityId,
             activityName: activityName,
             date: date,
-            amount: parseFloat(amount),
-            co2Amount: parseFloat((parseFloat(amount) * activity.carbonUnitRate).toFixed(2)) // recalculate CO2 amount
+            amount: val,
+            co2Amount: parseFloat((val * activity.carbonUnitRate).toFixed(2)) // recalculate CO2 amount
         };
 
         await writeData(RECORDS_FILE, records);
@@ -270,7 +284,10 @@ app.put('/api/settings', async (req, res) => {
             return res.status(400).json({ error: "Missing daily Carbon Goal value" });
         }
 
-        const settings = { dailyCarbonGoal: parseFloat(dailyCarbonGoal) };
+        const val = parseFloat(dailyCarbonGoal);
+        if (isNaN(val) || val < 0) return res.status(400).json({ error: "Goal must be a positive number" });
+
+        const settings = { dailyCarbonGoal: val };
         await writeData(SETTINGS_FILE, settings);
         res.json(settings);
     }

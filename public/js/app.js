@@ -85,11 +85,12 @@ async function updateDailyCarbonGoal() {
         if (res.ok) {
             state.dailyCarbonGoal = val;
             render();
+            showToast("Daily goal updated.");
         }
     }
     catch (err) {
         console.error("Failed to update daily carbon goal:", err);
-        showToast("Failed to save goal. Server unreachable.");
+        showToast("Failed to save goal.");
     }
 }
 
@@ -498,6 +499,12 @@ function renderActivities() {
     const tableBody = document.getElementById('activity-table-body');
     if (!tableBody) return;
 
+    // If no activities are found
+    if (state.activities.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="4" class="text-center text-muted py-4">No activities found matching your search</td></tr>';
+        return;
+    }
+
     tableBody.innerHTML = state.activities.map(a => `
         <tr>
             <td>${a.name}</td>
@@ -566,6 +573,12 @@ function searchActivities() {
 function renderRecords() {
     const tableBody = document.getElementById('record-table-body');
     if (!tableBody) return;
+
+    // If no records are found
+    if (state.records.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-4">No records found matching your filters</td></tr>';
+        return;
+    }
 
     tableBody.innerHTML = state.records.map(r => {
         const activityCategory = state.activities.find(a => String(a.id) === String(r.activityId));
