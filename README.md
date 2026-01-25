@@ -5,6 +5,9 @@ This is a web-based single-page dashboard application designed to help a user tr
 
 This was built in accordance with my [Programming Black Assignment 1 Mark Scheme](https://github.com/stevenaeola/progblack_2526/blob/main/assignment_1/README.md).
 
+
+<br>
+
 ## Features
 
 ### Dashboard
@@ -19,9 +22,13 @@ The main page of the application, providing a summary of their environmental imp
 Manage data entries and catagories. 
 *   **Activity Types**: Custom activities with specific units (km, kWh) and carbon rates to be used on Activity Records.
 *   **Activity Records**: Log specific activities and link them to the relevenat Activity Type.
+*   **Search & Filtering**: Searching for Activities by name and filtering Records by Activity Type and/or Name.
 *   **Sorting**: Clicking on any table header will sort the table by said column. Clicking again will reverse the order.
 *   **CRUD Operations**: Fully functional interface to **C**reate, **R**ead, **U**pdate, and **D**elete both Activity Types and Records.
 *   **Cascading Deletes**: Deleting an Activity Type automatically removes all associated Records to prevent orphaned data.
+
+
+<br>
 
 ## Technology Stack
 
@@ -39,8 +46,14 @@ Manage data entries and catagories.
 *   **[Heat.js](https://www.william-troup.com/heat-js/index.html)**: Not used directly, but was used as a reference for the Yearly Carbon Heatmap.
 *   **Vanilla JavaScript**: Core application logic.
 
+
+<br>
+
 ## API Documentation
 For information on the API endpoints, please see my [documentation](docs/API.md).
+
+
+<br>
 
 ## Installation & Testing
 

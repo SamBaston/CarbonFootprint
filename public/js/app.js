@@ -36,7 +36,7 @@ async function syncAppData() {
             goalInput.value = state.dailyCarbonGoal;
         }
 
-        populateGraphDropdown();
+        populateActivityDropdowns();
         render();
         handleConnectionError(null); // Clear any previous error message
     }
@@ -45,18 +45,30 @@ async function syncAppData() {
     }
 }
 
-// Populate the Activity Type dropdown for the Emissions Graph dashboard panel
-function populateGraphDropdown() {
-    const select = document.getElementById('graphActivityFilter');
-    if (!select) return;
+// Populate the Activity Type dropdowns (Emissions Graph & Record Filter)
+function populateActivityDropdowns() {
+    const graphSelect = document.getElementById('graphActivityFilter');
+    const recordSelect = document.getElementById('recordFilter');
 
-    select.innerHTML = '<option value="all">All Activities</option>'; // Default to all
-    state.activities.forEach(a => {
-        const opt = document.createElement('option');
-        opt.value = a.id;
-        opt.innerText = a.name;
-        select.appendChild(opt);
-    });
+    // Helper to populate a select element
+    const populate = (select, defaultText, defaultValue) => {
+        if (!select) return;
+        // Keep selected value if re-populating
+        const currentVal = select.value;
+        select.innerHTML = `<option value="${defaultValue}">${defaultText}</option>`;
+
+        state.activities.forEach(a => {
+            const opt = document.createElement('option');
+            opt.value = a.id;
+            opt.innerText = a.name;
+            select.appendChild(opt);
+        });
+
+        if (currentVal) select.value = currentVal;
+    };
+
+    populate(graphSelect, 'All Activities', 'all');
+    populate(recordSelect, 'All Records', '');
 }
 
 // Update the daily carbon goal from the Carbon Heatmap dashboard panel
@@ -526,6 +538,29 @@ function sortActivities(key) {
     renderActivities();
 }
 
+// Search Activities
+let activitySearchTimeout;
+function searchActivities() {
+    clearTimeout(activitySearchTimeout);
+    const query = document.getElementById('activitySearch').value;
+
+    // Debounce to prevent slamming the server
+    activitySearchTimeout = setTimeout(async () => {
+        try {
+            const url = query ? `/api/activities?name=${encodeURIComponent(query)}` : '/api/activities';
+            const res = await fetch(url);
+            if (res.ok) {
+                state.activities = await res.json();
+                renderActivities();
+            }
+        }
+        catch (err) {
+            console.error("Search failed", err);
+            showToast("Failed to search activities");
+        }
+    }, 300);
+}
+
 /** -- RECORDS -- **/
 // Render the Records view
 function renderRecords() {
@@ -587,6 +622,35 @@ function sortRecords(key) {
     });
 
     renderRecords();
+}
+
+// Filter & Search Records
+let recordSearchTimeout;
+function searchRecords() {
+    clearTimeout(recordSearchTimeout);
+
+    // Debounce to prevent slamming the server
+    recordSearchTimeout = setTimeout(async () => {
+        const activityId = document.getElementById('recordFilter').value;
+        const searchQuery = document.getElementById('recordSearch').value;
+
+        try {
+            const params = new URLSearchParams();
+            if (activityId) params.append('activityId', activityId);
+            if (searchQuery) params.append('name', searchQuery);
+
+            const url = `/api/records?${params.toString()}`;
+            const res = await fetch(url);
+            if (res.ok) {
+                state.records = await res.json();
+                renderRecords();
+            }
+        }
+        catch (err) {
+            console.error("Search failed", err);
+            showToast("Failed to search records");
+        }
+    }, 300);
 }
 
 

@@ -35,6 +35,14 @@ describe('EcoTrack API Service', () => {
                 activityName: "Car Travel",
                 amount: 100,
                 co2Amount: 15.0
+            },
+            {
+                id: "102",
+                date: "2023-01-02",
+                activityId: "2",
+                activityName: "Bus Travel",
+                amount: 50,
+                co2Amount: 2.5
             }
         ];
 
@@ -182,10 +190,28 @@ describe('EcoTrack API Service', () => {
         });
         test('GET /api/records?activityId=... filters results', () => {
             return request(app)
-                .get('/api/records?activityId=1') // Activity 1 is Car Travel
+                .get('/api/records?activityId=1')
                 .expect(200)
                 .expect(res => {
                     if (res.body.length !== 1) throw new Error("Filtering failed");
+                    if (res.body[0].activityName !== "Car Travel") throw new Error("Incorrect result");
+                });
+        });
+        test('GET /api/records?name=... searches by activity name', () => {
+            return request(app)
+                .get('/api/records?name=Bus')
+                .expect(200)
+                .expect(res => {
+                    if (res.body.length === 0) throw new Error("Search failed");
+                    if (!res.body[0].activityName.includes("Bus")) throw new Error("Incorrect result");
+                });
+        });
+        test('GET /api/records?activityId=...&name=... filters by both', () => {
+            return request(app)
+                .get('/api/records?activityId=1&name=Car')
+                .expect(200)
+                .expect(res => {
+                    if (res.body.length !== 1) throw new Error("Dual filter failed");
                     if (res.body[0].activityName !== "Car Travel") throw new Error("Incorrect result");
                 });
         });

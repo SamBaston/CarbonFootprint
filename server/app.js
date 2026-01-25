@@ -126,14 +126,19 @@ app.delete('/api/activities/:id', async (req, res) => {
 /** ----------- RECORDS ENDPOINTS ----------- **/
 //---------------------------------------------//
 
-// GET all records (searchable)
+// GET all records (searchable & filterable)
 app.get('/api/records', async (req, res) => {
     try {
         let records = await readData(RECORDS_FILE);
 
-        const { activityId } = req.query;
+        const { activityId, name } = req.query;
+
         if (activityId) {
             records = records.filter(r => String(r.activityId) === String(activityId));
+        }
+        if (name) {
+            const term = name.toLowerCase();
+            records = records.filter(r => r.activityName && r.activityName.toLowerCase().includes(term));
         }
 
         res.json(records);

@@ -105,6 +105,7 @@ Retrieves all logged records.
 
 **Query Parameters**
 *   `activityId` (optional): Filter records by a specific Activity ID.
+*   `name` (optional): Filter records by Activity Name (case-insensitive).
 
 **Response**
 ```json
