@@ -36,10 +36,17 @@ async function writeData(filePath, data) {
 /** -------- ACTIVITY TYPE ENDPOINTS -------- **/
 //---------------------------------------------//
 
-// GET all activity types
+// GET all activity types (searchable)
 app.get('/api/activities', async (req, res) => {
     try {
-        const activities = await readData(ACTIVITIES_FILE);
+        let activities = await readData(ACTIVITIES_FILE);
+
+        const { name } = req.query;
+        if (name) {
+            const term = name.toLowerCase();
+            activities = activities.filter(a => a.name.toLowerCase().includes(term));
+        }
+
         res.json(activities);
     }
     catch (err) {
@@ -119,10 +126,16 @@ app.delete('/api/activities/:id', async (req, res) => {
 /** ----------- RECORDS ENDPOINTS ----------- **/
 //---------------------------------------------//
 
-// GET all records
+// GET all records (searchable)
 app.get('/api/records', async (req, res) => {
     try {
-        const records = await readData(RECORDS_FILE);
+        let records = await readData(RECORDS_FILE);
+
+        const { activityId } = req.query;
+        if (activityId) {
+            records = records.filter(r => String(r.activityId) === String(activityId));
+        }
+
         res.json(records);
     }
     catch (err) {

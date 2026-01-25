@@ -88,6 +88,23 @@ describe('EcoTrack API Service', () => {
                 .get('/api/activities')
                 .expect(/Car Travel/);
         });
+        test('GET /api/activities?name=Car filters results', () => {
+            return request(app)
+                .get('/api/activities?name=Car')
+                .expect(200)
+                .expect(res => {
+                    if (res.body.length !== 1) throw new Error("Search failed");
+                    if (res.body[0].name !== "Car Travel") throw new Error("Incorrect result");
+                });
+        });
+        test('GET /api/activities?name=Plane returns empty list', () => {
+            return request(app)
+                .get('/api/activities?name=Plane')
+                .expect(200)
+                .expect(res => {
+                    if (res.body.length !== 0) throw new Error("Should have returned no results");
+                });
+        });
 
         /** -- Test POST Requests -- **/
         test('POST /api/activities succeeds', () => {
@@ -112,6 +129,12 @@ describe('EcoTrack API Service', () => {
                 .send(updateData)
                 .expect(200)
                 .expect(/Updated Car/);
+        });
+        test('PUT /api/activities/:id returns 404 for non-existent activity', () => {
+            return request(app)
+                .put('/api/activities/999')
+                .send({ name: "Ghost Activity" })
+                .expect(404);
         });
 
         /** -- Test DELETE Requests -- **/
@@ -151,9 +174,19 @@ describe('EcoTrack API Service', () => {
         test('GET /api/records returns correct data structure', () => {
             return request(app)
                 .get('/api/records')
+                .expect(200)
                 .expect(res => {
                     if (!Array.isArray(res.body)) throw new Error("Body is not an array");
                     if (res.body[0].activityName !== "Car Travel") throw new Error("Incorrect data");
+                });
+        });
+        test('GET /api/records?activityId=... filters results', () => {
+            return request(app)
+                .get('/api/records?activityId=1') // Activity 1 is Car Travel
+                .expect(200)
+                .expect(res => {
+                    if (res.body.length !== 1) throw new Error("Filtering failed");
+                    if (res.body[0].activityName !== "Car Travel") throw new Error("Incorrect result");
                 });
         });
         test('GET /api/records/:id succeeds', () => {
@@ -172,7 +205,7 @@ describe('EcoTrack API Service', () => {
         test('POST /api/records succeeds and calculates CO2', () => {
             const newRecord = {
                 date: "2023-01-02",
-                activityId: "2", // Bus (rate 0.05)
+                activityId: "2", // Bus with rate 0.05
                 activityName: "Bus Travel",
                 amount: 200
             };
@@ -184,6 +217,31 @@ describe('EcoTrack API Service', () => {
                 .expect(res => {
                     if (res.body.co2Amount !== 10.0) throw new Error(`Expected CO2 10.0, got ${res.body.co2Amount}`);
                 });
+        });
+        test('POST /api/records fails with invalid amount (negative number)', () => {
+            const negativeRecord = {
+                date: "2023-01-02",
+                activityId: "2",
+                activityName: "Bus Travel",
+                amount: -50
+            };
+            return request(app)
+                .post('/api/records')
+                .send(negativeRecord)
+                .expect(400)
+                .expect(/Amount must be a positive number/);
+        });
+        test('POST /api/records fails when activityId does not exist', () => {
+            const orphanRecord = {
+                date: "2023-01-02",
+                activityId: "999",
+                activityName: "Ghost Travel",
+                amount: 50
+            };
+            return request(app)
+                .post('/api/records')
+                .send(orphanRecord)
+                .expect(404);
         });
 
         /** -- Test PUT Requests -- **/
@@ -202,6 +260,12 @@ describe('EcoTrack API Service', () => {
                     // New CO2 = 200 * 0.15 = 30.0
                     if (res.body.co2Amount !== 30.0) throw new Error(`Expected CO2 30.0, got ${res.body.co2Amount}`);
                 });
+        });
+        test('PUT /api/records/:id returns 404 for non-existent record', () => {
+            return request(app)
+                .put('/api/records/999')
+                .send({ amount: 50 })
+                .expect(404);
         });
 
         /** -- Test DELETE Requests -- **/

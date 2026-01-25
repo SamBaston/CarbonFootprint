@@ -10,6 +10,9 @@ Base URL: `http://localhost:3000/api`
 `GET /activities`
 
 Retrieves a list of all activity types.
+    
+**Query Parameters**
+*   `name` (optional): Filter activities by name (case-insensitive).
 
 **Response**
 ```json
@@ -99,6 +102,9 @@ Deletes an activity type. **Warning:** This will also automatically delete all R
 `GET /records`
 
 Retrieves all logged records.
+
+**Query Parameters**
+*   `activityId` (optional): Filter records by a specific Activity ID.
 
 **Response**
 ```json

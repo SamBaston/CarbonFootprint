@@ -14,6 +14,7 @@ let state = {
 };
 
 const modal = new bootstrap.Modal(document.getElementById('crudModal'));
+const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
 
 async function syncAppData() {
     try {
@@ -681,18 +682,24 @@ async function handleSave() {
     }
 }
 
-// Deletion event for Activities and Records
-async function handleDelete() {
-    if (!confirm("Are you sure? This will delete the entry forever.")) return;
+// Delete event for Activities and Records
+function handleDelete() {
+    deleteModal.show();
+}
+
+// Confirmed Delete
+async function confirmDelete() {
     const type = state.editingType === 'activity' ? 'activities' : 'records';
-    const deleteBtn = document.getElementById('btnDelete');
+    const deleteBtn = document.getElementById('btnConfirmDelete');
     const originalText = deleteBtn.innerText;
+
     deleteBtn.disabled = true;
     deleteBtn.innerText = "Deleting...";
 
     try {
         const res = await fetch(`/api/${type}/${state.editingId}`, { method: 'DELETE' });
         if (res.ok) {
+            deleteModal.hide();
             modal.hide();
             syncAppData();
             showToast("Item deleted successfully.");
