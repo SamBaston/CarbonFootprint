@@ -187,6 +187,7 @@ app.put('/api/records/:id', async (req, res) => {
 app.post('/api/records', async (req, res) => {
     const { activityId, activityName, amount, date } = req.body;
     if (!activityId || !activityName || !amount || !date) return res.status(400).json({ error: "Missing fields" });
+    if (parseFloat(amount) < 0) return res.status(400).json({ error: "Amount must be a positive number" });
 
     try {
         const activities = await readData(ACTIVITIES_FILE);

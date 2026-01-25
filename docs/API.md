@@ -82,7 +82,7 @@ Updates an existing activity type.
 ### Delete Activity
 `DELETE /activities/:id`
 
-Deletes an activity type.
+Deletes an activity type. **Warning:** This will also automatically delete all Records associated with this Activity Type.
 
 **Response**
 (204 No Content)

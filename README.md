@@ -36,6 +36,7 @@ Manage data entries and catagories.
 *   **[Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/)**: Responsive layout and styling.
 *   **[Chart.js](https://www.chartjs.org/docs/latest/)**: Rendering interactive data visualizations (Emissions Chart).
 *   **[date-fns](https://date-fns.org/docs/Getting-Started)**: Lightweight date utility library (Dashboard Date Picker).
+*   **[Heat.js](https://www.william-troup.com/heat-js/index.html)**: Not used directly, but was used as a reference for the Yearly Carbon Heatmap.
 *   **Vanilla JavaScript**: Core application logic.
 
 ## API Documentation

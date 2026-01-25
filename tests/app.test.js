@@ -120,6 +120,18 @@ describe('EcoTrack API Service', () => {
                 .delete('/api/activities/1')
                 .expect(204);
         });
+
+        test('DELETE /api/activities/:id removes associated records', async () => {
+            const initialRecordCheck = mockRecords.find(r => r.id === "101");
+            if (!initialRecordCheck) throw new Error("Test setup failed: Record 101 should exist");
+
+            await request(app)
+                .delete('/api/activities/1')
+                .expect(204);
+
+            const recordCheck = mockRecords.find(r => r.id === "101");
+            if (recordCheck) throw new Error("Cascading delete failed: Record 101 still exists");
+        });
     });
 
 

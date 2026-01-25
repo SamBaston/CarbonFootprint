@@ -3613,5 +3613,13 @@
     "activityName": "moring drive",
     "amount": 23,
     "co2Amount": 3.91
+  },
+  {
+    "id": "1769365489943",
+    "date": "2026-01-25",
+    "activityId": "1769365408173",
+    "activityName": "negative unit rate record",
+    "amount": 1,
+    "co2Amount": -1
   }
 ]
