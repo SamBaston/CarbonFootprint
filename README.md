@@ -13,6 +13,7 @@ The main page of the application, providing a summary of their environmental imp
 *   **Period Comparison**: Compare the current emissions to the previous equivalent time period (e.g., "15% lower than previous period").
 *   **Emissions Breakdown**: A ranked list showing which activities are contributing the most to their footprint.
 *   **Carbon Emission Chart**: An interactive line graph visualizing emission trends over time, filterable by Activity Type. 
+*   **Yearly Carbon Heatmap**: A GitHub-style contribution graph visualizing daily carbon emissions in relation to their daily carbon goal. Additional stats show the percentage of days in a selected year that goal was met, and the average daily carbon value. 
 
 ### Activity & Record Management
 Manage data entries and catagories. 
@@ -20,6 +21,7 @@ Manage data entries and catagories.
 *   **Activity Records**: Log specific activities and link them to the relevenat Activity Type.
 *   **Sorting**: Clicking on any table header will sort the table by said column. Clicking again will reverse the order.
 *   **CRUD Operations**: Fully functional interface to **C**reate, **R**ead, **U**pdate, and **D**elete both Activity Types and Records.
+*   **Cascading Deletes**: Deleting an Activity Type automatically removes all associated Records to prevent orphaned data.
 
 ## Technology Stack
 
