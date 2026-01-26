@@ -1,4 +1,5 @@
-# EcoTrack - Carbon Footprint Tracker
+# CarbonFootprint
+### Personal Carbon Footprint Tracker
 
 ## Overview
 This is a web-based single-page dashboard application designed to help a user track their carbon footprint. It allows them to log various daily activities and see the resulting carbon emissions.
@@ -11,7 +12,7 @@ This was built in accordance with my [Programming Black Assignment 1 Mark Scheme
 ## Features
 
 ### Dashboard
-The main page of the application, providing a summary of their environmental impact.
+Displays high-level stats and trends.
 *   **Time Range Selection**: Filter data by Today, Past 7 Days, Past 30 Days, Past 90 Days, or Past Year. 
 *   **Period Comparison**: Compare the current emissions to the previous equivalent time period (e.g., "15% lower than previous period").
 *   **Emissions Breakdown**: A ranked list showing which activities are contributing the most to their footprint.
@@ -30,7 +31,7 @@ Manage data entries and catagories.
 
 <br>
 
-## Technology Stack
+## Tech Stack
 
 ### Backend
 *   **[Node.js](https://nodejs.org/docs/latest/api/)**: Runtime environment.
@@ -43,9 +44,19 @@ Manage data entries and catagories.
 *   **[Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/)**: Responsive layout and styling.
 *   **[Chart.js](https://www.chartjs.org/docs/latest/)**: Rendering interactive data visualizations (Emissions Chart).
 *   **[date-fns](https://date-fns.org/docs/Getting-Started)**: Lightweight date utility library (Dashboard Date Picker).
-*   **[Heat.js](https://www.william-troup.com/heat-js/index.html)**: Not used directly, but was used as a reference for the Yearly Carbon Heatmap.
 *   **Vanilla JavaScript**: Core application logic.
 
+
+<br>
+
+## Additional Resources
+
+These are resources that I haven't used directly but have at least taken inspiration from.
+
+*   **[Heat.js](https://www.william-troup.com/heat-js/index.html)**: I attempted to use this library for the Yearly Carbon Heatmap, but it did not quite suit my needs in relation to the different colouring based on daily carbon totals, so I ended up using a custom solution. Even still, it was a useful starting point.
+*   **[TrackZero](https://www.trackzero.eco/)**: An example platform used for tracking carbon emissions. It gave some inspiration for the layout of the dashboard and metrics a user would need.
+*   **Programming Black [22/23](https://github.com/stevenaeola/progblack_2223/tree/main/Examples) and [23/24](https://github.com/stevenaeola/progblack_2324/tree/main/examples) examples**: The 25/26 repo doesn't have any examples, but the 22/23 and 23/24 repos do, and all the provided mark schemes are essentially identical. 
+*   **[Xero API Documentation](https://developer.xero.com/documentation/api/accounting/accounts)**: Not a similar platfrom, but I like their API documentation style.
 
 <br>
 

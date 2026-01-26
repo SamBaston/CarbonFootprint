@@ -15,7 +15,7 @@ jest.mock('fs', () => ({
 
 const app = require('../server/app');
 
-describe('EcoTrack API Service', () => {
+describe('CarbonFootprint API', () => {
     let mockActivities;
     let mockRecords;
     let mockSettings;

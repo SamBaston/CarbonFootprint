@@ -52,12 +52,12 @@ app.get('/api/activities', async (req, res) => {
         const { name } = req.query;
         if (name) {
             const term = name.toLowerCase();
-            activities = activities.filter(a => a.name.toLowerCase().includes(term));
+            activities = activities.filter(activity => activity.name.toLowerCase().includes(term));
         }
 
         res.json(activities);
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to read activities" });
     }
 });
@@ -84,7 +84,7 @@ app.post('/api/activities', async (req, res) => {
         await writeData(ACTIVITIES_FILE, activities);
         res.status(201).json({ message: "Activity added" });
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to add an activity" });
     }
 });
@@ -93,14 +93,14 @@ app.post('/api/activities', async (req, res) => {
 app.put('/api/activities/:id', async (req, res) => {
     try {
         const activities = await readData(ACTIVITIES_FILE);
-        const index = activities.findIndex(a => a.id === req.params.id);
+        const index = activities.findIndex(activity => activity.id === req.params.id);
         if (index === -1) return res.status(404).json({ error: "Not found" });
 
         activities[index] = { ...activities[index], ...req.body };
         await writeData(ACTIVITIES_FILE, activities);
         res.json(activities[index]);
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to update an activity" });
     }
 });
@@ -113,7 +113,7 @@ app.delete('/api/activities/:id', async (req, res) => {
         // Remove associated records first
         let records = await readData(RECORDS_FILE);
         const initialRecordCount = records.length;
-        records = records.filter(r => String(r.activityId) !== String(id));
+        records = records.filter(record => String(record.activityId) !== String(id));
 
         if (records.length !== initialRecordCount) {
             await writeData(RECORDS_FILE, records);
@@ -121,12 +121,12 @@ app.delete('/api/activities/:id', async (req, res) => {
 
         // Remove the activity
         let activities = await readData(ACTIVITIES_FILE);
-        activities = activities.filter(a => a.id !== id);
+        activities = activities.filter(activity => activity.id !== id);
         await writeData(ACTIVITIES_FILE, activities);
 
         res.status(204).send();
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to delete an activity" });
     }
 });
@@ -145,16 +145,16 @@ app.get('/api/records', async (req, res) => {
         const { activityId, name } = req.query;
 
         if (activityId) {
-            records = records.filter(r => String(r.activityId) === String(activityId));
+            records = records.filter(record => String(record.activityId) === String(activityId));
         }
         if (name) {
             const term = name.toLowerCase();
-            records = records.filter(r => r.activityName && r.activityName.toLowerCase().includes(term));
+            records = records.filter(record => record.activityName && record.activityName.toLowerCase().includes(term));
         }
 
         res.json(records);
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to read records" });
     }
 });
@@ -164,7 +164,7 @@ app.get('/api/records/:id', async (req, res) => {
     try {
         const records = await readData(RECORDS_FILE);
         const targetId = String(req.params.id).trim();
-        const record = records.find(r => String(r.id).trim() === targetId);
+        const record = records.find(record => String(record.id).trim() === targetId);
 
         if (!record) {
             return res.status(404).json({ error: `Record ${targetId} not found` });
@@ -172,7 +172,7 @@ app.get('/api/records/:id', async (req, res) => {
 
         res.json(record);
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to fetch record" });
     }
 });
@@ -184,12 +184,12 @@ app.put('/api/records/:id', async (req, res) => {
         const activities = await readData(ACTIVITIES_FILE);
 
         const targetId = String(req.params.id).trim();
-        const index = records.findIndex(r => String(r.id).trim() === targetId);
+        const index = records.findIndex(record => String(record.id).trim() === targetId);
 
         if (index === -1) return res.status(404).json({ error: "Record ID not found in database" });
 
         const { activityId, activityName, amount, date } = req.body;
-        const activity = activities.find(a => String(a.id) === String(activityId));
+        const activity = activities.find(activity => String(activity.id) === String(activityId));
 
         if (!activity) {
             return res.status(400).json({ error: "Linked Activity Type not found" });
@@ -210,7 +210,7 @@ app.put('/api/records/:id', async (req, res) => {
         await writeData(RECORDS_FILE, records);
         res.json(records[index]);
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to update a record" });
     }
 });
@@ -225,8 +225,8 @@ app.post('/api/records', async (req, res) => {
         const activities = await readData(ACTIVITIES_FILE);
         const records = await readData(RECORDS_FILE);
 
-        // Find the activity to get the name and rate for the calculation
-        const activity = activities.find(a => a.id === activityId);
+        // Find the activity type to get the carbon rate
+        const activity = activities.find(activity => activity.id === activityId);
         if (!activity) return res.status(404).json({ error: "Activity type not found" });
 
         const newRecord = {
@@ -242,7 +242,7 @@ app.post('/api/records', async (req, res) => {
         await writeData(RECORDS_FILE, records);
         res.status(201).json(newRecord);
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to save a record" });
     }
 });
@@ -251,11 +251,11 @@ app.post('/api/records', async (req, res) => {
 app.delete('/api/records/:id', async (req, res) => {
     try {
         let records = await readData(RECORDS_FILE);
-        records = records.filter(r => r.id !== req.params.id);
+        records = records.filter(record => record.id !== req.params.id);
         await writeData(RECORDS_FILE, records);
         res.status(204).send();
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to delete a record" });
     }
 });
@@ -271,7 +271,7 @@ app.get('/api/settings', async (req, res) => {
         const settings = await readData(SETTINGS_FILE);
         res.json(settings);
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to read settings" });
     }
 });
@@ -291,7 +291,7 @@ app.put('/api/settings', async (req, res) => {
         await writeData(SETTINGS_FILE, settings);
         res.json(settings);
     }
-    catch (err) {
+    catch (error) {
         res.status(500).json({ error: "Failed to update settings" });
     }
 });

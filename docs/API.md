@@ -1,20 +1,57 @@
-# EcoTrack API Documentation
+# CarbonFootprint API
 
-Base URL: `http://localhost:3000/api`
+### Base URL
+`http://localhost:3000/api`
 
-<br><br>
+<br>
 
-## Activity Types
+## Content Types
+The API exclusively uses **JSON** for both request and response bodies. You should set the `Content-Type: application/json` header for POST and PUT requests.
 
-### Get Activities
+<br>
+
+## Global Status Codes
+| Status | Name | Description |
+| :--- | :--- | :--- |
+| 200 | OK | Success. |
+| 201 | Created | Resource created successfully. |
+| 204 | No Content | Success, no response body. |
+| 400 | Bad Request | Validation error or missing fields. |
+| 404 | Not Found | Resource not found. |
+| 500 | Internal Server Error | Unexpected server error. |
+
+<br><br><br>
+
+---
+---
+
+<br>
+
+# Activities
+Activity Types define categories of carbon emissions (e.g. "Car Travel") and their associated carbon unit rates.
+
+<br>
+
+### GET Activities
 `GET /activities`
 
-Retrieves a list of all activity types.
-    
-**Query Parameters**
-*   `name` (optional): Filter activities by name (case-insensitive).
+Returns a list of all Activity Types.
 
-**Response**
+#### Optional Query Parameters
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| name | string | Filter Activity Types by name (partial match, case-insensitive). |
+
+#### Response Elements
+| Element | Type | Description |
+| :--- | :--- | :--- |
+| id | string | Unique identifier (Timestamp-based). |
+| name | string | The name of the activity category. |
+| unit | string | The measurement unit (e.g., km, kWh). |
+| carbonUnitRate | number| The kg of CO2 emitted per unit. |
+
+#### Example Response
+**Status: 200 OK**
 ```json
 [
   {
@@ -34,12 +71,23 @@ Retrieves a list of all activity types.
 
 <br>
 
-### Create Activity
+---
+
+<br>
+
+### POST Activities
 `POST /activities`
 
-Creates a new activity type.
+Creates a new Activity Type.
 
-**Request Body**
+#### Request Body
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| name | string | **Required**. Descriptive name for the Activity Type. |
+| unit | string | **Required**. Measurement unit. |
+| carbonUnitRate | number | **Required**. Emission rate (can be negative for offsets). |
+
+#### Example Request
 ```json
 {
   "name": "Bus Travel",
@@ -48,7 +96,8 @@ Creates a new activity type.
 }
 ```
 
-**Response**
+#### Example Response
+**Status: 201 Created**
 ```json
 {
   "message": "Activity added"
@@ -57,12 +106,22 @@ Creates a new activity type.
 
 <br>
 
-### Update Activity
-`PUT /activities/:id`
+---
 
-Updates an existing activity type.
+<br>
 
-**Request Body**
+### PUT Activities
+`PUT /activities/{id}`
+
+Updates an existing Activity Type.
+
+#### URL Parameters
+| Parameter | Description |
+| :--- | :--- |
+| id | **Required**. The unique ID of the Activity Type. |
+
+#### Request Body
+Allows partial updates. You only need to include the fields you wish to change with the `id` provided in the URL.
 ```json
 {
   "name": "Bus Travel (Updated)",
@@ -70,7 +129,8 @@ Updates an existing activity type.
 }
 ```
 
-**Response**
+#### Example Response
+**Status: 200 OK**
 ```json
 {
   "id": "1705423853000",
@@ -82,32 +142,60 @@ Updates an existing activity type.
 
 <br>
 
-### Delete Activity
-`DELETE /activities/:id`
+---
+
+<br>
+
+### DELETE Activities
+`DELETE /activities/{id}`
 
 Deletes an activity type. **Warning:** This will also automatically delete all Records associated with this Activity Type.
 
 **Response**
 (204 No Content)
 
+#### Example Request
+`DELETE /api/activities/1706227200002`
 
+#### Example Response
+**Status: 204 No Content**
+*(Empty Body)*
 
 <br><br><br>
 
+---
+---
 
+<br>
 
-## Records
+# Records
+Records are specific instances of a daily activity, associated with an Activity Type.
 
-### Get Records
+<br>
+
+### GET Records
 `GET /records`
 
-Retrieves all logged records.
+Retrieves a filtered list of logged carbon records.
 
-**Query Parameters**
-*   `activityId` (optional): Filter records by a specific Activity ID.
-*   `name` (optional): Filter records by Activity Name (case-insensitive).
+#### OptionalQuery Parameters
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| activityId | string | Filter records by a parent Activity Type ID. |
+| name | string | Filter by the record's specific description. |
 
-**Response**
+#### Response Elements
+| Element | Type | Description |
+| :--- | :--- | :--- |
+| id | string | Unique record identifier. |
+| date | string | The event date (YYYY-MM-DD). |
+| activityId | string | The ID of the linked activity type. |
+| activityName | string | The user-provided description for this record. |
+| amount | number | The quantity log (must be positive). |
+| co2Amount | number | The server-calculated CO2 impact in kg. |
+
+#### Example Response
+**Status: 200 OK**
 ```json
 [
   {
@@ -123,86 +211,126 @@ Retrieves all logged records.
 
 <br>
 
-### Log Record
+---
+
+<br>
+
+### POST Records
 `POST /records`
 
 Creates a new carbon record and automatically calculates the CO2 amount based on the Activity Type's carbonUnitRate.
+#### Request Body
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| activityId | string | **Required**. Valid Activity Type ID. |
+| activityName | string | **Required**. Instance name (e.g. "Trip to Supermarket"). |
+| amount | number | **Required**. Quantity performed. |
+| date | string | **Required**. Date in YYYY-MM-DD format. |
 
-**Request Body**
+#### Example Request
 ```json
 {
-  "date": "2024-01-16",
-  "activityId": "1705423851000",
-  "activityName": "Car Travel",
-  "amount": 100
+  "activityId": "1706227200000",
+  "activityName": "Morning Drive",
+  "amount": 10,
+  "date": "2024-01-21"
 }
 ```
 
-**Response**
+#### Example Response
+**Status: 201 Created**
 ```json
 {
-  "id": "1705424100000",
-  "date": "2024-01-16",
-  "activityId": "1705423851000",
-  "activityName": "Car Travel",
-  "amount": 100,
-  "co2Amount": 15.0
+  "id": "1706227600000",
+  "date": "2024-01-21",
+  "activityId": "1706227200000",
+  "activityName": "Morning Drive",
+  "amount": 10,
+  "co2Amount": 1.5
 }
 ```
 
 <br>
 
-### Update Record
-`PUT /records/:id`
+---
+
+<br>
+
+### PUT Records
+`PUT /records/{id}`
 
 Updates an existing record and recalculates the CO2 amount.
 
-**Request Body**
+#### URL Parameters
+| Parameter | Description |
+| :--- | :--- |
+| id | **Required**. The unique ID of the record. |
+
+#### Request Body
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| activityId | string | The ID of the parent activity type. |
+| activityName | string | Updated instance name. |
+| amount | number | Updated quantity. |
+| date | string | Updated date. |
+
+#### Example Request
 ```json
 {
-    "date": "2024-01-16",
-    "activityId": "1705423851000",
-    "activityName": "Car Travel",
-    "amount": 200
+  "activityId": "1706227200000",
+  "activityName": "Evening Drive (Updated)",
+  "amount": 15,
+  "date": "2024-01-21"
 }
 ```
 
-**Response**
+#### Example Response
+**Status: 200 OK**
 ```json
 {
-    "id": "1705424100000",
-    "date": "2024-01-16",
-    "activityId": "1705423851000",
-    "activityName": "Car Travel",
-    "amount": 200,
-    "co2Amount": 30.0
+  "id": "1706227600000",
+  "date": "2024-01-21",
+  "activityId": "1706227200000",
+  "activityName": "Evening Drive (Updated)",
+  "amount": 15,
+  "co2Amount": 2.25
 }
 ```
 
 <br>
 
-### Delete Record
-`DELETE /records/:id`
+---
 
-Deletes a specific record.
+<br>
 
-**Response**
-(204 No Content)
+### DELETE Records
+`DELETE /records/{id}`
 
+Removes a specific Record.
 
+#### Example Response
+**Status: 204 No Content**
+*(Empty Body)*
 
 <br><br><br>
 
+---
+---
 
+<br>
 
-## Settings
+# Settings
+Global user configuration.
 
-### Get Settings
+<br>
+
+### GET Settings
 `GET /settings`
 
-Retrieves the current user settings, such as the daily carbon goal.
+Retrieves the current user settings, only the daily carbon goal in this implementation.
 
-**Response**
+#### Example Response
+**Status: 200 OK**
 ```json
 {
   "dailyCarbonGoal": 15.0
@@ -211,19 +339,29 @@ Retrieves the current user settings, such as the daily carbon goal.
 
 <br>
 
-### Update Settings
+---
+
+<br>
+
+### PUT Settings
 `PUT /settings`
 
 Updates the user settings.
 
-**Request Body**
+#### Request Body
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| dailyCarbonGoal | number | **Required**. The new daily target in kg. |
+
+#### Example Request
 ```json
 {
   "dailyCarbonGoal": 20.0
 }
 ```
 
-**Response**
+#### Example Response
+**Status: 200 OK**
 ```json
 {
   "dailyCarbonGoal": 20.0

@@ -18,17 +18,17 @@ const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
 
 async function syncAppData() {
     try {
-        const [actRes, recRes, setRes] = await Promise.all([
+        const [activities, records, settings] = await Promise.all([
             fetch('/api/activities'),
             fetch('/api/records'),
             fetch('/api/settings')
         ]);
 
-        if (!actRes.ok || !recRes.ok || !setRes.ok) throw new Error("Server error");
+        if (!activities.ok || !records.ok || !settings.ok) throw new Error("Server error");
 
-        state.activities = await actRes.json();
-        state.records = await recRes.json();
-        state.settings = await setRes.json();
+        state.activities = await activities.json();
+        state.records = await records.json();
+        state.settings = await settings.json();
         state.dailyCarbonGoal = state.settings.dailyCarbonGoal;
 
         const goalInput = document.getElementById('dailyCarbonGoalInput');
@@ -57,11 +57,11 @@ function populateActivityDropdowns() {
         const currentVal = select.value;
         select.innerHTML = `<option value="${defaultValue}">${defaultText}</option>`;
 
-        state.activities.forEach(a => {
-            const opt = document.createElement('option');
-            opt.value = a.id;
-            opt.innerText = a.name;
-            select.appendChild(opt);
+        state.activities.forEach(activity => {
+            const option = document.createElement('option');
+            option.value = activity.id;
+            option.innerText = activity.name;
+            select.appendChild(option);
         });
 
         if (currentVal) select.value = currentVal;
@@ -74,11 +74,12 @@ function populateActivityDropdowns() {
 // Get daily carbon emission totals
 function getDailyCarbonTotals(records) {
     if (!Array.isArray(records)) return {};
-    return records.reduce((acc, r) => {
-        if (!r.date) return acc;
-        const dateStr = r.date.split('T')[0];
-        acc[dateStr] = (acc[dateStr] || 0) + r.co2Amount;
-        return acc;
+    return records.reduce((dailyTotals, record) => {
+        if (!record.date) return dailyTotals;
+
+        const dateStr = record.date.split('T')[0];
+        dailyTotals[dateStr] = (dailyTotals[dateStr] || 0) + record.co2Amount;
+        return dailyTotals;
     }, {});
 }
 
@@ -88,19 +89,19 @@ async function updateDailyCarbonGoal() {
     if (isNaN(val)) return;
 
     try {
-        const res = await fetch('/api/settings', {
+        const response = await fetch('/api/settings', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ dailyCarbonGoal: val })
         });
-        if (res.ok) {
+        if (response.ok) {
             state.dailyCarbonGoal = val;
             render();
             showToast("Daily goal updated.");
         }
     }
-    catch (err) {
-        console.error("Failed to update daily carbon goal:", err);
+    catch (error) {
+        console.error("Failed to update daily carbon goal:", error);
         showToast("Failed to save goal.");
     }
 }
@@ -152,18 +153,18 @@ function renderDashboard() {
     previousStart.setDate(currentStart.getDate() - (rangeDays || 1) - rangeDays);
     previousStart.setHours(0, 0, 0, 0);
 
-    const currentRecords = state.records.filter(r => {
-        const d = new Date(r.date);
+    const currentRecords = state.records.filter(record => {
+        const d = new Date(record.date);
         return d >= currentStart && d <= now;
     });
 
-    const previousRecords = state.records.filter(r => {
-        const d = new Date(r.date);
+    const previousRecords = state.records.filter(record => {
+        const d = new Date(record.date);
         return d >= previousStart && d < currentStart;
     });
 
-    const currentTotal = currentRecords.reduce((sum, r) => sum + r.co2Amount, 0);
-    const previousTotal = previousRecords.reduce((sum, r) => sum + r.co2Amount, 0);
+    const currentTotal = currentRecords.reduce((sum, record) => sum + record.co2Amount, 0);
+    const previousTotal = previousRecords.reduce((sum, record) => sum + record.co2Amount, 0);
 
     // Render the actual dashboards
     renderComparison(currentTotal, previousTotal);
@@ -216,19 +217,19 @@ function renderEmissionsBreakdown(records, total) {
     document.getElementById('dashboard-total').innerText = `${total.toFixed(2)} kg CO2`;
 
     // Group records by their Activity Type 
-    const grouped = records.reduce((acc, r) => {
-        const category = state.activities.find(a => String(a.id) === String(r.activityId));
+    const grouped = records.reduce((categoryBreakdown, record) => {
+        const category = state.activities.find(activity => String(activity.id) === String(record.activityId));
         const name = category ? category.name : "Other";
-        acc[name] = (acc[name] || 0) + r.co2Amount;
-        return acc;
+        categoryBreakdown[name] = (categoryBreakdown[name] || 0) + record.co2Amount;
+        return categoryBreakdown;
     }, {});
 
     // Sort the Activity Types and display the top 5
     rankingDiv.innerHTML = Object.entries(grouped)
         .sort((a, b) => b[1] - a[1])
         .slice(0, 5)
-        .map(([name, val]) => {
-            const pct = total > 0 ? ((val / total) * 100).toFixed(1) : 0;
+        .map(([name, carbonValue]) => {
+            const pct = total > 0 ? ((carbonValue / total) * 100).toFixed(1) : 0;
             return `
                 <div class="mb-3">
                     <div class="d-flex justify-content-between small mb-1">
@@ -259,7 +260,7 @@ function renderEmissionsGraph(records, minDate, maxDate, filter) {
     // Filter the data based on the Activity Type dropdown option selected
     const filtered = filter === 'all'
         ? records
-        : records.filter(r => String(r.activityId) === String(filter));
+        : records.filter(record => String(record.activityId) === String(filter));
 
     // Create the chart
     const dailyTotals = getDailyCarbonTotals(filtered);
@@ -516,13 +517,13 @@ function renderActivities() {
         return;
     }
 
-    tableBody.innerHTML = state.activities.map(a => `
+    tableBody.innerHTML = state.activities.map(activity => `
         <tr>
-            <td>${a.name}</td>
-            <td>${a.unit}</td>
-            <td>${a.carbonUnitRate} kg</td>
+            <td>${activity.name}</td>
+            <td>${activity.unit}</td>
+            <td>${activity.carbonUnitRate} kg</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" onclick="openModal('activity', '${a.id}')">Edit</button>
+                <button class="btn btn-sm btn-outline-primary" onclick="openModal('activity', '${activity.id}')">Edit</button>
             </td>
         </tr>
     `).join('');
@@ -566,14 +567,14 @@ function searchActivities() {
     activitySearchTimeout = setTimeout(async () => {
         try {
             const url = query ? `/api/activities?name=${encodeURIComponent(query)}` : '/api/activities';
-            const res = await fetch(url);
-            if (res.ok) {
-                state.activities = await res.json();
+            const response = await fetch(url);
+            if (response.ok) {
+                state.activities = await response.json();
                 renderActivities();
             }
         }
-        catch (err) {
-            console.error("Search failed", err);
+        catch (error) {
+            console.error("Search failed", error);
             showToast("Failed to search activities");
         }
     }, 300);
@@ -591,19 +592,19 @@ function renderRecords() {
         return;
     }
 
-    tableBody.innerHTML = state.records.map(r => {
-        const activityCategory = state.activities.find(a => String(a.id) === String(r.activityId));
+    tableBody.innerHTML = state.records.map(record => {
+        const activityCategory = state.activities.find(activity => String(activity.id) === String(record.activityId));
         const categoryName = activityCategory ? activityCategory.name : 'Unknown';
 
         return `
             <tr>
                 <td><span class="badge bg-secondary">${categoryName}</span></td>
-                <td>${r.activityName}</td> 
-                <td>${r.amount}</td>
-                <td>${r.co2Amount} kg</td>
-                <td>${r.date}</td>
+                <td>${record.activityName}</td> 
+                <td>${record.amount}</td>
+                <td>${record.co2Amount} kg</td>
+                <td>${record.date}</td>
                 <td>
-                    <button class="btn btn-sm btn-outline-primary" onclick="openModal('record', '${r.id}')">Edit</button>
+                    <button class="btn btn-sm btn-outline-primary" onclick="openModal('record', '${record.id}')">Edit</button>
                 </td>
             </tr>
         `;
@@ -664,14 +665,14 @@ function searchRecords() {
             if (searchQuery) params.append('name', searchQuery);
 
             const url = `/api/records?${params.toString()}`;
-            const res = await fetch(url);
-            if (res.ok) {
-                state.records = await res.json();
+            const response = await fetch(url);
+            if (response.ok) {
+                state.records = await response.json();
                 renderRecords();
             }
         }
-        catch (err) {
-            console.error("Search failed", err);
+        catch (error) {
+            console.error("Search failed", error);
             showToast("Failed to search records");
         }
     }, 300);
@@ -694,7 +695,7 @@ function openModal(type, id = null) {
 
     const body = document.getElementById('modalBody');
     if (type === 'activity') {
-        const activity = id ? state.activities.find(a => String(a.id) === String(id)) : { name: '', unit: '', carbonUnitRate: '' };
+        const activity = id ? state.activities.find(activity => String(activity.id) === String(id)) : { name: '', unit: '', carbonUnitRate: '' };
         body.innerHTML = `
             <input type="text" id="f-name" class="form-control mb-2" placeholder="Name" value="${activity.name}">
             <input type="text" id="f-unit" class="form-control mb-2" placeholder="Unit" value="${activity.unit}">
@@ -702,10 +703,10 @@ function openModal(type, id = null) {
         `;
     }
     else {
-        const record = id ? state.records.find(r => String(r.id) === String(id)) : { activityId: '', activityName: '', amount: '', date: new Date().toISOString().split('T')[0] };
+        const record = id ? state.records.find(record => String(record.id) === String(id)) : { activityId: '', activityName: '', amount: '', date: new Date().toISOString().split('T')[0] };
 
-        const options = state.activities.map(a =>
-            `<option value="${a.id}" ${a.id === record.activityId ? 'selected' : ''}>${a.name}</option>`
+        const options = state.activities.map(activity =>
+            `<option value="${activity.id}" ${activity.id === record.activityId ? 'selected' : ''}>${activity.name}</option>`
         ).join('');
 
         body.innerHTML = `
@@ -747,22 +748,22 @@ async function handleSave() {
     saveBtn.innerText = "Saving...";
 
     try {
-        const res = await fetch(url, {
+        const response = await fetch(url, {
             method: isEdit ? 'PUT' : 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
         });
 
-        if (res.ok) {
+        if (response.ok) {
             modal.hide();
             syncAppData();
             showToast("Changes saved successfully.");
         } else {
-            const data = await res.json();
+            const data = await response.json();
             showToast(`Error: ${data.error || "Failed to save"}`);
         }
-    } catch (err) {
-        console.error(err);
+    } catch (error) {
+        console.error(error);
         showToast("Network error. Please try again.");
     } finally {
         saveBtn.disabled = false;
@@ -785,8 +786,8 @@ async function confirmDelete() {
     deleteBtn.innerText = "Deleting...";
 
     try {
-        const res = await fetch(`/api/${type}/${state.editingId}`, { method: 'DELETE' });
-        if (res.ok) {
+        const response = await fetch(`/api/${type}/${state.editingId}`, { method: 'DELETE' });
+        if (response.ok) {
             deleteModal.hide();
             modal.hide();
             syncAppData();
@@ -795,8 +796,8 @@ async function confirmDelete() {
             showToast("Failed to delete item.");
         }
     }
-    catch (err) {
-        console.error(err);
+    catch (error) {
+        console.error(error);
         showToast("Network error. Please try again.");
     }
     finally {
