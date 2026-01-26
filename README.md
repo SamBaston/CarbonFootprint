@@ -42,6 +42,7 @@ Manage data entries and catagories.
 
 ### Frontend
 *   **[Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/)**: Responsive layout and styling.
+*   **[Nu Html Checker](https://validator.w3.org/nu/#textarea)**: HTML valitation tool.
 *   **[Chart.js](https://www.chartjs.org/docs/latest/)**: Rendering interactive data visualizations (Emissions Chart).
 *   **[date-fns](https://date-fns.org/docs/Getting-Started)**: Lightweight date utility library (Dashboard Date Picker).
 *   **Vanilla JavaScript**: Core application logic.

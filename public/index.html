@@ -29,7 +29,7 @@
 
     <!-- Navigation sidebar -->
     <div id="sidebar" class="offcanvas-lg offcanvas-start text-bg-dark d-flex flex-column p-3" tabindex="-1"
-        aria-labelledby="sidebarLabel">
+        aria-labelledby="sidebarLabel" role="complementary">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="sidebarLabel">CarbonFootprint</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -71,7 +71,7 @@
                 <!-- Time Range Comparison -->
                 <div class="col-md-6">
                     <div class="card h-100 p-3 shadow-sm">
-                        <h5>Comparison to Previous Period</h5>
+                        <h4>Comparison to Previous Period</h4>
                         <div id="comparison-stat" class="display-4 fw-bold">--%</div>
                         <p id="comparison-text" class="text-muted small"></p>
                     </div>
@@ -80,7 +80,7 @@
                 <!-- Emissions Breakdown -->
                 <div class="col-md-6">
                     <div class="card h-100 p-3 shadow-sm">
-                        <h5>Emissions Breakdown</h5>
+                        <h4>Emissions Breakdown</h4>
                         <div id="dashboard-total" class="h4 text-primary mb-3">0 kg CO2</div>
                         <div id="category-ranking" class="mt-2" style="max-height: 150px; overflow-y: auto;">
                         </div>
@@ -93,7 +93,7 @@
                 <div class="col-12">
                     <div class="card p-3 shadow-sm">
                         <div class="d-flex justify-content-between">
-                            <h5>Emission Trends</h5>
+                            <h4>Emission Trends</h4>
                             <!-- Activity Type Filter -->
                             <select id="graphActivityFilter" class="form-select w-auto mb-2"
                                 onchange="renderDashboard()">
@@ -112,7 +112,7 @@
                 <div class="col-12">
                     <div class="card p-4 shadow-sm mb-4">
                         <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
-                            <h5 class="mb-0">Yearly Carbon Contributions</h5>
+                            <h4 class="mb-0">Yearly Carbon Contributions</h4>
 
                             <div class="d-flex align-items-center gap-4">
                                 <!-- Year Picker -->
@@ -182,11 +182,11 @@
                 <table class="table table-hover bg-white shadow-sm rounded">
                     <thead>
                         <tr>
-                            <th role="button" onclick="sortActivities('name')" style="cursor: pointer;">Name &#8693;
+                            <th onclick="sortActivities('name')" style="cursor: pointer;">Name &#8693;
                             </th>
-                            <th role="button" onclick="sortActivities('unit')" style="cursor: pointer;">Unit &#8693;
+                            <th onclick="sortActivities('unit')" style="cursor: pointer;">Unit &#8693;
                             </th>
-                            <th role="button" onclick="sortActivities('carbonUnitRate')" style="cursor: pointer;">Rate
+                            <th onclick="sortActivities('carbonUnitRate')" style="cursor: pointer;">Rate
                                 &#8693;</th>
                             <th>Actions</th>
                         </tr>
@@ -223,15 +223,15 @@
                 <table class="table table-hover bg-white shadow-sm rounded">
                     <thead>
                         <tr>
-                            <th role="button" onclick="sortRecords('activityType')" style="cursor: pointer;">Activity
+                            <th onclick="sortRecords('activityType')" style="cursor: pointer;">Activity
                                 &#8693;</th>
-                            <th role="button" onclick="sortRecords('activityName')" style="cursor: pointer;">Name
+                            <th onclick="sortRecords('activityName')" style="cursor: pointer;">Name
                                 &#8693;</th>
-                            <th role="button" onclick="sortRecords('amount')" style="cursor: pointer;">Amount &#8693;
+                            <th onclick="sortRecords('amount')" style="cursor: pointer;">Amount &#8693;
                             </th>
-                            <th role="button" onclick="sortRecords('co2Amount')" style="cursor: pointer;">CO2 &#8693;
+                            <th onclick="sortRecords('co2Amount')" style="cursor: pointer;">CO2 &#8693;
                             </th>
-                            <th role="button" onclick="sortRecords('date')" style="cursor: pointer;">Date &#8693;</th>
+                            <th onclick="sortRecords('date')" style="cursor: pointer;">Date &#8693;</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
