@@ -177,7 +177,8 @@ Creates a new Activity Type.
 ### PUT Activities
 `PUT /activities/{id}`
 
-Updates an existing Activity Type.
+Updates an existing Activity Type. 
+**Warning:** If the `carbonUnitRate` is updated, it will automatically recalculate the `co2Amount` for all existing Records associated with this Activity Type to reflect the new rate.
 
 #### URL Parameters
 | Parameter | Description |
@@ -213,7 +214,8 @@ Allows partial updates. You only need to include the fields you wish to change w
 ### DELETE Activities
 `DELETE /activities/{id}`
 
-Deletes an activity type. **Warning:** This will also automatically delete all Records associated with this Activity Type.
+Deletes an activity type. 
+**Warning:** This will also automatically delete all Records associated with this Activity Type.
 
 **Response**
 (204 No Content)

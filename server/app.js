@@ -127,11 +127,37 @@ app.post('/api/activities', async (req, res) => {
 app.put('/api/activities/:id', async (req, res) => {
     try {
         const activities = await readData(ACTIVITIES_FILE);
-        const index = activities.findIndex(activity => activity.id === req.params.id);
+        const id = req.params.id;
+        const index = activities.findIndex(activity => activity.id === id);
         if (index === -1) return res.status(404).json({ error: "Not found" });
 
+        const oldRate = activities[index].carbonUnitRate;
         activities[index] = { ...activities[index], ...req.body };
+        const newRate = activities[index].carbonUnitRate;
+
         await writeData(ACTIVITIES_FILE, activities);
+
+        // If the rate has changed, perform a cascading update on all associated records
+        if (oldRate !== newRate) {
+            let records = await readData(RECORDS_FILE);
+            let updated = false;
+
+            records = records.map(record => {
+                if (String(record.activityId) === String(id)) {
+                    updated = true;
+                    return {
+                        ...record,
+                        co2Amount: parseFloat((record.amount * newRate).toFixed(2))
+                    };
+                }
+                return record;
+            });
+
+            if (updated) {
+                await writeData(RECORDS_FILE, records);
+            }
+        }
+
         res.json(activities[index]);
     }
     catch (error) {
