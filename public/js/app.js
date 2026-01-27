@@ -20,7 +20,7 @@ async function syncAppData() {
     try {
         const [activities, records, settings] = await Promise.all([
             fetch('/api/activities'),
-            fetch('/api/records'),
+            fetch('/api/records?extend=activityType'),
             fetch('/api/settings')
         ]);
 
@@ -218,8 +218,7 @@ function renderEmissionsBreakdown(records, total) {
 
     // Group records by their Activity Type 
     const grouped = records.reduce((categoryBreakdown, record) => {
-        const category = state.activities.find(activity => String(activity.id) === String(record.activityId));
-        const name = category ? category.name : "Other";
+        const name = record.activityType ? record.activityType.name : "Other";
         categoryBreakdown[name] = (categoryBreakdown[name] || 0) + record.co2Amount;
         return categoryBreakdown;
     }, {});
@@ -593,8 +592,7 @@ function renderRecords() {
     }
 
     tableBody.innerHTML = state.records.map(record => {
-        const activityCategory = state.activities.find(activity => String(activity.id) === String(record.activityId));
-        const categoryName = activityCategory ? activityCategory.name : 'Unknown';
+        const categoryName = record.activityType ? record.activityType.name : 'Unknown';
 
         return `
             <tr>
@@ -626,10 +624,8 @@ function sortRecords(key) {
         let valueA, valueB;
 
         if (key === 'activityType') {
-            const categoryA = state.activities.find(act => String(act.id) === String(recordA.activityId));
-            const categoryB = state.activities.find(act => String(act.id) === String(recordB.activityId));
-            valueA = categoryA ? categoryA.name.toLowerCase() : '';
-            valueB = categoryB ? categoryB.name.toLowerCase() : '';
+            valueA = recordA.activityType ? recordA.activityType.name.toLowerCase() : '';
+            valueB = recordB.activityType ? recordB.activityType.name.toLowerCase() : '';
         } else if (key === 'date') {
             valueA = new Date(recordA[key]).getTime();
             valueB = new Date(recordB[key]).getTime();
@@ -664,7 +660,7 @@ function searchRecords() {
             if (activityId) params.append('activityId', activityId);
             if (searchQuery) params.append('name', searchQuery);
 
-            const url = `/api/records?${params.toString()}`;
+            const url = `/api/records?${params.toString()}&extend=activityType`;
             const response = await fetch(url);
             if (response.ok) {
                 state.records = await response.json();

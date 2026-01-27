@@ -178,11 +178,12 @@ Records are specific instances of a daily activity, associated with an Activity 
 
 Retrieves a filtered list of logged carbon records.
 
-#### OptionalQuery Parameters
+#### Optional Query Parameters
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | activityId | string | Filter records by a parent Activity Type ID. |
 | name | string | Filter by the record's specific description. |
+| extend | string | Set to `activityType` to include the full Activity Type object in the response. |
 
 #### Response Elements
 | Element | Type | Description |
@@ -193,6 +194,7 @@ Retrieves a filtered list of logged carbon records.
 | activityName | string | The user-provided description for this record. |
 | amount | number | The quantity log (must be positive). |
 | co2Amount | number | The server-calculated CO2 impact in kg. |
+| activityType | object | *(Optional)* Nested Activity Type object (when `extend=activityType` is used). |
 
 #### Example Response
 **Status: 200 OK**
@@ -207,6 +209,64 @@ Retrieves a filtered list of logged carbon records.
     "co2Amount": 7.5
   }
 ]
+```
+
+#### Example Response (Extended)
+**Status: 200 OK**
+`GET /records?extend=activityType`
+```json
+[
+  {
+    "id": "1705424001000",
+    "date": "2024-01-15",
+    "activityId": "1705423851000",
+    "activityName": "Car Travel",
+    "amount": 50,
+    "co2Amount": 7.5,
+    "activityType": {
+      "id": "1705423851000",
+      "name": "Car Travel",
+      "unit": "km",
+      "carbonUnitRate": 0.15
+    }
+  }
+]
+```
+
+<br>
+
+---
+
+<br>
+
+### GET Record Detail
+`GET /records/{id}`
+
+Retrieves details for a specific carbon record.
+
+#### Optional Query Parameters
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| extend | string | Set to `activityType` to include the full Activity Type object. |
+
+#### Example Response
+**Status: 200 OK**
+`GET /api/records/1705424001000?extend=activityType`
+```json
+{
+  "id": "1705424001000",
+  "date": "2024-01-15",
+  "activityId": "1705423851000",
+  "activityName": "Car Travel",
+  "amount": 50,
+  "co2Amount": 7.5,
+  "activityType": {
+    "id": "1705423851000",
+    "name": "Car Travel",
+    "unit": "km",
+    "carbonUnitRate": 0.15
+  }
+}
 ```
 
 <br>

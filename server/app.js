@@ -141,8 +141,7 @@ app.delete('/api/activities/:id', async (req, res) => {
 app.get('/api/records', async (req, res) => {
     try {
         let records = await readData(RECORDS_FILE);
-
-        const { activityId, name } = req.query;
+        const { activityId, name, extend } = req.query;
 
         if (activityId) {
             records = records.filter(record => String(record.activityId) === String(activityId));
@@ -150,6 +149,14 @@ app.get('/api/records', async (req, res) => {
         if (name) {
             const term = name.toLowerCase();
             records = records.filter(record => record.activityName && record.activityName.toLowerCase().includes(term));
+        }
+
+        if (extend === 'activityType') {
+            const activities = await readData(ACTIVITIES_FILE);
+            records = records.map(record => ({
+                ...record,
+                activityType: activities.find(a => String(a.id) === String(record.activityId)) || null
+            }));
         }
 
         res.json(records);
@@ -164,10 +171,18 @@ app.get('/api/records/:id', async (req, res) => {
     try {
         const records = await readData(RECORDS_FILE);
         const targetId = String(req.params.id).trim();
-        const record = records.find(record => String(record.id).trim() === targetId);
+        let record = records.find(record => String(record.id).trim() === targetId);
 
         if (!record) {
             return res.status(404).json({ error: `Record ${targetId} not found` });
+        }
+
+        if (req.query.extend === 'activityType') {
+            const activities = await readData(ACTIVITIES_FILE);
+            record = {
+                ...record,
+                activityType: activities.find(a => String(a.id) === String(record.activityId)) || null
+            };
         }
 
         res.json(record);
