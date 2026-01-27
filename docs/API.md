@@ -41,6 +41,7 @@ Returns a list of all Activity Types.
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | name | string | Filter Activity Types by name (partial match, case-insensitive). |
+| extend | string | Set to `records` to include an array of associated carbon records for each activity. |
 
 #### Response Elements
 | Element | Type | Description |
@@ -49,6 +50,7 @@ Returns a list of all Activity Types.
 | name | string | The name of the activity category. |
 | unit | string | The measurement unit (e.g., km, kWh). |
 | carbonUnitRate | number| The kg of CO2 emitted per unit. |
+| records | array | *(Optional)* Array of associated carbon records (when `extend=records` is used). |
 
 #### Example Response
 **Status: 200 OK**
@@ -67,6 +69,68 @@ Returns a list of all Activity Types.
     "carbonUnitRate": 0.233
   }
 ]
+```
+
+#### Example Response (Extended)
+**Status: 200 OK**
+`GET /activities?extend=records`
+```json
+[
+  {
+    "id": "1705423851000",
+    "name": "Car Travel",
+    "unit": "km",
+    "carbonUnitRate": 0.15,
+    "records": [
+      {
+        "id": "1705424001000",
+        "date": "2024-01-15",
+        "activityId": "1705423851000",
+        "activityName": "Trip to store",
+        "amount": 50,
+        "co2Amount": 7.5
+      }
+    ]
+  }
+]
+```
+
+<br>
+
+---
+
+<br>
+
+### GET Activity Detail
+`GET /activities/{id}`
+
+Retrieves details for a specific Activity Type.
+
+#### Optional Query Parameters
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| extend | string | Set to `records` to include the list of associated carbon records. |
+
+#### Example Response
+**Status: 200 OK**
+`GET /api/activities/1705423851000?extend=records`
+```json
+{
+  "id": "1705423851000",
+  "name": "Car Travel",
+  "unit": "km",
+  "carbonUnitRate": 0.15,
+  "records": [
+    {
+      "id": "1705424001000",
+      "date": "2024-01-15",
+      "activityId": "1705423851000",
+      "activityName": "Trip to store",
+      "amount": 50,
+      "co2Amount": 7.5
+    }
+  ]
+}
 ```
 
 <br>

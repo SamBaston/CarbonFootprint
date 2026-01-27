@@ -49,16 +49,50 @@ app.get('/api/activities', async (req, res) => {
     try {
         let activities = await readData(ACTIVITIES_FILE);
 
-        const { name } = req.query;
+        const { name, extend } = req.query;
         if (name) {
             const term = name.toLowerCase();
             activities = activities.filter(activity => activity.name.toLowerCase().includes(term));
+        }
+
+        if (extend === 'records') {
+            const records = await readData(RECORDS_FILE);
+            activities = activities.map(activity => ({
+                ...activity,
+                records: records.filter(r => String(r.activityId) === String(activity.id))
+            }));
         }
 
         res.json(activities);
     }
     catch (error) {
         res.status(500).json({ error: "Failed to read activities" });
+    }
+});
+
+// GET a specific activity type
+app.get('/api/activities/:id', async (req, res) => {
+    try {
+        const activities = await readData(ACTIVITIES_FILE);
+        const targetId = String(req.params.id).trim();
+        let activity = activities.find(a => String(a.id).trim() === targetId);
+
+        if (!activity) {
+            return res.status(404).json({ error: `Activity ${targetId} not found` });
+        }
+
+        if (req.query.extend === 'records') {
+            const records = await readData(RECORDS_FILE);
+            activity = {
+                ...activity,
+                records: records.filter(r => String(r.activityId) === String(activity.id))
+            };
+        }
+
+        res.json(activity);
+    }
+    catch (error) {
+        res.status(500).json({ error: "Failed to fetch activity" });
     }
 });
 
