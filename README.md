@@ -67,6 +67,24 @@ For information on the API endpoints, please see my [documentation](docs/API.md)
 
 <br>
 
+## Possible Future Improvements
+Due to the mark scheme I had to adheare to, there were limitations on what I could do. For example, no user accounts/authentication, single page application, no external databases, etc. If I were to continue working on this project, I would add (in no particular order):
+
+*   User accounts/authentication
+*   External database in place of JSON files
+*   Improved file structure
+*   Automated record generation
+*   Unit tests for frontend
+*   Copy and paste functionality for Activity Types and Records
+*   More modern UI (less reliance on bootstrap)
+*   Dark and Light mode UI toggle
+*   Data import/export functionality (JSON and/or CSV)
+*   Exclude from reporting toggle for Activity Types and Records
+*   Activity Type filters to be multiselectable
+*   Favouritable Activity Types for quick access
+
+<br>
+
 ## Installation & Testing
 
 1.  **Prerequisites**: Ensure you have [Node.js](https://nodejs.org/) installed.
