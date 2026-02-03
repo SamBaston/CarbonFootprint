@@ -1,22 +1,79 @@
-/* --- GLOBAL --- */
+/* --- VARIABLES & THEME --- */
 :root {
+    /* Light Mode Palette (Appleish/Teslaish Clean) */
+    --bg-body: #f5f5f7;
+    --bg-card: #ffffff;
+    --bg-sidebar: #ffffff;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --accent-color: #0071e3;
+    /* Apple Blue */
+    --accent-hover: #0077ed;
+    --border-color: #d2d2d7;
+    --divider-color: #e5e5e5;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+    --font-stack: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
     --cell-size: 11px;
-    --cell-gap: 2px;
-    --text-color: #24292e;
-    --gray-text: #586069;
-    --border-color: #e1e4e8;
+    --cell-gap: 3px;
+    --heatmap-empty: #ebedf0;
 }
 
+[data-theme="dark"] {
+    /* Dark Mode Palette */
+    --bg-body: #000000;
+    --bg-card: #1c1c1e;
+    /* Apple Dark Grey */
+    --bg-sidebar: #1c1c1e;
+    --text-primary: #f5f5f7;
+    --text-secondary: #86868b;
+    --accent-color: #2997ff;
+    /* Lighter Blue for Dark Mode */
+    --accent-hover: #47aeff;
+    --border-color: #38383a;
+    --divider-color: #38383a;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+
+    --heatmap-empty: #2c2c2e;
+}
+
+/* --- GLOBAL STYLES --- */
 body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
 
+.text-muted {
+    color: var(--text-secondary) !important;
+}
 
-/* --- LAYOUT & NAV SIDEBAR --- */
+/* --- LAYOUT --- */
 @media (min-width: 992px) {
     body {
         flex-direction: row;
@@ -27,71 +84,135 @@ body {
         top: 0;
         height: 100vh;
         overflow-y: auto;
+        border-right: 1px solid var(--border-color);
     }
-}
-
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #212529;
-    color: white;
-    transition: all 0.3s;
 }
 
 #content {
     flex: 1;
-    padding: 20px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.nav-link {
-    color: rgba(255, 255, 255, .75);
-    cursor: pointer;
+/* --- SIDEBAR --- */
+#sidebar {
+    min-width: 260px;
+    max-width: 260px;
+    background: var(--bg-sidebar);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
 }
 
-.nav-link.active {
-    color: white;
-    background: #0d6efd;
-}
-
-.nav-link:hover {
-    color: white;
-}
-
-
-
-/* --- YEARLY CARBON HEATMAP DASHBOARD PANEL --- */
-.year-picker {
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    color: var(--text-primary);
 }
 
-.year-button {
-    background: #fafbfc;
-    border: 1px solid rgba(27, 31, 36, 0.15);
-    border-radius: 6px;
-    padding: 2px 8px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: all 0.2s;
-    color: var(--text-color);
+.nav-pills .nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
 }
 
-.year-button:hover {
-    background-color: #f3f4f6;
-    border-color: rgba(27, 31, 36, 0.3);
+.nav-pills .nav-link:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+    color: var(--text-primary);
 }
 
-.year-display {
-    font-size: 14px;
+.nav-pills .nav-link.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* --- CARDS & PANELS & MODALS --- */
+.card,
+.modal-content {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: var(--border-color);
+}
+
+.modal-content .btn-close {
+    filter: var(--btn-close-filter, none);
+}
+
+[data-theme="dark"] .modal-content .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* --- COMPONENTS --- */
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.form-control,
+.form-select {
+    background-color: var(--bg-body);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+}
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--text-primary);
+    --bs-table-border-color: var(--divider-color);
+}
+
+.table th {
     font-weight: 600;
-    min-width: 40px;
-    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    border-bottom-width: 1px;
 }
 
+/* --- HEATMAP OVERRIDES --- */
 .heatmap-wrapper {
     overflow-x: auto;
-    padding-bottom: 16px;
+    padding-bottom: 10px;
 }
 
 .months-container {
@@ -108,7 +229,7 @@ body {
     display: flex;
     margin-bottom: 5px;
     font-size: 11px;
-    color: var(--gray-text);
+    color: var(--text-secondary);
     height: 18px;
     position: relative;
 }
@@ -130,7 +251,7 @@ body {
     width: 26px;
     padding-right: 5px;
     font-size: 9px;
-    color: var(--gray-text);
+    color: var(--text-secondary);
 }
 
 .day-label {
@@ -152,137 +273,54 @@ body {
     gap: var(--cell-gap);
 }
 
+.year-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+}
+
+.heatmap-wrapper {
+    overflow-x: auto;
+    padding-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.year-button {
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    padding: 4px 12px;
+}
+
 .day-cell {
     width: var(--cell-size);
     height: var(--cell-size);
     border-radius: 2px;
+    background-color: var(--heatmap-empty);
     cursor: pointer;
     transition: all 0.2s ease;
-    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .day-cell:hover {
-    outline: 2px solid rgba(0, 0, 0, 0.3);
-    outline-offset: 1px;
-}
-
-.day-cell.empty {
-    background-color: transparent;
-    cursor: default;
-    border: none;
-}
-
-.day-cell.empty:hover {
-    outline: none;
-}
-
-.day-cell.future {
-    background-color: #f6f8fa;
-    border: 1px dashed #d1d5da;
+    transform: scale(1.3);
+    z-index: 10;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .day-cell.no-data {
-    background-color: #ebedf0;
+    background-color: var(--heatmap-empty);
 }
 
-/* Red day shades (significantly over goal) */
-.day-cell.level-0 {
-    background-color: #8b0000;
-}
-
-.day-cell.level-1 {
-    background-color: #b22222;
-}
-
-.day-cell.level-2 {
-    background-color: #dc3545;
-}
-
-.day-cell.level-3 {
-    background-color: #ff4d4d;
-}
-
-.day-cell.level-4 {
-    background-color: #ff6666;
-}
-
-/* Amber day shades (slightly over goal) */
-.day-cell.level-5 {
-    background-color: #ff8c00;
-}
-
-.day-cell.level-6 {
-    background-color: #ffa500;
-}
-
-.day-cell.level-7 {
-    background-color: #ffd700;
-}
-
-/* Green day shades (met or under goal) */
-.day-cell.level-8 {
-    background-color: #a3d900;
-}
-
-.day-cell.level-9 {
-    background-color: #76c100;
-}
-
-.day-cell.level-10 {
-    background-color: #28a745;
-}
-
-.day-cell.level-11 {
-    background-color: #1e7e34;
-}
-
-.day-cell.level-12 {
-    background-color: #006400;
-}
-
-.heatmap-tooltip {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.2s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.heatmap-legend {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 10px;
-    font-size: 11px;
-    color: var(--gray-text);
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.legend-colors {
-    display: flex;
-    gap: 2px;
-}
-
-.legend-color {
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-}
-
+/* --- HEATMAP STATS --- */
 .stats-row {
     margin-top: 15px;
     display: flex;
     gap: 30px;
     font-size: 13px;
     flex-wrap: wrap;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-color);
     padding-top: 15px;
 }
 
@@ -292,7 +330,7 @@ body {
 }
 
 .stat-label {
-    color: var(--gray-text);
+    color: var(--text-secondary);
     font-size: 11px;
     margin-bottom: 2px;
 }
@@ -300,4 +338,160 @@ body {
 .stat-val {
     font-weight: 600;
     font-size: 14px;
+    color: var(--text-primary);
+}
+
+/* --- FORM OVERRIDES for Dark Mode --- */
+.input-group-text {
+    background-color: var(--bg-body);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    border-right: none;
+}
+
+.input-group .form-control {
+    border-left: none;
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2386868b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    padding-right: 2.5rem;
+    /* Ensure arrow doesn't overlap text */
+}
+
+/* --- HEATMAP TOOLTIP --- */
+.heatmap-tooltip {
+    position: fixed;
+    /* ensure it floats relative to viewport */
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 9999;
+    /* high z-index to appear on top */
+    opacity: 0;
+    transition: opacity 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.day-cell.no-data {
+    background-color: transparent;
+    /* Hide empty cells */
+    border: none;
+    cursor: default;
+}
+
+/* --- HEATMAP COLORS (Keep traffic light logic but cleaner) --- */
+/* Green Range */
+.day-cell.level-12 {
+    background-color: #006000;
+}
+
+.day-cell.level-11 {
+    background-color: #1abc1a;
+}
+
+.day-cell.level-10 {
+    background-color: #32d732;
+}
+
+.day-cell.level-9 {
+    background-color: #69f069;
+}
+
+.day-cell.level-8 {
+    background-color: #96fa96;
+}
+
+/* Amber Range */
+.day-cell.level-7 {
+    background-color: #ffce00;
+}
+
+.day-cell.level-6 {
+    background-color: #ffae00;
+}
+
+.day-cell.level-5 {
+    background-color: #ff9100;
+}
+
+/* Red Range */
+.day-cell.level-4 {
+    background-color: #ff6b6b;
+}
+
+.day-cell.level-3 {
+    background-color: #ff4d4d;
+}
+
+.day-cell.level-2 {
+    background-color: #e00000;
+}
+
+.day-cell.level-1 {
+    background-color: #bd0000;
+}
+
+.day-cell.level-0 {
+    background-color: #8a0000;
+}
+
+/* --- DARK MODE TOGGLE --- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--divider-color);
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 44px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    background-color: white;
+    bottom: 3px;
+    content: "";
+    height: 18px;
+    left: 3px;
+    position: absolute;
+    transition: .4s;
+    width: 18px;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--accent-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
 }

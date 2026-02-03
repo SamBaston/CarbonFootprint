@@ -3621,5 +3621,13 @@
     "activityName": "negative unit rate record",
     "amount": 1,
     "co2Amount": -10
+  },
+  {
+    "id": "1770135068811",
+    "date": "2026-02-03",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home use",
+    "amount": 32,
+    "co2Amount": 7.36
   }
 ]

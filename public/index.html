@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body class="bg-light">
+<body class="">
 
     <!-- Alerts -->
     <div id="offline-alert"
@@ -20,36 +20,50 @@
     </div>
 
     <!-- Mobile Nav Button -->
-    <div class="d-lg-none p-3 bg-light border-bottom">
-        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+    <div class="d-lg-none p-3 border-bottom" style="background: var(--bg-sidebar);">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
             aria-controls="sidebar">
             <span class="navbar-toggler-icon"></span> Menu
         </button>
     </div>
 
     <!-- Navigation sidebar -->
-    <div id="sidebar" class="offcanvas-lg offcanvas-start text-bg-dark d-flex flex-column p-3" tabindex="-1"
+    <div id="sidebar" class="offcanvas-lg offcanvas-start d-flex flex-column" tabindex="-1"
         aria-labelledby="sidebarLabel" role="complementary">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="sidebarLabel">CarbonFootprint</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                data-bs-target="#sidebar" aria-label="Close"></button>
+            <h5 class="offcanvas-title sidebar-title" id="sidebarLabel">CarbonFootprint</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar"
+                aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body d-flex flex-column p-0">
-            <h3 class="d-none d-lg-block">CarbonFootprint</h3>
+        <div class="offcanvas-body d-flex flex-column flex-grow-1 p-0">
+            <h3 class="d-none d-lg-block sidebar-title">
+                <span style="color: var(--accent-color);">Carbon</span>Footprint
+            </h3>
 
-            <hr>
+            <hr style="border-color: var(--divider-color);">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a onclick="switchView('dashboard')" id="nav-dashboard" class="nav-link active">Dashboard</a>
+                    <a onclick="switchView('dashboard')" id="nav-dashboard" class="nav-link active"
+                        data-bs-dismiss="offcanvas" data-bs-target="#sidebar">Dashboard</a>
                 </li>
                 <li>
-                    <a onclick="switchView('activities')" id="nav-activities" class="nav-link">Activity Types</a>
+                    <a onclick="switchView('activities')" id="nav-activities" class="nav-link"
+                        data-bs-dismiss="offcanvas" data-bs-target="#sidebar">Activity Types</a>
                 </li>
                 <li>
-                    <a onclick="switchView('records')" id="nav-records" class="nav-link">Activity Records</a>
+                    <a onclick="switchView('records')" id="nav-records" class="nav-link" data-bs-dismiss="offcanvas"
+                        data-bs-target="#sidebar">Activity Records</a>
                 </li>
             </ul>
+
+            <!-- Dark Mode Toggle -->
+            <div class="theme-switch-wrapper">
+                <span class="me-2 text-muted small">Dark Mode</span>
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" onchange="toggleTheme(this.checked)">
+                    <div class="slider"></div>
+                </label>
+            </div>
         </div>
     </div>
 
@@ -92,10 +106,10 @@
             <div class="row mb-4">
                 <div class="col-12">
                     <div class="card p-3 shadow-sm">
-                        <div class="d-flex justify-content-between">
-                            <h4>Emission Trends</h4>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                            <h4 class="mb-0">Emission Trends</h4>
                             <!-- Activity Type Filter -->
-                            <select id="graphActivityFilter" class="form-select w-auto mb-2"
+                            <select id="graphActivityFilter" class="form-select w-auto mb-2 mb-md-0"
                                 onchange="renderDashboard()">
                                 <option value="all">All Activities</option>
                             </select>
@@ -114,7 +128,7 @@
                         <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
                             <h4 class="mb-0">Yearly Carbon Contributions</h4>
 
-                            <div class="d-flex align-items-center gap-4">
+                            <div class="d-flex align-items-center gap-4 flex-wrap">
                                 <!-- Year Picker -->
                                 <div class="year-picker">
                                     <button class="year-button" onclick="changeHeatmapYear(-1)">← Previous</button>
@@ -170,16 +184,16 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <div class="input-group">
+                        <span class="input-group-text">Search</span>
                         <input type="text" id="activitySearch" class="form-control" placeholder="Search activities..."
                             oninput="searchActivities()">
-                        <span class="input-group-text">Search</span>
                     </div>
                 </div>
             </div>
 
             <!-- Activity Table -->
             <div class="table-responsive">
-                <table class="table table-hover bg-white shadow-sm rounded">
+                <table class="table table-hover shadow-sm rounded" style="background-color: var(--bg-card);">
                     <thead>
                         <tr>
                             <th onclick="sortActivities('name')" style="cursor: pointer;">Name &#8693;
@@ -220,7 +234,7 @@
 
             <!-- Record Table -->
             <div class="table-responsive">
-                <table class="table table-hover bg-white shadow-sm rounded">
+                <table class="table table-hover shadow-sm rounded" style="background-color: var(--bg-card);">
                     <thead>
                         <tr>
                             <th onclick="sortRecords('activityType')" style="cursor: pointer;">Activity

@@ -10,8 +10,35 @@ let state = {
     recordSort: { column: 'date', direction: 'desc' },
     activitySort: { column: 'name', direction: 'asc' },
     dailyCarbonGoal: 15.0,
-    heatmapYear: new Date().getFullYear()
+    heatmapYear: new Date().getFullYear(),
+    theme: localStorage.getItem('theme') || 'light'
 };
+
+// Apply theme immediately
+if (state.theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+// Global function for the toggle switch
+window.toggleTheme = function (isDark) {
+    state.theme = isDark ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', state.theme);
+    localStorage.setItem('theme', state.theme);
+
+    // access checkbox to ensure it stays in sync if toggled programmatically
+    const checkbox = document.getElementById('checkbox');
+    if (checkbox) checkbox.checked = isDark;
+
+    render(); // Re-render to update charts
+};
+
+// Initialize Checkbox state on load
+document.addEventListener('DOMContentLoaded', () => {
+    const checkbox = document.getElementById('checkbox');
+    if (checkbox) {
+        checkbox.checked = state.theme === 'dark';
+    }
+});
 
 const modal = new bootstrap.Modal(document.getElementById('crudModal'));
 const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
@@ -153,12 +180,18 @@ function renderDashboard() {
     previousStart.setDate(currentStart.getDate() - (rangeDays || 1) - rangeDays);
     previousStart.setHours(0, 0, 0, 0);
 
-    const currentRecords = state.records.filter(record => {
+    // Filter out records from excluded activity types
+    const validRecords = state.records.filter(record => {
+        if (!record.activityType) return true; // Keep if unknown, or handle as you wish
+        return !record.activityType.excludeFromDashboard;
+    });
+
+    const currentRecords = validRecords.filter(record => {
         const d = new Date(record.date);
         return d >= currentStart && d <= now;
     });
 
-    const previousRecords = state.records.filter(record => {
+    const previousRecords = validRecords.filter(record => {
         const d = new Date(record.date);
         return d >= previousStart && d < currentStart;
     });
@@ -170,7 +203,7 @@ function renderDashboard() {
     renderComparison(currentTotal, previousTotal);
     renderEmissionsBreakdown(currentRecords, currentTotal);
     renderEmissionsGraph(currentRecords, currentStart, now, activityFilter);
-    renderYearlyHeatmap();
+    renderYearlyHeatmap(); // Heatmap uses state.records directly, need to check that too
 }
 
 // Render the Time Range Comparison dashboard panel
@@ -232,8 +265,8 @@ function renderEmissionsBreakdown(records, total) {
             return `
                 <div class="mb-3">
                     <div class="d-flex justify-content-between small mb-1">
-                        <span>${name}</span>
-                        <span class="fw-bold">${pct}%</span>
+                        <span style="color: var(--text-primary)">${name}</span>
+                        <span class="fw-bold" style="color: var(--text-primary)">${pct}%</span>
                     </div>
                     <div class="progress" style="height: 10px; border-radius: 5px;">
                         <div class="progress-bar bg-primary" role="progressbar" style="width: ${pct}%"></div>
@@ -274,7 +307,7 @@ function renderEmissionsGraph(records, minDate, maxDate, filter) {
             datasets: [{
                 label: 'kg CO2',
                 data: dataPoints,
-                borderColor: '#0d6efd',
+                borderColor: getThemeColor('accent-color'),
                 backgroundColor: 'rgba(13, 110, 253, 0.1)',
                 fill: true,
                 tension: 0.3,
@@ -293,11 +326,15 @@ function renderEmissionsGraph(records, minDate, maxDate, filter) {
                     },
                     min: minDate.toISOString(),
                     max: maxDate.toISOString(),
-                    title: { display: true, text: 'Date' }
+                    title: { display: true, text: 'Date', color: getThemeColor('text-secondary') },
+                    grid: { color: getThemeColor('divider-color') },
+                    ticks: { color: getThemeColor('text-secondary') }
                 },
                 y: {
                     beginAtZero: true,
-                    title: { display: true, text: 'kg CO2' }
+                    title: { display: true, text: 'kg CO2', color: getThemeColor('text-secondary') },
+                    grid: { color: getThemeColor('divider-color') },
+                    ticks: { color: getThemeColor('text-secondary') }
                 }
             },
             plugins: {
@@ -324,7 +361,12 @@ function renderYearlyHeatmap() {
     yearDisplay.textContent = year;
 
     // Get daily data for the selected year
-    const allDailyData = getDailyCarbonTotals(state.records);
+    // Get daily data for the selected year (Filter excluded activities)
+    const validRecords = state.records.filter(record => {
+        if (!record.activityType) return true;
+        return !record.activityType.excludeFromDashboard;
+    });
+    const allDailyData = getDailyCarbonTotals(validRecords);
 
     const dailyDataForYear = {};
     Object.entries(allDailyData).forEach(([dateStr, total]) => {
@@ -389,14 +431,17 @@ function renderYearlyHeatmap() {
 
                 const cellIdx = w * 7 + d;
                 if (cellIdx < firstDayMon || dayCounter > daysInMonth) {
-                    cell.classList.add('empty');
+                    cell.classList.add('no-data'); // Use no-data class for hidden/padding cells
                 } else {
                     const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(dayCounter).padStart(2, '0')}`;
                     const cellDate = new Date(year, month, dayCounter);
                     const isFuture = cellDate > new Date();
 
                     if (isFuture) {
-                        cell.classList.add('future');
+                        // Future cells are just empty/disabled style
+                        cell.style.backgroundColor = 'var(--heatmap-empty)';
+                        cell.style.opacity = '0.5';
+                        cell.style.cursor = 'default';
                     } else {
                         const val = dailyDataForYear[dateStr] || 0;
                         const level = getHeatmapColorLevel(val, state.dailyCarbonGoal);
@@ -425,6 +470,7 @@ function renderYearlyHeatmap() {
             }
             weeksGrid.appendChild(wCol);
         }
+
         mGrid.appendChild(weeksGrid);
         mBlock.appendChild(mGrid);
         container.appendChild(mBlock);
@@ -518,11 +564,15 @@ function renderActivities() {
 
     tableBody.innerHTML = state.activities.map(activity => `
         <tr>
-            <td>${activity.name}</td>
+            <td>
+                ${activity.name}
+                ${activity.excludeFromDashboard ? '<span class="badge bg-secondary ms-1" style="font-size: 0.6em">Hidden</span>' : ''}
+            </td>
             <td>${activity.unit}</td>
             <td>${activity.carbonUnitRate} kg</td>
             <td>
                 <button class="btn btn-sm btn-outline-primary" onclick="openModal('activity', '${activity.id}')">Edit</button>
+                <button class="btn btn-sm btn-outline-secondary" onclick="copyItem('activity', '${activity.id}')">Copy</button>
             </td>
         </tr>
     `).join('');
@@ -603,6 +653,7 @@ function renderRecords() {
                 <td>${record.date}</td>
                 <td>
                     <button class="btn btn-sm btn-outline-primary" onclick="openModal('record', '${record.id}')">Edit</button>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="copyItem('record', '${record.id}')">Copy</button>
                 </td>
             </tr>
         `;
@@ -681,25 +732,48 @@ function searchRecords() {
 //---------------------------------------------//
 
 // The Edit and Create events for Activities and Records
-function openModal(type, id = null) {
+// The Edit and Create events for Activities and Records
+function openModal(type, id = null, prefillData = null) {
     state.editingType = type;
     state.editingId = id;
 
+    // Set title: pass id implies Edit, otherwise Add (possibly with copy data)
     document.getElementById('modalTitle').innerText = id ? `Edit ${type}` : `Add ${type}`;
     const deleteBtn = document.getElementById('btnDelete');
     id ? deleteBtn.classList.remove('d-none') : deleteBtn.classList.add('d-none');
 
     const body = document.getElementById('modalBody');
     if (type === 'activity') {
-        const activity = id ? state.activities.find(activity => String(activity.id) === String(id)) : { name: '', unit: '', carbonUnitRate: '' };
+        let activity;
+        if (id) {
+            activity = state.activities.find(a => String(a.id) === String(id));
+        } else if (prefillData) {
+            activity = prefillData;
+        } else {
+            activity = { name: '', unit: '', carbonUnitRate: '', excludeFromDashboard: false };
+        }
+
         body.innerHTML = `
             <input type="text" id="f-name" class="form-control mb-2" placeholder="Name" value="${activity.name}">
             <input type="text" id="f-unit" class="form-control mb-2" placeholder="Unit" value="${activity.unit}">
             <input type="number" id="f-rate" class="form-control mb-2" placeholder="Rate" value="${activity.carbonUnitRate}">
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" id="f-exclude" ${activity.excludeFromDashboard ? 'checked' : ''}>
+                <label class="form-check-label" for="f-exclude">
+                    Exclude from Dashboard
+                </label>
+            </div>
         `;
     }
     else {
-        const record = id ? state.records.find(record => String(record.id) === String(id)) : { activityId: '', activityName: '', amount: '', date: new Date().toISOString().split('T')[0] };
+        let record;
+        if (id) {
+            record = state.records.find(r => String(r.id) === String(id));
+        } else if (prefillData) {
+            record = prefillData;
+        } else {
+            record = { activityId: '', activityName: '', amount: '', date: new Date().toISOString().split('T')[0] };
+        }
 
         const options = state.activities.map(activity =>
             `<option value="${activity.id}" ${activity.id === record.activityId ? 'selected' : ''}>${activity.name}</option>`
@@ -715,6 +789,16 @@ function openModal(type, id = null) {
     modal.show();
 }
 
+// Copy Item Event
+function copyItem(type, id) {
+    const list = type === 'activity' ? state.activities : state.records;
+    const item = list.find(i => String(i.id) === String(id));
+    if (item) {
+        // Pass item as prefill data, but id as null so it is treated as new
+        openModal(type, null, { ...item }); // Spread to create a shallow copy
+    }
+}
+
 // Save event for Activities and Records
 async function handleSave() {
     const type = state.editingType;
@@ -726,7 +810,8 @@ async function handleSave() {
         payload = {
             name: document.getElementById('f-name').value,
             unit: document.getElementById('f-unit').value,
-            carbonUnitRate: parseFloat(document.getElementById('f-rate').value)
+            carbonUnitRate: parseFloat(document.getElementById('f-rate').value),
+            excludeFromDashboard: document.getElementById('f-exclude').checked
         };
     }
     else {
@@ -830,3 +915,8 @@ function showToast(message) {
 
 // Start the app
 syncAppData();
+
+// Helper to get CSS variable values for Chart.js
+function getThemeColor(variableName) {
+    return getComputedStyle(document.documentElement).getPropertyValue(`--${variableName}`).trim();
+}

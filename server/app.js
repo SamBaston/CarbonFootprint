@@ -112,6 +112,7 @@ app.post('/api/activities', async (req, res) => {
             name: name,
             unit: unit,
             carbonUnitRate: carbonUnitRate,
+            excludeFromDashboard: req.body.excludeFromDashboard || false
         };
 
         activities.push(newActivity);

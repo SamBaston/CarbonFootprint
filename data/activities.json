@@ -33,13 +33,15 @@
     "id": "flight_short",
     "name": "Short-Haul Flight",
     "unit": "km",
-    "carbonUnitRate": 0.25
+    "carbonUnitRate": 0.25,
+    "excludeFromDashboard": true
   },
   {
     "id": "flight_long",
     "name": "Long-Haul Flight",
     "unit": "km",
-    "carbonUnitRate": 0.15
+    "carbonUnitRate": 0.15,
+    "excludeFromDashboard": true
   },
   {
     "id": "beef_meal",
