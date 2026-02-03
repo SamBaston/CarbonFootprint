@@ -27,14 +27,19 @@
     "id": "train_travel",
     "name": "Train Journey",
     "unit": "km",
-    "carbonUnitRate": 0.04
+    "carbonUnitRate": 0.04,
+    "excludeFromDashboard": false,
+    "isFavorite": true,
+    "hideInDropdown": false
   },
   {
     "id": "flight_short",
     "name": "Short-Haul Flight",
     "unit": "km",
     "carbonUnitRate": 0.25,
-    "excludeFromDashboard": true
+    "excludeFromDashboard": true,
+    "isFavorite": false,
+    "hideInDropdown": true
   },
   {
     "id": "flight_long",

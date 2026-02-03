@@ -42,6 +42,8 @@ Returns a list of all Activity Types.
 | :--- | :--- | :--- |
 | name | string | Filter Activity Types by name (partial match, case-insensitive). |
 | extend | string | Set to `records` to include an array of associated carbon records for each activity. |
+| active | string | Set to `true` to exclude activities that are hidden from dropdowns. |
+| favorite | string | Set to `true` to return only favorite activities. |
 
 #### Response Elements
 | Element | Type | Description |
@@ -50,6 +52,9 @@ Returns a list of all Activity Types.
 | name | string | The name of the activity category. |
 | unit | string | The measurement unit (e.g., km, kWh). |
 | carbonUnitRate | number| The kg of CO2 emitted per unit. |
+| excludeFromDashboard | boolean | Whether to exclude records of this type from dashboard stats. |
+| isFavorite | boolean | Whether this activity is marked as a favorite. |
+| hideInDropdown | boolean | Whether this activity is hidden from dropdown lists. |
 | records | array | *(Optional)* Array of associated carbon records (when `extend=records` is used). |
 
 #### Example Response
@@ -60,13 +65,19 @@ Returns a list of all Activity Types.
     "id": "1705423851000",
     "name": "Car Travel",
     "unit": "km",
-    "carbonUnitRate": 0.15
+    "carbonUnitRate": 0.15,
+    "excludeFromDashboard": false,
+    "isFavorite": true,
+    "hideInDropdown": false
   },
   {
     "id": "1705423852000",
     "name": "Electricity",
     "unit": "kWh",
-    "carbonUnitRate": 0.233
+    "carbonUnitRate": 0.233,
+    "excludeFromDashboard": true,
+    "isFavorite": false,
+    "hideInDropdown": false
   }
 ]
 ```
@@ -81,6 +92,9 @@ Returns a list of all Activity Types.
     "name": "Car Travel",
     "unit": "km",
     "carbonUnitRate": 0.15,
+    "excludeFromDashboard": false,
+    "isFavorite": true,
+    "hideInDropdown": false,
     "records": [
       {
         "id": "1705424001000",
@@ -120,6 +134,9 @@ Retrieves details for a specific Activity Type.
   "name": "Car Travel",
   "unit": "km",
   "carbonUnitRate": 0.15,
+  "excludeFromDashboard": false,
+  "isFavorite": true,
+  "hideInDropdown": false,
   "records": [
     {
       "id": "1705424001000",
@@ -150,6 +167,9 @@ Creates a new Activity Type.
 | name | string | **Required**. Descriptive name for the Activity Type. |
 | unit | string | **Required**. Measurement unit. |
 | carbonUnitRate | number | **Required**. Emission rate (can be negative for offsets). |
+| excludeFromDashboard | boolean | *(Optional)* Exclude records from dashboard stats. Defaults to `false`. |
+| isFavorite | boolean | *(Optional)* Mark as favorite. Defaults to `false`. |
+| hideInDropdown | boolean | *(Optional)* Hide from dropdowns. Defaults to `false`. |
 
 #### Example Request
 ```json
@@ -190,7 +210,8 @@ Allows partial updates. You only need to include the fields you wish to change w
 ```json
 {
   "name": "Bus Travel (Updated)",
-  "carbonUnitRate": 0.08
+  "carbonUnitRate": 0.08,
+  "isFavorite": true
 }
 ```
 
@@ -201,7 +222,10 @@ Allows partial updates. You only need to include the fields you wish to change w
   "id": "1705423853000",
   "name": "Bus Travel (Updated)",
   "unit": "km",
-  "carbonUnitRate": 0.08
+  "carbonUnitRate": 0.08,
+  "excludeFromDashboard": false,
+  "isFavorite": true,
+  "hideInDropdown": false
 }
 ```
 
@@ -293,7 +317,10 @@ Retrieves a filtered list of logged carbon records.
       "id": "1705423851000",
       "name": "Car Travel",
       "unit": "km",
-      "carbonUnitRate": 0.15
+      "carbonUnitRate": 0.15,
+      "excludeFromDashboard": false,
+      "isFavorite": true,
+      "hideInDropdown": false
     }
   }
 ]
@@ -330,7 +357,10 @@ Retrieves details for a specific carbon record.
     "id": "1705423851000",
     "name": "Car Travel",
     "unit": "km",
-    "carbonUnitRate": 0.15
+    "carbonUnitRate": 0.15,
+    "excludeFromDashboard": false,
+    "isFavorite": true,
+    "hideInDropdown": false
   }
 }
 ```

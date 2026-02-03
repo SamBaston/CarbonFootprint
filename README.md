@@ -75,13 +75,7 @@ Due to the mark scheme I had to adheare to, there were limitations on what I cou
 *   Improved file structure
 *   Automated record generation
 *   Unit tests for frontend
-*   Copy and paste functionality for Activity Types and Records
-*   More modern UI (less reliance on bootstrap)
-*   Dark and Light mode UI toggle
 *   Data import/export functionality (JSON and/or CSV)
-*   Exclude from reporting toggle for Activity Types and Records
-*   Activity Type filters to be multiselectable
-*   Favouritable Activity Types for quick access
 
 <br>
 

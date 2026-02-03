@@ -49,10 +49,18 @@ app.get('/api/activities', async (req, res) => {
     try {
         let activities = await readData(ACTIVITIES_FILE);
 
-        const { name, extend } = req.query;
+        const { name, extend, active, favorite } = req.query;
         if (name) {
             const term = name.toLowerCase();
             activities = activities.filter(activity => activity.name.toLowerCase().includes(term));
+        }
+
+        if (active === 'true') {
+            activities = activities.filter(activity => !activity.hideInDropdown);
+        }
+
+        if (favorite === 'true') {
+            activities = activities.filter(activity => activity.isFavorite);
         }
 
         if (extend === 'records') {
@@ -112,7 +120,10 @@ app.post('/api/activities', async (req, res) => {
             name: name,
             unit: unit,
             carbonUnitRate: carbonUnitRate,
-            excludeFromDashboard: req.body.excludeFromDashboard || false
+            excludeFromDashboard: req.body.excludeFromDashboard || false,
+            // New fields with mutual exclusivity check
+            isFavorite: req.body.hideInDropdown ? false : (req.body.isFavorite || false),
+            hideInDropdown: req.body.hideInDropdown || false
         };
 
         activities.push(newActivity);
@@ -133,7 +144,16 @@ app.put('/api/activities/:id', async (req, res) => {
         if (index === -1) return res.status(404).json({ error: "Not found" });
 
         const oldRate = activities[index].carbonUnitRate;
-        activities[index] = { ...activities[index], ...req.body };
+
+        // Prepare updates
+        const updates = { ...req.body };
+
+        // Enforce constraint: can't be favorite and hidden
+        if (updates.hideInDropdown) {
+            updates.isFavorite = false;
+        }
+
+        activities[index] = { ...activities[index], ...updates };
         const newRate = activities[index].carbonUnitRate;
 
         await writeData(ACTIVITIES_FILE, activities);

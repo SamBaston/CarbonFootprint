@@ -84,10 +84,24 @@ function populateActivityDropdowns() {
         const currentVal = select.value;
         select.innerHTML = `<option value="${defaultValue}">${defaultText}</option>`;
 
-        state.activities.forEach(activity => {
+        // Filter out hidden activities (unless it's the currently selected one, to avoid breaking edits)
+        // Sort: Favorites first, then alphabetical
+        const sortedActivities = [...state.activities]
+            .filter(a => !a.hideInDropdown)
+            .sort((a, b) => {
+                // Primary sort: Favorites (true comes before false)
+                if ((a.isFavorite || false) !== (b.isFavorite || false)) {
+                    return (b.isFavorite || false) - (a.isFavorite || false);
+                }
+                // Secondary sort: Name alphabetical
+                return a.name.localeCompare(b.name);
+            });
+
+        sortedActivities.forEach(activity => {
             const option = document.createElement('option');
             option.value = activity.id;
-            option.innerText = activity.name;
+            // Add star icon for favorites
+            option.innerText = (activity.isFavorite ? '⭐ ' : '') + activity.name;
             select.appendChild(option);
         });
 
@@ -565,8 +579,10 @@ function renderActivities() {
     tableBody.innerHTML = state.activities.map(activity => `
         <tr>
             <td>
+                ${activity.isFavorite ? '<span class="be-1" title="Favorite">⭐</span>' : ''}
                 ${activity.name}
-                ${activity.excludeFromDashboard ? '<span class="badge bg-secondary ms-1" style="font-size: 0.6em">Hidden</span>' : ''}
+                ${activity.excludeFromDashboard ? '<span class="badge bg-secondary ms-1" style="font-size: 0.6em">No-Dash</span>' : ''}
+                ${activity.hideInDropdown ? '<span class="badge bg-dark ms-1" style="font-size: 0.6em">Hidden</span>' : ''}
             </td>
             <td>${activity.unit}</td>
             <td>${activity.carbonUnitRate} kg</td>
@@ -732,7 +748,6 @@ function searchRecords() {
 //---------------------------------------------//
 
 // The Edit and Create events for Activities and Records
-// The Edit and Create events for Activities and Records
 function openModal(type, id = null, prefillData = null) {
     state.editingType = type;
     state.editingId = id;
@@ -750,18 +765,33 @@ function openModal(type, id = null, prefillData = null) {
         } else if (prefillData) {
             activity = prefillData;
         } else {
-            activity = { name: '', unit: '', carbonUnitRate: '', excludeFromDashboard: false };
+            activity = { name: '', unit: '', carbonUnitRate: '', excludeFromDashboard: false, isFavorite: false, hideInDropdown: false };
         }
 
         body.innerHTML = `
             <input type="text" id="f-name" class="form-control mb-2" placeholder="Name" value="${activity.name}">
             <input type="text" id="f-unit" class="form-control mb-2" placeholder="Unit" value="${activity.unit}">
             <input type="number" id="f-rate" class="form-control mb-2" placeholder="Rate" value="${activity.carbonUnitRate}">
-            <div class="form-check mt-3">
-                <input class="form-check-input" type="checkbox" id="f-exclude" ${activity.excludeFromDashboard ? 'checked' : ''}>
-                <label class="form-check-label" for="f-exclude">
-                    Exclude from Dashboard
-                </label>
+            
+            <div class="d-flex flex-column gap-2 mt-3">
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="f-fav" 
+                        onchange="document.getElementById('f-hide').checked = this.checked ? false : document.getElementById('f-hide').checked"
+                        ${activity.isFavorite ? 'checked' : ''}>
+                    <label class="form-check-label" for="f-fav">⭐ Favorite (Prioritize in lists)</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="f-hide" 
+                        onchange="document.getElementById('f-fav').checked = this.checked ? false : document.getElementById('f-fav').checked"
+                        ${activity.hideInDropdown ? 'checked' : ''}>
+                    <label class="form-check-label" for="f-hide">🚫 Hide from Dropdowns</label>
+                </div>
+
+                <div class="form-check border-top pt-2">
+                    <input class="form-check-input" type="checkbox" id="f-exclude" ${activity.excludeFromDashboard ? 'checked' : ''}>
+                    <label class="form-check-label" for="f-exclude">Exclude from Dashboard Stats</label>
+                </div>
             </div>
         `;
     }
@@ -775,8 +805,18 @@ function openModal(type, id = null, prefillData = null) {
             record = { activityId: '', activityName: '', amount: '', date: new Date().toISOString().split('T')[0] };
         }
 
-        const options = state.activities.map(activity =>
-            `<option value="${activity.id}" ${activity.id === record.activityId ? 'selected' : ''}>${activity.name}</option>`
+        // Sort activities for record creation too: Favorites first, then alphabetical, excluding hidden ones
+        const sortedForModal = [...state.activities]
+            .filter(a => !a.hideInDropdown || a.id === record.activityId) // Include hidden if it's the current value
+            .sort((a, b) => {
+                if ((a.isFavorite || false) !== (b.isFavorite || false)) {
+                    return (b.isFavorite || false) - (a.isFavorite || false);
+                }
+                return a.name.localeCompare(b.name);
+            });
+
+        const options = sortedForModal.map(activity =>
+            `<option value="${activity.id}" ${activity.id === record.activityId ? 'selected' : ''}>${activity.isFavorite ? '⭐ ' : ''}${activity.name}</option>`
         ).join('');
 
         body.innerHTML = `
@@ -811,7 +851,9 @@ async function handleSave() {
             name: document.getElementById('f-name').value,
             unit: document.getElementById('f-unit').value,
             carbonUnitRate: parseFloat(document.getElementById('f-rate').value),
-            excludeFromDashboard: document.getElementById('f-exclude').checked
+            excludeFromDashboard: document.getElementById('f-exclude').checked,
+            isFavorite: document.getElementById('f-fav').checked,
+            hideInDropdown: document.getElementById('f-hide').checked
         };
     }
     else {
