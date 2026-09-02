@@ -5,7 +5,8 @@
 This is a web-based single-page dashboard application designed to help a user track their carbon footprint. It allows them to log various daily activities and see the resulting carbon emissions.
 
 This was built in accordance with my [Programming Black Assignment 1 Mark Scheme](https://github.com/stevenaeola/progblack_2526/blob/main/assignment_1/README.md).
-Grade: 71/100
+
+Grade: 79/100
 
 <br>
 
