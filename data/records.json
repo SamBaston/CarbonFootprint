@@ -3621,5 +3621,3437 @@
     "activityName": "negative unit rate record",
     "amount": 1,
     "co2Amount": -10
+  },
+  {
+    "id": "1770000000001",
+    "date": "2026-01-31",
+    "activityId": "car_petrol",
+    "activityName": "Weekend shopping trip",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1770000000002",
+    "date": "2026-01-31",
+    "activityId": "beef_meal",
+    "activityName": "Saturday steak night",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000003",
+    "date": "2026-02-01",
+    "activityId": "train_travel",
+    "activityName": "Day trip to visit friends",
+    "amount": 50,
+    "co2Amount": 2
+  },
+  {
+    "id": "1770000000004",
+    "date": "2026-02-01",
+    "activityId": "veg_meal",
+    "activityName": "Sunday roast veg",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000005",
+    "date": "2026-02-02",
+    "activityId": "train_travel",
+    "activityName": "Morning commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000006",
+    "date": "2026-02-02",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken salad lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000007",
+    "date": "2026-02-02",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home power",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1770000000008",
+    "date": "2026-02-03",
+    "activityId": "car_petrol",
+    "activityName": "Commute to office",
+    "amount": 30,
+    "co2Amount": 5.1
+  },
+  {
+    "id": "1770000000009",
+    "date": "2026-02-03",
+    "activityId": "natural_gas",
+    "activityName": "Evening heating",
+    "amount": 35,
+    "co2Amount": 7
+  },
+  {
+    "id": "1770000000010",
+    "date": "2026-02-04",
+    "activityId": "bus_travel",
+    "activityName": "Bus into town",
+    "amount": 15,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000011",
+    "date": "2026-02-04",
+    "activityId": "pork_meal",
+    "activityName": "Pork dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000012",
+    "date": "2026-02-05",
+    "activityId": "train_travel",
+    "activityName": "Commute to office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000013",
+    "date": "2026-02-05",
+    "activityId": "electricity_usage",
+    "activityName": "Evening home usage",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1770000000014",
+    "date": "2026-02-06",
+    "activityId": "car_diesel",
+    "activityName": "Friday commute & errands",
+    "amount": 35,
+    "co2Amount": 7.35
+  },
+  {
+    "id": "1770000000015",
+    "date": "2026-02-06",
+    "activityId": "internet_usage",
+    "activityName": "Friday movie streaming",
+    "amount": 20,
+    "co2Amount": 10
+  },
+  {
+    "id": "1770000000016",
+    "date": "2026-02-07",
+    "activityId": "car_electric",
+    "activityName": "Supermarket run",
+    "amount": 20,
+    "co2Amount": 1
+  },
+  {
+    "id": "1770000000017",
+    "date": "2026-02-07",
+    "activityId": "beef_meal",
+    "activityName": "Weekend burger feast",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000018",
+    "date": "2026-02-08",
+    "activityId": "veg_meal",
+    "activityName": "Plant-based Sunday curry",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000019",
+    "date": "2026-02-08",
+    "activityId": "electricity_usage",
+    "activityName": "Sunday household appliances",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000020",
+    "date": "2026-02-09",
+    "activityId": "train_travel",
+    "activityName": "Commute to central office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000021",
+    "date": "2026-02-09",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken & rice prep",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000022",
+    "date": "2026-02-10",
+    "activityId": "bus_travel",
+    "activityName": "City bus commute",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000023",
+    "date": "2026-02-10",
+    "activityId": "natural_gas",
+    "activityName": "Winter heating",
+    "amount": 40,
+    "co2Amount": 8
+  },
+  {
+    "id": "1770000000024",
+    "date": "2026-02-11",
+    "activityId": "car_petrol",
+    "activityName": "Client meeting drive",
+    "amount": 45,
+    "co2Amount": 7.65
+  },
+  {
+    "id": "1770000000025",
+    "date": "2026-02-11",
+    "activityId": "veg_meal",
+    "activityName": "Vegetarian lunch",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000026",
+    "date": "2026-02-12",
+    "activityId": "train_travel",
+    "activityName": "Morning commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000027",
+    "date": "2026-02-12",
+    "activityId": "electricity_usage",
+    "activityName": "Home appliances & lighting",
+    "amount": 26,
+    "co2Amount": 5.98
+  },
+  {
+    "id": "1770000000028",
+    "date": "2026-02-13",
+    "activityId": "car_diesel",
+    "activityName": "Drive to work",
+    "amount": 30,
+    "co2Amount": 6.3
+  },
+  {
+    "id": "1770000000029",
+    "date": "2026-02-13",
+    "activityId": "pork_meal",
+    "activityName": "Friday night dinner",
+    "amount": 2,
+    "co2Amount": 15.6
+  },
+  {
+    "id": "1770000000030",
+    "date": "2026-02-14",
+    "activityId": "car_petrol",
+    "activityName": "Valentine's dinner drive",
+    "amount": 25,
+    "co2Amount": 4.25
+  },
+  {
+    "id": "1770000000031",
+    "date": "2026-02-14",
+    "activityId": "lamb_meal",
+    "activityName": "Valentine's special dinner",
+    "amount": 1,
+    "co2Amount": 20.4
+  },
+  {
+    "id": "1770000000032",
+    "date": "2026-02-15",
+    "activityId": "veg_meal",
+    "activityName": "Sunday homemade pasta",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000033",
+    "date": "2026-02-15",
+    "activityId": "internet_usage",
+    "activityName": "Weekend streaming",
+    "amount": 15,
+    "co2Amount": 7.5
+  },
+  {
+    "id": "1770000000034",
+    "date": "2026-02-16",
+    "activityId": "train_travel",
+    "activityName": "Weekly commute start",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000035",
+    "date": "2026-02-16",
+    "activityId": "chicken_meal",
+    "activityName": "Grilled chicken dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000036",
+    "date": "2026-02-17",
+    "activityId": "bus_travel",
+    "activityName": "Commute by bus",
+    "amount": 15,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000037",
+    "date": "2026-02-17",
+    "activityId": "natural_gas",
+    "activityName": "Central heating",
+    "amount": 35,
+    "co2Amount": 7
+  },
+  {
+    "id": "1770000000038",
+    "date": "2026-02-18",
+    "activityId": "car_electric",
+    "activityName": "Electric vehicle commute",
+    "amount": 35,
+    "co2Amount": 1.75
+  },
+  {
+    "id": "1770000000039",
+    "date": "2026-02-18",
+    "activityId": "veg_meal",
+    "activityName": "Mediterranean lunch",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000040",
+    "date": "2026-02-19",
+    "activityId": "train_travel",
+    "activityName": "Office commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000041",
+    "date": "2026-02-19",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 24,
+    "co2Amount": 5.52
+  },
+  {
+    "id": "1770000000042",
+    "date": "2026-02-20",
+    "activityId": "car_petrol",
+    "activityName": "Commute & grocery stop",
+    "amount": 32,
+    "co2Amount": 5.44
+  },
+  {
+    "id": "1770000000043",
+    "date": "2026-02-20",
+    "activityId": "chicken_meal",
+    "activityName": "Family chicken roast",
+    "amount": 2,
+    "co2Amount": 13
+  },
+  {
+    "id": "1770000000044",
+    "date": "2026-02-21",
+    "activityId": "car_diesel",
+    "activityName": "Weekend countryside drive",
+    "amount": 55,
+    "co2Amount": 11.55
+  },
+  {
+    "id": "1770000000045",
+    "date": "2026-02-21",
+    "activityId": "beef_meal",
+    "activityName": "Saturday pub dinner",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000046",
+    "date": "2026-02-22",
+    "activityId": "veg_meal",
+    "activityName": "Sunday veggie stew",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000047",
+    "date": "2026-02-22",
+    "activityId": "electricity_usage",
+    "activityName": "Laundry & domestic use",
+    "amount": 30,
+    "co2Amount": 6.9
+  },
+  {
+    "id": "1770000000048",
+    "date": "2026-02-23",
+    "activityId": "train_travel",
+    "activityName": "Monday commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000049",
+    "date": "2026-02-23",
+    "activityId": "pork_meal",
+    "activityName": "Quick pork stir fry",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000050",
+    "date": "2026-02-24",
+    "activityId": "bus_travel",
+    "activityName": "Bus journey to clinic",
+    "amount": 10,
+    "co2Amount": 1
+  },
+  {
+    "id": "1770000000051",
+    "date": "2026-02-24",
+    "activityId": "natural_gas",
+    "activityName": "Heating on cold night",
+    "amount": 38,
+    "co2Amount": 7.6
+  },
+  {
+    "id": "1770000000052",
+    "date": "2026-02-25",
+    "activityId": "car_petrol",
+    "activityName": "Drive to work",
+    "amount": 28,
+    "co2Amount": 4.76
+  },
+  {
+    "id": "1770000000053",
+    "date": "2026-02-25",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken caesar salad",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000054",
+    "date": "2026-02-26",
+    "activityId": "train_travel",
+    "activityName": "Office commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000055",
+    "date": "2026-02-26",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home power",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1770000000056",
+    "date": "2026-02-27",
+    "activityId": "car_electric",
+    "activityName": "Commute and gym visit",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1770000000057",
+    "date": "2026-02-27",
+    "activityId": "new_tshirt",
+    "activityName": "Spring clothes order",
+    "amount": 2,
+    "co2Amount": 10
+  },
+  {
+    "id": "1770000000058",
+    "date": "2026-02-28",
+    "activityId": "car_petrol",
+    "activityName": "Weekend outing to national park",
+    "amount": 60,
+    "co2Amount": 10.2
+  },
+  {
+    "id": "1770000000059",
+    "date": "2026-02-28",
+    "activityId": "beef_meal",
+    "activityName": "Weekend burger night",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000060",
+    "date": "2026-03-01",
+    "activityId": "train_travel",
+    "activityName": "Sunday train trip",
+    "amount": 45,
+    "co2Amount": 1.8
+  },
+  {
+    "id": "1770000000061",
+    "date": "2026-03-01",
+    "activityId": "veg_meal",
+    "activityName": "Sunday veggie roast",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000062",
+    "date": "2026-03-02",
+    "activityId": "train_travel",
+    "activityName": "Morning office train",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000063",
+    "date": "2026-03-02",
+    "activityId": "electricity_usage",
+    "activityName": "Home office power",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000064",
+    "date": "2026-03-03",
+    "activityId": "bus_travel",
+    "activityName": "City bus commute",
+    "amount": 14,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000065",
+    "date": "2026-03-03",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken breast & veg",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000066",
+    "date": "2026-03-04",
+    "activityId": "car_petrol",
+    "activityName": "Commute to office",
+    "amount": 30,
+    "co2Amount": 5.1
+  },
+  {
+    "id": "1770000000067",
+    "date": "2026-03-04",
+    "activityId": "natural_gas",
+    "activityName": "Heating during cold snap",
+    "amount": 32,
+    "co2Amount": 6.4
+  },
+  {
+    "id": "1770000000068",
+    "date": "2026-03-05",
+    "activityId": "train_travel",
+    "activityName": "Work commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000069",
+    "date": "2026-03-05",
+    "activityId": "veg_meal",
+    "activityName": "Lentil soup dinner",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000070",
+    "date": "2026-03-06",
+    "activityId": "car_diesel",
+    "activityName": "Friday office commute",
+    "amount": 35,
+    "co2Amount": 7.35
+  },
+  {
+    "id": "1770000000071",
+    "date": "2026-03-06",
+    "activityId": "pork_meal",
+    "activityName": "Friday pulled pork",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000072",
+    "date": "2026-03-07",
+    "activityId": "car_petrol",
+    "activityName": "Weekend hardware shop run",
+    "amount": 20,
+    "co2Amount": 3.4
+  },
+  {
+    "id": "1770000000073",
+    "date": "2026-03-07",
+    "activityId": "beef_meal",
+    "activityName": "Saturday steak night",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000074",
+    "date": "2026-03-08",
+    "activityId": "veg_meal",
+    "activityName": "Sunday pasta bake",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000075",
+    "date": "2026-03-08",
+    "activityId": "internet_usage",
+    "activityName": "Sunday movies & gaming",
+    "amount": 22,
+    "co2Amount": 11
+  },
+  {
+    "id": "1770000000076",
+    "date": "2026-03-09",
+    "activityId": "train_travel",
+    "activityName": "Commute to city centre",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000077",
+    "date": "2026-03-09",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken stir fry",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000078",
+    "date": "2026-03-10",
+    "activityId": "bus_travel",
+    "activityName": "Bus to work",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000079",
+    "date": "2026-03-10",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 26,
+    "co2Amount": 5.98
+  },
+  {
+    "id": "1770000000080",
+    "date": "2026-03-11",
+    "activityId": "car_electric",
+    "activityName": "Commute to HQ",
+    "amount": 30,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000081",
+    "date": "2026-03-11",
+    "activityId": "natural_gas",
+    "activityName": "Evening heating",
+    "amount": 30,
+    "co2Amount": 6
+  },
+  {
+    "id": "1770000000082",
+    "date": "2026-03-12",
+    "activityId": "train_travel",
+    "activityName": "Work commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000083",
+    "date": "2026-03-12",
+    "activityId": "veg_meal",
+    "activityName": "Bean chili dinner",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000084",
+    "date": "2026-03-13",
+    "activityId": "car_petrol",
+    "activityName": "Commute to office",
+    "amount": 32,
+    "co2Amount": 5.44
+  },
+  {
+    "id": "1770000000085",
+    "date": "2026-03-13",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken curry",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000086",
+    "date": "2026-03-14",
+    "activityId": "flight_short",
+    "activityName": "Spring weekend city break flight",
+    "amount": 450,
+    "co2Amount": 112.5
+  },
+  {
+    "id": "1770000000087",
+    "date": "2026-03-15",
+    "activityId": "bus_travel",
+    "activityName": "Airport shuttle & sightseeing",
+    "amount": 25,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000088",
+    "date": "2026-03-15",
+    "activityId": "lamb_meal",
+    "activityName": "Dinner while traveling",
+    "amount": 1,
+    "co2Amount": 20.4
+  },
+  {
+    "id": "1770000000089",
+    "date": "2026-03-16",
+    "activityId": "flight_short",
+    "activityName": "Return flight from city break",
+    "amount": 450,
+    "co2Amount": 112.5
+  },
+  {
+    "id": "1770000000090",
+    "date": "2026-03-17",
+    "activityId": "train_travel",
+    "activityName": "Commute to work",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000091",
+    "date": "2026-03-17",
+    "activityId": "veg_meal",
+    "activityName": "Healthy recovery salad",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000092",
+    "date": "2026-03-18",
+    "activityId": "car_petrol",
+    "activityName": "Commute and school run",
+    "amount": 28,
+    "co2Amount": 4.76
+  },
+  {
+    "id": "1770000000093",
+    "date": "2026-03-18",
+    "activityId": "electricity_usage",
+    "activityName": "Home appliances",
+    "amount": 24,
+    "co2Amount": 5.52
+  },
+  {
+    "id": "1770000000094",
+    "date": "2026-03-19",
+    "activityId": "bus_travel",
+    "activityName": "Public transit commute",
+    "amount": 15,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000095",
+    "date": "2026-03-19",
+    "activityId": "chicken_meal",
+    "activityName": "Roast chicken lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000096",
+    "date": "2026-03-20",
+    "activityId": "car_diesel",
+    "activityName": "Friday commute drive",
+    "amount": 32,
+    "co2Amount": 6.72
+  },
+  {
+    "id": "1770000000097",
+    "date": "2026-03-20",
+    "activityId": "pork_meal",
+    "activityName": "Pork chops dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000098",
+    "date": "2026-03-21",
+    "activityId": "car_electric",
+    "activityName": "Weekend market trip",
+    "amount": 22,
+    "co2Amount": 1.1
+  },
+  {
+    "id": "1770000000099",
+    "date": "2026-03-21",
+    "activityId": "beef_meal",
+    "activityName": "Weekend burger lunch",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000100",
+    "date": "2026-03-22",
+    "activityId": "train_travel",
+    "activityName": "Visit relatives by rail",
+    "amount": 60,
+    "co2Amount": 2.4
+  },
+  {
+    "id": "1770000000101",
+    "date": "2026-03-22",
+    "activityId": "veg_meal",
+    "activityName": "Vegetarian dinner",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000102",
+    "date": "2026-03-23",
+    "activityId": "train_travel",
+    "activityName": "Monday commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000103",
+    "date": "2026-03-23",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1770000000104",
+    "date": "2026-03-24",
+    "activityId": "bus_travel",
+    "activityName": "City transit to office",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000105",
+    "date": "2026-03-24",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken fajitas",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000106",
+    "date": "2026-03-25",
+    "activityId": "car_petrol",
+    "activityName": "Office commute",
+    "amount": 30,
+    "co2Amount": 5.1
+  },
+  {
+    "id": "1770000000107",
+    "date": "2026-03-25",
+    "activityId": "natural_gas",
+    "activityName": "Spring evening heating",
+    "amount": 25,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000108",
+    "date": "2026-03-26",
+    "activityId": "train_travel",
+    "activityName": "Work commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000109",
+    "date": "2026-03-26",
+    "activityId": "veg_meal",
+    "activityName": "Vegetable risotto",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000110",
+    "date": "2026-03-27",
+    "activityId": "car_diesel",
+    "activityName": "Friday commute & shopping",
+    "amount": 35,
+    "co2Amount": 7.35
+  },
+  {
+    "id": "1770000000111",
+    "date": "2026-03-27",
+    "activityId": "internet_usage",
+    "activityName": "Streaming movie night",
+    "amount": 20,
+    "co2Amount": 10
+  },
+  {
+    "id": "1770000000112",
+    "date": "2026-03-28",
+    "activityId": "car_petrol",
+    "activityName": "Weekend garden centre run",
+    "amount": 25,
+    "co2Amount": 4.25
+  },
+  {
+    "id": "1770000000113",
+    "date": "2026-03-28",
+    "activityId": "lamb_meal",
+    "activityName": "Saturday roast dinner",
+    "amount": 1,
+    "co2Amount": 20.4
+  },
+  {
+    "id": "1770000000114",
+    "date": "2026-03-29",
+    "activityId": "veg_meal",
+    "activityName": "Sunday veggie stew",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000115",
+    "date": "2026-03-29",
+    "activityId": "electricity_usage",
+    "activityName": "Laundry & household electricity",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1770000000116",
+    "date": "2026-03-30",
+    "activityId": "train_travel",
+    "activityName": "Commute to office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000117",
+    "date": "2026-03-30",
+    "activityId": "chicken_meal",
+    "activityName": "Lemon herb chicken",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000118",
+    "date": "2026-03-31",
+    "activityId": "car_electric",
+    "activityName": "End of month commute",
+    "amount": 30,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000119",
+    "date": "2026-03-31",
+    "activityId": "natural_gas",
+    "activityName": "Water heating",
+    "amount": 20,
+    "co2Amount": 4
+  },
+  {
+    "id": "1770000000120",
+    "date": "2026-04-01",
+    "activityId": "train_travel",
+    "activityName": "Daily rail commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000121",
+    "date": "2026-04-01",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home power",
+    "amount": 23,
+    "co2Amount": 5.29
+  },
+  {
+    "id": "1770000000122",
+    "date": "2026-04-02",
+    "activityId": "bus_travel",
+    "activityName": "Morning bus ride",
+    "amount": 14,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000123",
+    "date": "2026-04-02",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken noodle soup",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000124",
+    "date": "2026-04-03",
+    "activityId": "car_petrol",
+    "activityName": "Easter getaway road trip start",
+    "amount": 85,
+    "co2Amount": 14.45
+  },
+  {
+    "id": "1770000000125",
+    "date": "2026-04-04",
+    "activityId": "car_petrol",
+    "activityName": "Easter holiday drive",
+    "amount": 40,
+    "co2Amount": 6.8
+  },
+  {
+    "id": "1770000000126",
+    "date": "2026-04-04",
+    "activityId": "lamb_meal",
+    "activityName": "Easter weekend lamb feast",
+    "amount": 1,
+    "co2Amount": 20.4
+  },
+  {
+    "id": "1770000000127",
+    "date": "2026-04-05",
+    "activityId": "veg_meal",
+    "activityName": "Easter Sunday vegetable tart",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000128",
+    "date": "2026-04-05",
+    "activityId": "electricity_usage",
+    "activityName": "Holiday cottage electricity",
+    "amount": 20,
+    "co2Amount": 4.6
+  },
+  {
+    "id": "1770000000129",
+    "date": "2026-04-06",
+    "activityId": "car_petrol",
+    "activityName": "Easter holiday return drive",
+    "amount": 85,
+    "co2Amount": 14.45
+  },
+  {
+    "id": "1770000000130",
+    "date": "2026-04-06",
+    "activityId": "pork_meal",
+    "activityName": "Post-trip easy dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000131",
+    "date": "2026-04-07",
+    "activityId": "train_travel",
+    "activityName": "Back to work commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000132",
+    "date": "2026-04-07",
+    "activityId": "veg_meal",
+    "activityName": "Healthy office lunch",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000133",
+    "date": "2026-04-08",
+    "activityId": "car_electric",
+    "activityName": "EV commute",
+    "amount": 28,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000134",
+    "date": "2026-04-08",
+    "activityId": "electricity_usage",
+    "activityName": "EV charging at home",
+    "amount": 32,
+    "co2Amount": 7.36
+  },
+  {
+    "id": "1770000000135",
+    "date": "2026-04-09",
+    "activityId": "bus_travel",
+    "activityName": "Commute to town",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000136",
+    "date": "2026-04-09",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken pasta bake",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000137",
+    "date": "2026-04-10",
+    "activityId": "car_petrol",
+    "activityName": "Friday commute",
+    "amount": 30,
+    "co2Amount": 5.1
+  },
+  {
+    "id": "1770000000138",
+    "date": "2026-04-10",
+    "activityId": "beef_meal",
+    "activityName": "Friday steak treat",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000139",
+    "date": "2026-04-11",
+    "activityId": "car_diesel",
+    "activityName": "Weekend DIY errands",
+    "amount": 30,
+    "co2Amount": 6.3
+  },
+  {
+    "id": "1770000000140",
+    "date": "2026-04-11",
+    "activityId": "veg_meal",
+    "activityName": "Quick veggie wrap",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000141",
+    "date": "2026-04-12",
+    "activityId": "veg_meal",
+    "activityName": "Sunday home cooking",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000142",
+    "date": "2026-04-12",
+    "activityId": "internet_usage",
+    "activityName": "Weekend streaming binge",
+    "amount": 25,
+    "co2Amount": 12.5
+  },
+  {
+    "id": "1770000000143",
+    "date": "2026-04-13",
+    "activityId": "train_travel",
+    "activityName": "Monday commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000144",
+    "date": "2026-04-13",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home power",
+    "amount": 24,
+    "co2Amount": 5.52
+  },
+  {
+    "id": "1770000000145",
+    "date": "2026-04-14",
+    "activityId": "bus_travel",
+    "activityName": "Bus to office",
+    "amount": 15,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000146",
+    "date": "2026-04-14",
+    "activityId": "chicken_meal",
+    "activityName": "Grilled chicken dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000147",
+    "date": "2026-04-15",
+    "activityId": "car_petrol",
+    "activityName": "Drive to regional branch",
+    "amount": 55,
+    "co2Amount": 9.35
+  },
+  {
+    "id": "1770000000148",
+    "date": "2026-04-15",
+    "activityId": "veg_meal",
+    "activityName": "Plant-based lunch",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000149",
+    "date": "2026-04-16",
+    "activityId": "train_travel",
+    "activityName": "Train commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000150",
+    "date": "2026-04-16",
+    "activityId": "natural_gas",
+    "activityName": "Spring heating",
+    "amount": 22,
+    "co2Amount": 4.4
+  },
+  {
+    "id": "1770000000151",
+    "date": "2026-04-17",
+    "activityId": "car_diesel",
+    "activityName": "Commute to work",
+    "amount": 32,
+    "co2Amount": 6.72
+  },
+  {
+    "id": "1770000000152",
+    "date": "2026-04-17",
+    "activityId": "pork_meal",
+    "activityName": "Pork tenderloin dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000153",
+    "date": "2026-04-18",
+    "activityId": "car_petrol",
+    "activityName": "Saturday drive to coastal walk",
+    "amount": 65,
+    "co2Amount": 11.05
+  },
+  {
+    "id": "1770000000154",
+    "date": "2026-04-18",
+    "activityId": "beef_meal",
+    "activityName": "Saturday pub dinner",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000155",
+    "date": "2026-04-19",
+    "activityId": "train_travel",
+    "activityName": "Sunday excursion",
+    "amount": 35,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000156",
+    "date": "2026-04-19",
+    "activityId": "veg_meal",
+    "activityName": "Sunday veggie stir fry",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000157",
+    "date": "2026-04-20",
+    "activityId": "train_travel",
+    "activityName": "Morning commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000158",
+    "date": "2026-04-20",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home power",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000159",
+    "date": "2026-04-21",
+    "activityId": "bus_travel",
+    "activityName": "City transit",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000160",
+    "date": "2026-04-21",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken & rice lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000161",
+    "date": "2026-04-22",
+    "activityId": "car_electric",
+    "activityName": "Earth Day eco commute",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1770000000162",
+    "date": "2026-04-22",
+    "activityId": "veg_meal",
+    "activityName": "Earth Day vegetarian meals",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000163",
+    "date": "2026-04-23",
+    "activityId": "train_travel",
+    "activityName": "Work commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000164",
+    "date": "2026-04-23",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home electricity",
+    "amount": 24,
+    "co2Amount": 5.52
+  },
+  {
+    "id": "1770000000165",
+    "date": "2026-04-24",
+    "activityId": "car_petrol",
+    "activityName": "Friday commute & shopping",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1770000000166",
+    "date": "2026-04-24",
+    "activityId": "chicken_meal",
+    "activityName": "Friday roast chicken",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000167",
+    "date": "2026-04-25",
+    "activityId": "car_diesel",
+    "activityName": "Weekend drive to farmers market",
+    "amount": 30,
+    "co2Amount": 6.3
+  },
+  {
+    "id": "1770000000168",
+    "date": "2026-04-25",
+    "activityId": "new_tshirt",
+    "activityName": "Bought summer t-shirts",
+    "amount": 2,
+    "co2Amount": 10
+  },
+  {
+    "id": "1770000000169",
+    "date": "2026-04-26",
+    "activityId": "veg_meal",
+    "activityName": "Sunday pasta feast",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000170",
+    "date": "2026-04-26",
+    "activityId": "internet_usage",
+    "activityName": "Gaming & cloud backup",
+    "amount": 20,
+    "co2Amount": 10
+  },
+  {
+    "id": "1770000000171",
+    "date": "2026-04-27",
+    "activityId": "train_travel",
+    "activityName": "Commute to office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000172",
+    "date": "2026-04-27",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken wrap dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000173",
+    "date": "2026-04-28",
+    "activityId": "bus_travel",
+    "activityName": "Bus to town centre",
+    "amount": 14,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000174",
+    "date": "2026-04-28",
+    "activityId": "electricity_usage",
+    "activityName": "Home electricity use",
+    "amount": 23,
+    "co2Amount": 5.29
+  },
+  {
+    "id": "1770000000175",
+    "date": "2026-04-29",
+    "activityId": "car_petrol",
+    "activityName": "Commute to HQ",
+    "amount": 32,
+    "co2Amount": 5.44
+  },
+  {
+    "id": "1770000000176",
+    "date": "2026-04-29",
+    "activityId": "pork_meal",
+    "activityName": "Pork dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000177",
+    "date": "2026-04-30",
+    "activityId": "train_travel",
+    "activityName": "End of month commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000178",
+    "date": "2026-04-30",
+    "activityId": "veg_meal",
+    "activityName": "Vegetarian dinner",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000179",
+    "date": "2026-05-01",
+    "activityId": "car_petrol",
+    "activityName": "Bank holiday weekend getaway start",
+    "amount": 90,
+    "co2Amount": 15.3
+  },
+  {
+    "id": "1770000000180",
+    "date": "2026-05-01",
+    "activityId": "beef_meal",
+    "activityName": "Holiday burger dinner",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000181",
+    "date": "2026-05-02",
+    "activityId": "car_petrol",
+    "activityName": "Exploring country park",
+    "amount": 40,
+    "co2Amount": 6.8
+  },
+  {
+    "id": "1770000000182",
+    "date": "2026-05-02",
+    "activityId": "chicken_meal",
+    "activityName": "Picnic lunch with chicken",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000183",
+    "date": "2026-05-03",
+    "activityId": "car_petrol",
+    "activityName": "Bank holiday return drive",
+    "amount": 90,
+    "co2Amount": 15.3
+  },
+  {
+    "id": "1770000000184",
+    "date": "2026-05-03",
+    "activityId": "veg_meal",
+    "activityName": "Easy Sunday veggie dinner",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000185",
+    "date": "2026-05-04",
+    "activityId": "electricity_usage",
+    "activityName": "Bank holiday relaxation at home",
+    "amount": 26,
+    "co2Amount": 5.98
+  },
+  {
+    "id": "1770000000186",
+    "date": "2026-05-04",
+    "activityId": "internet_usage",
+    "activityName": "Movie marathon",
+    "amount": 25,
+    "co2Amount": 12.5
+  },
+  {
+    "id": "1770000000187",
+    "date": "2026-05-05",
+    "activityId": "train_travel",
+    "activityName": "Morning commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000188",
+    "date": "2026-05-05",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken breast lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000189",
+    "date": "2026-05-06",
+    "activityId": "bus_travel",
+    "activityName": "City transit to work",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000190",
+    "date": "2026-05-06",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 21,
+    "co2Amount": 4.83
+  },
+  {
+    "id": "1770000000191",
+    "date": "2026-05-07",
+    "activityId": "car_electric",
+    "activityName": "EV office commute",
+    "amount": 30,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000192",
+    "date": "2026-05-07",
+    "activityId": "veg_meal",
+    "activityName": "Mediterranean salad",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000193",
+    "date": "2026-05-08",
+    "activityId": "car_diesel",
+    "activityName": "Friday drive to site",
+    "amount": 45,
+    "co2Amount": 9.45
+  },
+  {
+    "id": "1770000000194",
+    "date": "2026-05-08",
+    "activityId": "pork_meal",
+    "activityName": "Friday BBQ pork ribs",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000195",
+    "date": "2026-05-09",
+    "activityId": "car_petrol",
+    "activityName": "Weekend shopping run",
+    "amount": 25,
+    "co2Amount": 4.25
+  },
+  {
+    "id": "1770000000196",
+    "date": "2026-05-09",
+    "activityId": "lamb_meal",
+    "activityName": "Saturday dinner with friends",
+    "amount": 1,
+    "co2Amount": 20.4
+  },
+  {
+    "id": "1770000000197",
+    "date": "2026-05-10",
+    "activityId": "train_travel",
+    "activityName": "Sunday train excursion",
+    "amount": 50,
+    "co2Amount": 2
+  },
+  {
+    "id": "1770000000198",
+    "date": "2026-05-10",
+    "activityId": "veg_meal",
+    "activityName": "Sunday veggie roast",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000199",
+    "date": "2026-05-11",
+    "activityId": "train_travel",
+    "activityName": "Office commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000200",
+    "date": "2026-05-11",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home power",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000201",
+    "date": "2026-05-12",
+    "activityId": "bus_travel",
+    "activityName": "Morning bus journey",
+    "amount": 14,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000202",
+    "date": "2026-05-12",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken salad prep",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000203",
+    "date": "2026-05-13",
+    "activityId": "car_petrol",
+    "activityName": "Drive to conference",
+    "amount": 50,
+    "co2Amount": 8.5
+  },
+  {
+    "id": "1770000000204",
+    "date": "2026-05-13",
+    "activityId": "veg_meal",
+    "activityName": "Conference lunch",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000205",
+    "date": "2026-05-14",
+    "activityId": "train_travel",
+    "activityName": "Return commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000206",
+    "date": "2026-05-14",
+    "activityId": "electricity_usage",
+    "activityName": "Evening power usage",
+    "amount": 24,
+    "co2Amount": 5.52
+  },
+  {
+    "id": "1770000000207",
+    "date": "2026-05-15",
+    "activityId": "car_diesel",
+    "activityName": "Friday office commute",
+    "amount": 30,
+    "co2Amount": 6.3
+  },
+  {
+    "id": "1770000000208",
+    "date": "2026-05-15",
+    "activityId": "beef_meal",
+    "activityName": "Friday night steak dinner",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000209",
+    "date": "2026-05-16",
+    "activityId": "car_electric",
+    "activityName": "Errands in city",
+    "amount": 20,
+    "co2Amount": 1
+  },
+  {
+    "id": "1770000000210",
+    "date": "2026-05-16",
+    "activityId": "chicken_meal",
+    "activityName": "Homemade chicken nuggets",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000211",
+    "date": "2026-05-17",
+    "activityId": "veg_meal",
+    "activityName": "Sunday plant-based curry",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000212",
+    "date": "2026-05-17",
+    "activityId": "internet_usage",
+    "activityName": "Sunday gaming & video stream",
+    "amount": 20,
+    "co2Amount": 10
+  },
+  {
+    "id": "1770000000213",
+    "date": "2026-05-18",
+    "activityId": "train_travel",
+    "activityName": "Monday train commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000214",
+    "date": "2026-05-18",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home electricity",
+    "amount": 23,
+    "co2Amount": 5.29
+  },
+  {
+    "id": "1770000000215",
+    "date": "2026-05-19",
+    "activityId": "bus_travel",
+    "activityName": "Commute to office",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000216",
+    "date": "2026-05-19",
+    "activityId": "pork_meal",
+    "activityName": "Pork stir fry dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000217",
+    "date": "2026-05-20",
+    "activityId": "car_petrol",
+    "activityName": "Drive to meeting",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1770000000218",
+    "date": "2026-05-20",
+    "activityId": "veg_meal",
+    "activityName": "Healthy quinoa bowl",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000219",
+    "date": "2026-05-21",
+    "activityId": "train_travel",
+    "activityName": "Office commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000220",
+    "date": "2026-05-21",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken taco night",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000221",
+    "date": "2026-05-22",
+    "activityId": "flight_short",
+    "activityName": "Late spring weekend flight to Paris",
+    "amount": 400,
+    "co2Amount": 100
+  },
+  {
+    "id": "1770000000222",
+    "date": "2026-05-23",
+    "activityId": "bus_travel",
+    "activityName": "Paris metro and sightseeing bus",
+    "amount": 18,
+    "co2Amount": 1.8
+  },
+  {
+    "id": "1770000000223",
+    "date": "2026-05-23",
+    "activityId": "beef_meal",
+    "activityName": "Bistro steak frites",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000224",
+    "date": "2026-05-24",
+    "activityId": "flight_short",
+    "activityName": "Return flight from Paris",
+    "amount": 400,
+    "co2Amount": 100
+  },
+  {
+    "id": "1770000000225",
+    "date": "2026-05-25",
+    "activityId": "electricity_usage",
+    "activityName": "Late May bank holiday at home",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1770000000226",
+    "date": "2026-05-25",
+    "activityId": "veg_meal",
+    "activityName": "Bank holiday recovery cooking",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000227",
+    "date": "2026-05-26",
+    "activityId": "train_travel",
+    "activityName": "Commute to work",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000228",
+    "date": "2026-05-26",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken caesar wrap",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000229",
+    "date": "2026-05-27",
+    "activityId": "car_electric",
+    "activityName": "EV commute",
+    "amount": 28,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000230",
+    "date": "2026-05-27",
+    "activityId": "electricity_usage",
+    "activityName": "Home power & EV charge",
+    "amount": 30,
+    "co2Amount": 6.9
+  },
+  {
+    "id": "1770000000231",
+    "date": "2026-05-28",
+    "activityId": "bus_travel",
+    "activityName": "Morning bus commute",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000232",
+    "date": "2026-05-28",
+    "activityId": "pork_meal",
+    "activityName": "Quick pork stir-fry",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000233",
+    "date": "2026-05-29",
+    "activityId": "car_petrol",
+    "activityName": "Commute and grocery haul",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1770000000234",
+    "date": "2026-05-29",
+    "activityId": "chicken_meal",
+    "activityName": "Friday chicken roast",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000235",
+    "date": "2026-05-30",
+    "activityId": "car_diesel",
+    "activityName": "Weekend drive to the beach",
+    "amount": 70,
+    "co2Amount": 14.7
+  },
+  {
+    "id": "1770000000236",
+    "date": "2026-05-30",
+    "activityId": "beef_meal",
+    "activityName": "Saturday beach BBQ",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000237",
+    "date": "2026-05-31",
+    "activityId": "veg_meal",
+    "activityName": "Sunday pasta salad",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000238",
+    "date": "2026-05-31",
+    "activityId": "electricity_usage",
+    "activityName": "End of month laundry & home power",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1770000000239",
+    "date": "2026-06-01",
+    "activityId": "train_travel",
+    "activityName": "First commute of June",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000240",
+    "date": "2026-06-01",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken salad lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000241",
+    "date": "2026-06-02",
+    "activityId": "bus_travel",
+    "activityName": "City transit to work",
+    "amount": 14,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000242",
+    "date": "2026-06-02",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home power",
+    "amount": 20,
+    "co2Amount": 4.6
+  },
+  {
+    "id": "1770000000243",
+    "date": "2026-06-03",
+    "activityId": "car_electric",
+    "activityName": "EV office commute",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1770000000244",
+    "date": "2026-06-03",
+    "activityId": "veg_meal",
+    "activityName": "Avocado and bean salad",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000245",
+    "date": "2026-06-04",
+    "activityId": "train_travel",
+    "activityName": "Commute to office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000246",
+    "date": "2026-06-04",
+    "activityId": "pork_meal",
+    "activityName": "Pork meatballs dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000247",
+    "date": "2026-06-05",
+    "activityId": "car_petrol",
+    "activityName": "Friday commute & social drive",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1770000000248",
+    "date": "2026-06-05",
+    "activityId": "beef_meal",
+    "activityName": "Friday night burger",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000249",
+    "date": "2026-06-06",
+    "activityId": "car_diesel",
+    "activityName": "Weekend cycling trip drive",
+    "amount": 45,
+    "co2Amount": 9.45
+  },
+  {
+    "id": "1770000000250",
+    "date": "2026-06-06",
+    "activityId": "chicken_meal",
+    "activityName": "Barbecue chicken dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000251",
+    "date": "2026-06-07",
+    "activityId": "veg_meal",
+    "activityName": "Sunday homemade pizza (veg)",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000252",
+    "date": "2026-06-07",
+    "activityId": "internet_usage",
+    "activityName": "Streaming summer sports",
+    "amount": 24,
+    "co2Amount": 12
+  },
+  {
+    "id": "1770000000253",
+    "date": "2026-06-08",
+    "activityId": "train_travel",
+    "activityName": "Morning commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000254",
+    "date": "2026-06-08",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000255",
+    "date": "2026-06-09",
+    "activityId": "bus_travel",
+    "activityName": "Bus to client office",
+    "amount": 15,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000256",
+    "date": "2026-06-09",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken rice bowl",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000257",
+    "date": "2026-06-10",
+    "activityId": "car_petrol",
+    "activityName": "Commute to headquarters",
+    "amount": 30,
+    "co2Amount": 5.1
+  },
+  {
+    "id": "1770000000258",
+    "date": "2026-06-10",
+    "activityId": "veg_meal",
+    "activityName": "Greek salad dinner",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000259",
+    "date": "2026-06-11",
+    "activityId": "train_travel",
+    "activityName": "Office commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000260",
+    "date": "2026-06-11",
+    "activityId": "electricity_usage",
+    "activityName": "Fans running during warm spell",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1770000000261",
+    "date": "2026-06-12",
+    "activityId": "car_diesel",
+    "activityName": "Friday commute",
+    "amount": 30,
+    "co2Amount": 6.3
+  },
+  {
+    "id": "1770000000262",
+    "date": "2026-06-12",
+    "activityId": "pork_meal",
+    "activityName": "Friday pork belly skewers",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000263",
+    "date": "2026-06-13",
+    "activityId": "car_petrol",
+    "activityName": "Saturday day trip to the hills",
+    "amount": 65,
+    "co2Amount": 11.05
+  },
+  {
+    "id": "1770000000264",
+    "date": "2026-06-13",
+    "activityId": "lamb_meal",
+    "activityName": "Weekend gastro pub lamb roast",
+    "amount": 1,
+    "co2Amount": 20.4
+  },
+  {
+    "id": "1770000000265",
+    "date": "2026-06-14",
+    "activityId": "veg_meal",
+    "activityName": "Sunday light lunch",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000266",
+    "date": "2026-06-14",
+    "activityId": "electricity_usage",
+    "activityName": "Sunday household chores",
+    "amount": 21,
+    "co2Amount": 4.83
+  },
+  {
+    "id": "1770000000267",
+    "date": "2026-06-15",
+    "activityId": "train_travel",
+    "activityName": "Work commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000268",
+    "date": "2026-06-15",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken & vegetable stir-fry",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000269",
+    "date": "2026-06-16",
+    "activityId": "bus_travel",
+    "activityName": "Morning transit commute",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000270",
+    "date": "2026-06-16",
+    "activityId": "electricity_usage",
+    "activityName": "Home electricity use",
+    "amount": 23,
+    "co2Amount": 5.29
+  },
+  {
+    "id": "1770000000271",
+    "date": "2026-06-17",
+    "activityId": "car_electric",
+    "activityName": "EV commute",
+    "amount": 30,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000272",
+    "date": "2026-06-17",
+    "activityId": "veg_meal",
+    "activityName": "Falafel wrap lunch",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000273",
+    "date": "2026-06-18",
+    "activityId": "train_travel",
+    "activityName": "Commute to office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000274",
+    "date": "2026-06-18",
+    "activityId": "chicken_meal",
+    "activityName": "Roast chicken with new potatoes",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000275",
+    "date": "2026-06-19",
+    "activityId": "car_petrol",
+    "activityName": "Friday commute & weekend prep",
+    "amount": 32,
+    "co2Amount": 5.44
+  },
+  {
+    "id": "1770000000276",
+    "date": "2026-06-19",
+    "activityId": "beef_meal",
+    "activityName": "Summer solstice BBQ beef burgers",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000277",
+    "date": "2026-06-20",
+    "activityId": "train_travel",
+    "activityName": "Saturday train to music festival",
+    "amount": 80,
+    "co2Amount": 3.2
+  },
+  {
+    "id": "1770000000278",
+    "date": "2026-06-20",
+    "activityId": "veg_meal",
+    "activityName": "Festival street food (vegan)",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000279",
+    "date": "2026-06-21",
+    "activityId": "train_travel",
+    "activityName": "Return train from festival",
+    "amount": 80,
+    "co2Amount": 3.2
+  },
+  {
+    "id": "1770000000280",
+    "date": "2026-06-21",
+    "activityId": "internet_usage",
+    "activityName": "Festival photos upload & relax",
+    "amount": 20,
+    "co2Amount": 10
+  },
+  {
+    "id": "1770000000281",
+    "date": "2026-06-22",
+    "activityId": "bus_travel",
+    "activityName": "Monday bus ride to work",
+    "amount": 14,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000282",
+    "date": "2026-06-22",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken noodle salad",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000283",
+    "date": "2026-06-23",
+    "activityId": "car_petrol",
+    "activityName": "Commute to office",
+    "amount": 28,
+    "co2Amount": 4.76
+  },
+  {
+    "id": "1770000000284",
+    "date": "2026-06-23",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000285",
+    "date": "2026-06-24",
+    "activityId": "train_travel",
+    "activityName": "Commute by train",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000286",
+    "date": "2026-06-24",
+    "activityId": "veg_meal",
+    "activityName": "Vegetarian pasta",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000287",
+    "date": "2026-06-25",
+    "activityId": "car_electric",
+    "activityName": "Clean EV commute",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1770000000288",
+    "date": "2026-06-25",
+    "activityId": "pork_meal",
+    "activityName": "Pork schnitzel dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000289",
+    "date": "2026-06-26",
+    "activityId": "car_diesel",
+    "activityName": "Friday commute",
+    "amount": 32,
+    "co2Amount": 6.72
+  },
+  {
+    "id": "1770000000290",
+    "date": "2026-06-26",
+    "activityId": "chicken_meal",
+    "activityName": "Grilled chicken skewers",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000291",
+    "date": "2026-06-27",
+    "activityId": "car_petrol",
+    "activityName": "Weekend camping trip drive",
+    "amount": 75,
+    "co2Amount": 12.75
+  },
+  {
+    "id": "1770000000292",
+    "date": "2026-06-27",
+    "activityId": "beef_meal",
+    "activityName": "Campfire beef chili",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000293",
+    "date": "2026-06-28",
+    "activityId": "car_petrol",
+    "activityName": "Camp return drive",
+    "amount": 75,
+    "co2Amount": 12.75
+  },
+  {
+    "id": "1770000000294",
+    "date": "2026-06-28",
+    "activityId": "veg_meal",
+    "activityName": "Light soup dinner",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000295",
+    "date": "2026-06-29",
+    "activityId": "train_travel",
+    "activityName": "Monday commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000296",
+    "date": "2026-06-29",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home power",
+    "amount": 24,
+    "co2Amount": 5.52
+  },
+  {
+    "id": "1770000000297",
+    "date": "2026-06-30",
+    "activityId": "bus_travel",
+    "activityName": "End of June bus commute",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000298",
+    "date": "2026-06-30",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken salad dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000299",
+    "date": "2026-07-01",
+    "activityId": "train_travel",
+    "activityName": "Commute to office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000300",
+    "date": "2026-07-01",
+    "activityId": "electricity_usage",
+    "activityName": "Home AC / fans usage",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1770000000301",
+    "date": "2026-07-02",
+    "activityId": "car_petrol",
+    "activityName": "Drive to regional site",
+    "amount": 40,
+    "co2Amount": 6.8
+  },
+  {
+    "id": "1770000000302",
+    "date": "2026-07-02",
+    "activityId": "veg_meal",
+    "activityName": "Cold pasta salad",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000303",
+    "date": "2026-07-03",
+    "activityId": "car_diesel",
+    "activityName": "Friday commute",
+    "amount": 30,
+    "co2Amount": 6.3
+  },
+  {
+    "id": "1770000000304",
+    "date": "2026-07-03",
+    "activityId": "beef_meal",
+    "activityName": "Friday steak barbecue",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000305",
+    "date": "2026-07-04",
+    "activityId": "car_petrol",
+    "activityName": "Independence weekend lake drive",
+    "amount": 50,
+    "co2Amount": 8.5
+  },
+  {
+    "id": "1770000000306",
+    "date": "2026-07-04",
+    "activityId": "chicken_meal",
+    "activityName": "BBQ chicken wings",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000307",
+    "date": "2026-07-05",
+    "activityId": "veg_meal",
+    "activityName": "Sunday veggie burgers",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000308",
+    "date": "2026-07-05",
+    "activityId": "internet_usage",
+    "activityName": "Weekend streaming",
+    "amount": 22,
+    "co2Amount": 11
+  },
+  {
+    "id": "1770000000309",
+    "date": "2026-07-06",
+    "activityId": "train_travel",
+    "activityName": "Commute to office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000310",
+    "date": "2026-07-06",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1770000000311",
+    "date": "2026-07-07",
+    "activityId": "bus_travel",
+    "activityName": "Public bus commute",
+    "amount": 14,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000312",
+    "date": "2026-07-07",
+    "activityId": "pork_meal",
+    "activityName": "Pork gyro dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000313",
+    "date": "2026-07-08",
+    "activityId": "car_electric",
+    "activityName": "EV office commute",
+    "amount": 30,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000314",
+    "date": "2026-07-08",
+    "activityId": "veg_meal",
+    "activityName": "Halloumi wrap lunch",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000315",
+    "date": "2026-07-09",
+    "activityId": "train_travel",
+    "activityName": "Train commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000316",
+    "date": "2026-07-09",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken & rice lunch prep",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000317",
+    "date": "2026-07-10",
+    "activityId": "car_petrol",
+    "activityName": "Friday commute & errands",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1770000000318",
+    "date": "2026-07-10",
+    "activityId": "lamb_meal",
+    "activityName": "Friday night Greek lamb koftas",
+    "amount": 1,
+    "co2Amount": 20.4
+  },
+  {
+    "id": "1770000000319",
+    "date": "2026-07-11",
+    "activityId": "car_diesel",
+    "activityName": "Weekend coastal drive",
+    "amount": 80,
+    "co2Amount": 16.8
+  },
+  {
+    "id": "1770000000320",
+    "date": "2026-07-11",
+    "activityId": "chicken_meal",
+    "activityName": "Fish & chips / chicken supper",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000321",
+    "date": "2026-07-12",
+    "activityId": "veg_meal",
+    "activityName": "Sunday cold gazpacho & salad",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000322",
+    "date": "2026-07-12",
+    "activityId": "electricity_usage",
+    "activityName": "Household power",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000323",
+    "date": "2026-07-13",
+    "activityId": "train_travel",
+    "activityName": "Work commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000324",
+    "date": "2026-07-13",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 24,
+    "co2Amount": 5.52
+  },
+  {
+    "id": "1770000000325",
+    "date": "2026-07-14",
+    "activityId": "bus_travel",
+    "activityName": "Morning bus journey",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000326",
+    "date": "2026-07-14",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken salad dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000327",
+    "date": "2026-07-15",
+    "activityId": "car_electric",
+    "activityName": "Commute by EV",
+    "amount": 28,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000328",
+    "date": "2026-07-15",
+    "activityId": "veg_meal",
+    "activityName": "Vegetarian lunch bowl",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000329",
+    "date": "2026-07-16",
+    "activityId": "train_travel",
+    "activityName": "Office commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000330",
+    "date": "2026-07-16",
+    "activityId": "pork_meal",
+    "activityName": "Pork tenderloin dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000331",
+    "date": "2026-07-17",
+    "activityId": "flight_short",
+    "activityName": "Summer holiday flight to Spain",
+    "amount": 900,
+    "co2Amount": 225
+  },
+  {
+    "id": "1770000000332",
+    "date": "2026-07-18",
+    "activityId": "bus_travel",
+    "activityName": "Resort transfers & beach bus",
+    "amount": 20,
+    "co2Amount": 2
+  },
+  {
+    "id": "1770000000333",
+    "date": "2026-07-18",
+    "activityId": "beef_meal",
+    "activityName": "Spanish tapas with beef",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000334",
+    "date": "2026-07-19",
+    "activityId": "veg_meal",
+    "activityName": "Mediterranean paella (veg)",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000335",
+    "date": "2026-07-19",
+    "activityId": "chicken_meal",
+    "activityName": "Grilled chicken lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000336",
+    "date": "2026-07-20",
+    "activityId": "bus_travel",
+    "activityName": "Excursion bus tour",
+    "amount": 35,
+    "co2Amount": 3.5
+  },
+  {
+    "id": "1770000000337",
+    "date": "2026-07-20",
+    "activityId": "pork_meal",
+    "activityName": "Iberian pork dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000338",
+    "date": "2026-07-21",
+    "activityId": "flight_short",
+    "activityName": "Return flight from Spain",
+    "amount": 900,
+    "co2Amount": 225
+  },
+  {
+    "id": "1770000000339",
+    "date": "2026-07-22",
+    "activityId": "train_travel",
+    "activityName": "Post-vacation office commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000340",
+    "date": "2026-07-22",
+    "activityId": "veg_meal",
+    "activityName": "Healthy recovery soup",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000341",
+    "date": "2026-07-23",
+    "activityId": "car_petrol",
+    "activityName": "Commute to office",
+    "amount": 30,
+    "co2Amount": 5.1
+  },
+  {
+    "id": "1770000000342",
+    "date": "2026-07-23",
+    "activityId": "electricity_usage",
+    "activityName": "Catching up on laundry & house electricity",
+    "amount": 30,
+    "co2Amount": 6.9
+  },
+  {
+    "id": "1770000000343",
+    "date": "2026-07-24",
+    "activityId": "bus_travel",
+    "activityName": "Bus to office",
+    "amount": 14,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000344",
+    "date": "2026-07-24",
+    "activityId": "chicken_meal",
+    "activityName": "Friday chicken katsu",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000345",
+    "date": "2026-07-25",
+    "activityId": "car_electric",
+    "activityName": "Supermarket & town errands",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1770000000346",
+    "date": "2026-07-25",
+    "activityId": "beef_meal",
+    "activityName": "Saturday backyard barbecue",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000347",
+    "date": "2026-07-26",
+    "activityId": "veg_meal",
+    "activityName": "Sunday vegetable tart",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000348",
+    "date": "2026-07-26",
+    "activityId": "internet_usage",
+    "activityName": "Holiday video streaming & uploads",
+    "amount": 28,
+    "co2Amount": 14
+  },
+  {
+    "id": "1770000000349",
+    "date": "2026-07-27",
+    "activityId": "train_travel",
+    "activityName": "Monday commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000350",
+    "date": "2026-07-27",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken salad prep",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000351",
+    "date": "2026-07-28",
+    "activityId": "car_diesel",
+    "activityName": "Commute to site",
+    "amount": 35,
+    "co2Amount": 7.35
+  },
+  {
+    "id": "1770000000352",
+    "date": "2026-07-28",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000353",
+    "date": "2026-07-29",
+    "activityId": "bus_travel",
+    "activityName": "City transit",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000354",
+    "date": "2026-07-29",
+    "activityId": "veg_meal",
+    "activityName": "Mediterranean salad",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000355",
+    "date": "2026-07-30",
+    "activityId": "car_petrol",
+    "activityName": "Commute to office",
+    "amount": 32,
+    "co2Amount": 5.44
+  },
+  {
+    "id": "1770000000356",
+    "date": "2026-07-30",
+    "activityId": "pork_meal",
+    "activityName": "Pork chops dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000357",
+    "date": "2026-07-31",
+    "activityId": "train_travel",
+    "activityName": "End of July commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000358",
+    "date": "2026-07-31",
+    "activityId": "chicken_meal",
+    "activityName": "Friday dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000359",
+    "date": "2026-08-01",
+    "activityId": "car_petrol",
+    "activityName": "Saturday drive to national park",
+    "amount": 65,
+    "co2Amount": 11.05
+  },
+  {
+    "id": "1770000000360",
+    "date": "2026-08-01",
+    "activityId": "beef_meal",
+    "activityName": "Saturday steak BBQ",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000361",
+    "date": "2026-08-02",
+    "activityId": "veg_meal",
+    "activityName": "Sunday veggie pasta",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000362",
+    "date": "2026-08-02",
+    "activityId": "electricity_usage",
+    "activityName": "Sunday home power",
+    "amount": 24,
+    "co2Amount": 5.52
+  },
+  {
+    "id": "1770000000363",
+    "date": "2026-08-03",
+    "activityId": "train_travel",
+    "activityName": "August morning commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000364",
+    "date": "2026-08-03",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken wrap lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000365",
+    "date": "2026-08-04",
+    "activityId": "bus_travel",
+    "activityName": "Bus to work",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000366",
+    "date": "2026-08-04",
+    "activityId": "electricity_usage",
+    "activityName": "AC usage during heatwave",
+    "amount": 32,
+    "co2Amount": 7.36
+  },
+  {
+    "id": "1770000000367",
+    "date": "2026-08-05",
+    "activityId": "car_electric",
+    "activityName": "EV commute",
+    "amount": 25,
+    "co2Amount": 1.25
+  },
+  {
+    "id": "1770000000368",
+    "date": "2026-08-05",
+    "activityId": "veg_meal",
+    "activityName": "Cold watermelon & feta salad",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000369",
+    "date": "2026-08-06",
+    "activityId": "train_travel",
+    "activityName": "Commute to office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000370",
+    "date": "2026-08-06",
+    "activityId": "pork_meal",
+    "activityName": "BBQ pulled pork dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000371",
+    "date": "2026-08-07",
+    "activityId": "car_petrol",
+    "activityName": "Friday commute & errands",
+    "amount": 30,
+    "co2Amount": 5.1
+  },
+  {
+    "id": "1770000000372",
+    "date": "2026-08-07",
+    "activityId": "chicken_meal",
+    "activityName": "Friday roast chicken",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000373",
+    "date": "2026-08-08",
+    "activityId": "car_diesel",
+    "activityName": "Weekend road trip to the lakes",
+    "amount": 90,
+    "co2Amount": 18.9
+  },
+  {
+    "id": "1770000000374",
+    "date": "2026-08-08",
+    "activityId": "lamb_meal",
+    "activityName": "Lake district lamb dinner",
+    "amount": 1,
+    "co2Amount": 20.4
+  },
+  {
+    "id": "1770000000375",
+    "date": "2026-08-09",
+    "activityId": "car_diesel",
+    "activityName": "Return drive from lakes",
+    "amount": 90,
+    "co2Amount": 18.9
+  },
+  {
+    "id": "1770000000376",
+    "date": "2026-08-09",
+    "activityId": "veg_meal",
+    "activityName": "Light Sunday soup",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000377",
+    "date": "2026-08-10",
+    "activityId": "train_travel",
+    "activityName": "Commute to office",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000378",
+    "date": "2026-08-10",
+    "activityId": "electricity_usage",
+    "activityName": "Daily electricity use",
+    "amount": 23,
+    "co2Amount": 5.29
+  },
+  {
+    "id": "1770000000379",
+    "date": "2026-08-11",
+    "activityId": "bus_travel",
+    "activityName": "Morning bus ride",
+    "amount": 15,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000380",
+    "date": "2026-08-11",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken & rice lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000381",
+    "date": "2026-08-12",
+    "activityId": "car_electric",
+    "activityName": "EV office commute",
+    "amount": 28,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000382",
+    "date": "2026-08-12",
+    "activityId": "veg_meal",
+    "activityName": "Tofu vegetable stir fry",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000383",
+    "date": "2026-08-13",
+    "activityId": "train_travel",
+    "activityName": "Work commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000384",
+    "date": "2026-08-13",
+    "activityId": "electricity_usage",
+    "activityName": "Home appliances & electronics",
+    "amount": 25,
+    "co2Amount": 5.75
+  },
+  {
+    "id": "1770000000385",
+    "date": "2026-08-14",
+    "activityId": "car_petrol",
+    "activityName": "Commute to headquarters",
+    "amount": 32,
+    "co2Amount": 5.44
+  },
+  {
+    "id": "1770000000386",
+    "date": "2026-08-14",
+    "activityId": "beef_meal",
+    "activityName": "Friday burger night",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000387",
+    "date": "2026-08-15",
+    "activityId": "car_electric",
+    "activityName": "Weekend market & sports run",
+    "amount": 22,
+    "co2Amount": 1.1
+  },
+  {
+    "id": "1770000000388",
+    "date": "2026-08-15",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken barbecue skewers",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000389",
+    "date": "2026-08-16",
+    "activityId": "veg_meal",
+    "activityName": "Sunday veggie curry",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000390",
+    "date": "2026-08-16",
+    "activityId": "internet_usage",
+    "activityName": "Sunday movie streaming",
+    "amount": 20,
+    "co2Amount": 10
+  },
+  {
+    "id": "1770000000391",
+    "date": "2026-08-17",
+    "activityId": "train_travel",
+    "activityName": "Morning commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000392",
+    "date": "2026-08-17",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home power",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000393",
+    "date": "2026-08-18",
+    "activityId": "bus_travel",
+    "activityName": "Bus to office",
+    "amount": 12,
+    "co2Amount": 1.2
+  },
+  {
+    "id": "1770000000394",
+    "date": "2026-08-18",
+    "activityId": "pork_meal",
+    "activityName": "Pork dinner",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000395",
+    "date": "2026-08-19",
+    "activityId": "car_petrol",
+    "activityName": "Drive to client site",
+    "amount": 42,
+    "co2Amount": 7.14
+  },
+  {
+    "id": "1770000000396",
+    "date": "2026-08-19",
+    "activityId": "veg_meal",
+    "activityName": "Avocado salad lunch",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000397",
+    "date": "2026-08-20",
+    "activityId": "train_travel",
+    "activityName": "Work commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000398",
+    "date": "2026-08-20",
+    "activityId": "chicken_meal",
+    "activityName": "Lemon herb chicken",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000399",
+    "date": "2026-08-21",
+    "activityId": "car_diesel",
+    "activityName": "Friday office commute",
+    "amount": 30,
+    "co2Amount": 6.3
+  },
+  {
+    "id": "1770000000400",
+    "date": "2026-08-21",
+    "activityId": "new_phone",
+    "activityName": "Upgraded smartphone",
+    "amount": 1,
+    "co2Amount": 80
+  },
+  {
+    "id": "1770000000401",
+    "date": "2026-08-22",
+    "activityId": "car_petrol",
+    "activityName": "Weekend family visit drive",
+    "amount": 55,
+    "co2Amount": 9.35
+  },
+  {
+    "id": "1770000000402",
+    "date": "2026-08-22",
+    "activityId": "beef_meal",
+    "activityName": "Saturday barbecue feast",
+    "amount": 1,
+    "co2Amount": 15.5
+  },
+  {
+    "id": "1770000000403",
+    "date": "2026-08-23",
+    "activityId": "veg_meal",
+    "activityName": "Sunday pasta bake",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000404",
+    "date": "2026-08-23",
+    "activityId": "electricity_usage",
+    "activityName": "Household chores & charging",
+    "amount": 26,
+    "co2Amount": 5.98
+  },
+  {
+    "id": "1770000000405",
+    "date": "2026-08-24",
+    "activityId": "train_travel",
+    "activityName": "Monday commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000406",
+    "date": "2026-08-24",
+    "activityId": "chicken_meal",
+    "activityName": "Chicken & rice lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000407",
+    "date": "2026-08-25",
+    "activityId": "bus_travel",
+    "activityName": "City transit to work",
+    "amount": 14,
+    "co2Amount": 1.4
+  },
+  {
+    "id": "1770000000408",
+    "date": "2026-08-25",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home electricity",
+    "amount": 24,
+    "co2Amount": 5.52
+  },
+  {
+    "id": "1770000000409",
+    "date": "2026-08-26",
+    "activityId": "car_electric",
+    "activityName": "Eco EV commute",
+    "amount": 30,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000410",
+    "date": "2026-08-26",
+    "activityId": "veg_meal",
+    "activityName": "Chickpea curry dinner",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000411",
+    "date": "2026-08-27",
+    "activityId": "train_travel",
+    "activityName": "Office commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000412",
+    "date": "2026-08-27",
+    "activityId": "pork_meal",
+    "activityName": "Pork stir-fry",
+    "amount": 1,
+    "co2Amount": 7.8
+  },
+  {
+    "id": "1770000000413",
+    "date": "2026-08-28",
+    "activityId": "car_petrol",
+    "activityName": "Bank holiday getaway start drive",
+    "amount": 80,
+    "co2Amount": 13.6
+  },
+  {
+    "id": "1770000000414",
+    "date": "2026-08-28",
+    "activityId": "chicken_meal",
+    "activityName": "Holiday pub dinner",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000415",
+    "date": "2026-08-29",
+    "activityId": "car_petrol",
+    "activityName": "Bank holiday weekend countryside drive",
+    "amount": 40,
+    "co2Amount": 6.8
+  },
+  {
+    "id": "1770000000416",
+    "date": "2026-08-29",
+    "activityId": "lamb_meal",
+    "activityName": "Bank holiday roast lamb",
+    "amount": 1,
+    "co2Amount": 20.4
+  },
+  {
+    "id": "1770000000417",
+    "date": "2026-08-30",
+    "activityId": "car_petrol",
+    "activityName": "Return drive from bank holiday break",
+    "amount": 80,
+    "co2Amount": 13.6
+  },
+  {
+    "id": "1770000000418",
+    "date": "2026-08-30",
+    "activityId": "veg_meal",
+    "activityName": "Light Sunday dinner",
+    "amount": 1,
+    "co2Amount": 2.5
+  },
+  {
+    "id": "1770000000419",
+    "date": "2026-08-31",
+    "activityId": "electricity_usage",
+    "activityName": "Summer bank holiday at home",
+    "amount": 28,
+    "co2Amount": 6.44
+  },
+  {
+    "id": "1770000000420",
+    "date": "2026-08-31",
+    "activityId": "internet_usage",
+    "activityName": "Streaming bank holiday movies",
+    "amount": 25,
+    "co2Amount": 12.5
+  },
+  {
+    "id": "1770000000421",
+    "date": "2026-09-01",
+    "activityId": "train_travel",
+    "activityName": "September return to routine commute",
+    "amount": 40,
+    "co2Amount": 1.6
+  },
+  {
+    "id": "1770000000422",
+    "date": "2026-09-01",
+    "activityId": "chicken_meal",
+    "activityName": "Healthy chicken & quinoa lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000423",
+    "date": "2026-09-01",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home electricity",
+    "amount": 22,
+    "co2Amount": 5.06
+  },
+  {
+    "id": "1770000000424",
+    "date": "2026-09-02",
+    "activityId": "car_petrol",
+    "activityName": "Commute to office & client visit",
+    "amount": 35,
+    "co2Amount": 5.95
+  },
+  {
+    "id": "1770000000425",
+    "date": "2026-09-02",
+    "activityId": "veg_meal",
+    "activityName": "Mediterranean salad dinner",
+    "amount": 2,
+    "co2Amount": 5
+  },
+  {
+    "id": "1770000000426",
+    "date": "2026-09-02",
+    "activityId": "natural_gas",
+    "activityName": "Evening heating on cooler night",
+    "amount": 20,
+    "co2Amount": 4
+  },
+  {
+    "id": "1770000000427",
+    "date": "2026-09-03",
+    "activityId": "bus_travel",
+    "activityName": "Morning bus commute into town",
+    "amount": 15,
+    "co2Amount": 1.5
+  },
+  {
+    "id": "1770000000428",
+    "date": "2026-09-03",
+    "activityId": "chicken_meal",
+    "activityName": "Grilled chicken lunch",
+    "amount": 1,
+    "co2Amount": 6.5
+  },
+  {
+    "id": "1770000000429",
+    "date": "2026-09-03",
+    "activityId": "electricity_usage",
+    "activityName": "Daily home electricity & laptop",
+    "amount": 24,
+    "co2Amount": 5.52
   }
 ]
