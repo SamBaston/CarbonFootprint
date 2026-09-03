@@ -8,6 +8,7 @@ Link to a free-tier cold-start delay [live demo](https://carbonfootprint-m8gx.on
 
 This was built in accordance with my [Programming Black Assignment 1 Mark Scheme](https://github.com/stevenaeola/progblack_2526/blob/main/assignment_1/README.md).
 
+Grade: 79/100
 
 <br>
 
